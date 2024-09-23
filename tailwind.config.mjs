@@ -9,6 +9,10 @@ export default {
 				'accent': '#0E0E11',
 				'semi-dark': '#17171B',
 				'background': '#0E0E11',
+				'border-dark': '#252525',
+				'semi-white': '#8F8F8F',
+				'brown': '#3c3633',
+				'purple': '#6e51f0',
 			},
 
 			fontFamily: {

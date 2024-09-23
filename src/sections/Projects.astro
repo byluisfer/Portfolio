@@ -1,17 +1,77 @@
 <section class="h-screen">
-    
   <h1 class="relative text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white font-saira font-black z-10 text-center">
-      PROJECTS
+    PROJECTS
   </h1>
 
-  <h2 class="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary font-dafoe font-regular z-20 text-center led-effect-aboutMe transform -translate-y-20 sm:-translate-y-[100px] md:-translate-y-[125px] lg:-translate-y-[135px] translate-x-6 sm:translate-x-[38px] md:translate-x-[40px] lg:translate-x-[30px]">
-      Projects
+  <h2 class="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary font-dafoe font-regular z-20 text-center led-effect-projects transform -translate-y-20 sm:-translate-y-[100px] md:-translate-y-[125px] lg:-translate-y-[135px] translate-x-6 sm:translate-x-[38px] md:translate-x-[40px] lg:translate-x-[30px]">
+    Projects
   </h2>
 
+  <!-- Tic Tac Toe Project -->
+  <div class="flex justify-center -mt-20 cursor-pointer">
+    <div class="relative bg-semi-dark rounded-2xl shadow-lg border-8 border-border-dark h-auto w-auto px-10 text-white hover:shadow-2xl transition-all duration-300 group overflow-hidden">
+      <!-- Overlay de iluminación -->
+      <div class="absolute inset-0 bg-gradient-to-b from-brown/40 to-transparent opacity-0 group-hover:opacity-75 transition-opacity duration-300"></div>
+  
+      <!-- Flecha en la esquina superior derecha -->
+      <div class="absolute top-12 right-14 z-10">
+        <i class="fas fa-arrow-right text-white text-2xl transform transition-transform duration-300 ease-in-out group-hover:translate-x-5"></i>
+      </div>
+  
+      <!-- Contenido de la tarjeta -->
+      <div class="mt-10 relative z-10">
+        <h2 class="text-2xl font-mplus font-bold">Tic Tac Toe with AI</h2>
+        <p class="text-xl text-white">
+          CsBe, 22
+          <span class="text-semi-white">- This is my personal site of Real Madrid</span>
+        </p>
+  
+        <!-- Contenedor de la imagen -->
+        <div class="mt-20">
+          <img
+            src="/public/tictactoe.png"
+            alt="Tic Tac Toe"
+            class="w-full h-full object-cover rounded-t-2xl transform translate-y-10 transition-transform duration-300 ease-in-out group-hover:-translate-y-1"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Real Madrid Project -->
+  <div class="flex justify-center mt-20 cursor-pointer">
+    <div class="relative bg-semi-dark rounded-2xl shadow-lg border-8 border-border-dark h-auto w-auto px-10 text-white hover:shadow-2xl transition-all duration-300 group overflow-hidden">
+      <!-- Overlay de iluminación -->
+      <div class="absolute inset-0 bg-gradient-to-b from-purple/40 to-transparent opacity-0 group-hover:opacity-75 transition-opacity duration-300"></div>
+  
+      <!-- Flecha en la esquina superior derecha -->
+      <div class="absolute top-12 right-14 z-10">
+        <i class="fas fa-arrow-right text-white text-2xl transform transition-transform duration-300 ease-in-out group-hover:translate-x-5"></i>
+      </div>
+  
+      <!-- Contenido de la tarjeta -->
+      <div class="mt-10 relative z-10">
+        <h2 class="text-2xl font-mplus font-bold">Tic Tac Toe with AI</h2>
+        <p class="text-xl text-white">
+          CsBe, 22
+          <span class="text-semi-white">- This is my personal site of Real Madrid</span>
+        </p>
+  
+        <!-- Contenedor de la imagen -->
+        <div class="mt-20">
+          <img
+            src="/public/rm2.png"
+            alt="Tic Tac Toe"
+            class="w-full h-full object-cover rounded-t-2xl transform translate-y-10 transition-transform duration-300 ease-in-out group-hover:-translate-y-1"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <style>
-  .led-effect-aboutMe {
+  .led-effect-projects {
     text-shadow:
       0 0 5px #9D3BE4,
       0 0 10px #9D3BE4,
