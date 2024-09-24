@@ -13,6 +13,7 @@ export default {
 				'semi-white': '#8F8F8F',
 				'brown': '#3c3633',
 				'purple': '#6e51f0',
+				'orange': '#ff5a1f',
 			},
 
 			fontFamily: {
