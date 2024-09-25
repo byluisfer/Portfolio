@@ -14,6 +14,7 @@ export default {
 				'brown': '#3c3633',
 				'purple': '#6e51f0',
 				'orange': '#ff5a1f',
+				'semi-secondary': '#b26be7',
 			},
 
 			fontFamily: {
@@ -21,6 +22,7 @@ export default {
 				'lobster': ['Lobster', 'sans-serif'],
 				'mplus': ['"M PLUS Rounded 1c"', 'sans-serif'],
 				'dafoe': ['Mr Dafoe', 'sans-serif'],
+				'archivo': ['Archivo Black', 'sans-serif'],
 			},
 
 			fontWeight: {
