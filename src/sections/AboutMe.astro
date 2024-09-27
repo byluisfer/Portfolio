@@ -1,139 +1,36 @@
-<section class="h-screen py-20">
-    <!-- Títulos de la sección -->
+<section class="h-screen">
+    
     <h1 class="relative text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white font-saira font-black z-10 text-center">
-      ABOUT ME
+        ABOUT ME
     </h1>
-    <h2 class="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary font-dafoe z-20 text-center led-effect-aboutMe transform
-      -translate-y-20 sm:-translate-y-[100px] md:-translate-y-[125px] lg:-translate-y-[135px]
-      translate-x-6 sm:translate-x-[38px] md:translate-x-[40px] lg:translate-x-[30px]">
-      About Me
-    </h2>
-  
-    <!-- Contenedor que elimina el padding lateral -->
-    <div class="-mx-32 -mt-28">
-      <!-- Grid principal -->
-      <div class="grid grid-cols-5 gap-4 w-full"
-           style="grid-template-columns: 1fr 1fr 1fr 1fr; grid-template-rows: auto 1fr;">
-        <!-- Div de la foto (ocupa 2 filas) -->
-        <div class="row-span-2 flex items-center justify-center rounded-xl"
-             style="height: 500px; width: 350px;">
-             <img src="/ibai.png" alt="" class="w-full h-full">
-        </div>
-        <!-- Div de Info (altura fija) -->
-        <div class="bg-primary rounded-xl p-6"
-             style="height: 180px; width: 750px;">
-             <h1 class="text-white font-archivo text-2xl">I'M LUIS</h1>
-             <p class="text-white font-mplus text-xl mt-4">I am <span class="font-lobster led-effect-aboutMe">18 years old</span>, from Spain, Madrid and I am currently a <span class="font-lobster led-effect-aboutMe">computer science student</span> in my second year and I love programming. I have knowledge of <span class="font-lobster led-effect-aboutMe">Frontend</span> and <span class="font-lobster led-effect-aboutMe">Backend.</span></p>
-        </div>
-        <!-- Div de Redes Sociales (misma altura que Info) -->
-        <div class="flex items-center justify-center" style="height: 150px; width: 235px;">
-          <!-- Grid interno para organizar los 6 divs en 2 filas y 3 columnas -->
-          <div class="grid grid-cols-3 gap-1 -ml-8 -mt-4">
-            <div class="p-1">
-                <div class="h-14 w-14 text-white font-archivo text-2xl flex items-center justify-center rounded-lg leading-none">LIN<br>KS:</div>
-              </div>
-              <div class="p-1">
-                  <div class="bg-white h-14 w-14 flex items-center justify-center rounded-lg cursor-pointer">
-                    <i class="fa-brands fa-github text-2xl transform transition-transform duration-300 hover:scale-125"></i>
-                  </div>
-                </div>
-                <div class="p-1">
-                  <div class="bg-white h-14 w-14 flex items-center justify-center rounded-lg cursor-pointer">
-                    <i class="fa-brands fa-linkedin-in text-2xl transform transition-transform duration-300 hover:scale-125"></i>
-                  </div>
-                </div>
-                <div class="p-1">
-                  <div class="bg-white h-14 w-14 flex items-center justify-center rounded-lg cursor-pointer">
-                    <i class="fa-brands fa-instagram text-2xl transform transition-transform duration-300 hover:scale-125"></i>
-                  </div>
-                </div>
-                <div class="p-1">
-                  <div class="bg-white h-14 w-14 flex items-center justify-center rounded-lg cursor-pointer">
-                    <i class="fa-brands fa-x-twitter text-2xl transform transition-transform duration-300 hover:scale-125"></i>
-                  </div>
-                </div>
-                <div class="p-1">
-                  <div class="bg-white h-14 w-14 flex items-center justify-center rounded-lg cursor-pointer">
-                    <i class="fa-regular fa-envelope text-2xl transform transition-transform duration-300 hover:scale-125"></i>
-                  </div>
-                </div>
-          </div>
-        </div>
-        <!-- Div vacío para llenar la columna 4 en la primera fila -->
-        <div></div>
-        <!-- Contenedor para "Estudios", "Hora" y "Hobbies" -->
-        <div class="col-span-3 flex items-center" style="height: 300px; width: 970px;">
-          <!-- Div "Estudios" -->
-          <div class="relative bg-secondary p-6 rounded-xl"
-               style="width: 520px; height: 300px;">
-               <h1 class="text-white font-archivo text-2xl">EDUCATION</h1>
-               <i class="fa-solid fa-graduation-cap text-3xl text-semi-secondary absolute top-6 right-6"></i>
-               <div class="mt-6">
-                <div class="relative">
-                    <!-- Línea vertical -->
-                    <div class="absolute left-2 h-36 border-l-4 border-white"></div>
-        
-                    <!-- Elementos del timeline -->
-                    <div class="mb-10 flex items-center">
-                        <div class="w-5 h-5 -mt-1 bg-white rounded-full"></div>
-                        <p id="csbe-toggle" class="ml-4 text-white font-mplus text-xl cursor-pointer">Computer Schule Bern</p>
-                    </div>
 
-                    <div id="csbe-content" class="ml-9 -mt-8 text-white font-mplus text-sm transition-all duration-300">
-                        <p>Este es el texto adicional que aparece al hacer clic en csbeeeeeeeee.</p>
-                    </div>
-        
-                    <div class="mb-8 flex items-center">
-                        <div class="w-5 h-5 bg-white rounded-full"></div>
-                        <p id="morillon-toggle" class="ml-4 text-white font-mplus text-xl cursor-pointer">Schulhaus Morillon</p>
-                    </div>
-                    
-                    <!-- Texto que aparecerá al hacer clic -->
-                    <div id="morillon-content" class="ml-9 -mt-8 text-white font-mplus text-sm hidden transition-all duration-300">
-                        <p>Este es el texto adicional que aparece al hacer clic en Schulhaus Morillon.</p>
-                    </div>
-        
-                    <div class="mb-8 flex items-center">
-                        <div class="w-5 h-5 mt-2 bg-white rounded-full"></div>
-                        <p id="cristoRey-toggle" class="ml-4 text-white mt-2 font-mplus text-xl cursor-pointer">Colegio Cristo Rey</p>
-                    </div>
-                    
-                    <!-- Texto que aparecerá al hacer clic -->
-                    <div id="cristoRey-content" class="ml-9 -mt-8 text-white font-mplus text-sm hidden transition-all duration-300">
-                        <p>Este es el texto adicional que aparece al hacer clic en colegio cristo rey.</p>
-                    </div>
-                </div>
-            </div>
-          </div>
-          <!-- Div "Hora" -->
-          <div class="bg-yellow-500 flex items-center justify-center rounded-lg ml-5"
-               style="flex-grow: 1; height: 300px; width: 70px;">
-            <p class="text-white font-bold">Hora</p>
-          </div>
-          <!-- Div "Hobbies" -->
-          <div class="bg-pink-500 flex items-center justify-center rounded-lg -mt-28 ml-5"
-               style="flex-grow: 1; height: 280px;">
-            <p class="text-white font-bold">Hobbies</p>
-          </div>
-        </div>
-        <!-- Div de Idiomas (debajo de Foto) -->
-        <div class="bg-indigo-500 flex items-center justify-center rounded-xl"
-        style="height: 200px; width: 350px;">
-        <p class="text-white font-bold">Idiomas</p>
-        </div>
-        <!-- Div de Skills (a la derecha de Idiomas, ancho igual al de Info) -->
-        <div class="bg-teal-500 flex items-center justify-center rounded-lg col-span-1"
-        style="height: 200px; width: 750px;">
-        <p class="text-white font-bold">Skills</p>
-        </div>
-        <!-- Div de Dispo (a la derecha de Skills) -->
-        <div class="bg-primary flex items-center justify-center rounded-lg -mt-16"
-        style="height: 200px; width: 200px;">
-        <p class="text-white font-bold">Dispo</p>
-        </div>
+    <h2 class="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary font-dafoe font-regular z-20 text-center led-effect-aboutMe transform -translate-y-20 sm:-translate-y-[100px] md:-translate-y-[125px] lg:-translate-y-[135px] translate-x-6 sm:translate-x-[38px] md:translate-x-[40px] lg:translate-x-[30px]">
+        About Me
+    </h2>
+
+    <div class="flex flex-col sm:flex-row items-center sm:items-start -mt-20 space-y-4 sm:space-y-0 sm:space-x-8">
+    
+        <!-- Imagen a la izquierda -->
+        <img src="/ibai.png" alt="Foto de About Me" class="w-80 h-auto object-cover rounded-lg">
+    
+        <!-- Contenedor del texto a la derecha -->
+        <div class="text-center sm:text-left">
+            <h1 class="text-white text-3xl font-archivo">
+                HI, I'M LUIS 
+                <span class="inline-block transform origin-custom-origin hover:animate-wave cursor-pointer">👋</span>
+            </h1>
+            <p class="text-lg sm:text-xl md:text-2xl lg:text-2xl text-white font-mplus font-regular mt-4 leading-tight">
+                I am <span class="font-lobster led-effect-aboutMe">18 years old</span>, from Spain, Madrid and I am 
+                currently a <span class="font-lobster led-effect-aboutMe">computer science student</span> in my 
+                second year and I love programming. I have knowledge of <span class="font-lobster led-effect-aboutMe">
+                Frontend</span> and <span class="font-lobster led-effect-aboutMe">Backend.</span>
+            </p>            
+        </div>        
+    </div>
+    
 
 </section>
-  
+
 <style>
     .led-effect-aboutMe {
       text-shadow:
@@ -141,61 +38,4 @@
         0 0 10px #9D3BE4,
         0 0 15px #9D3BE4;
     }
-    body {
-        overflow-x: hidden;
-    }
-
 </style>
-
-<script>
-    // Función para ocultar todo el contenido
-    function hideAllContents() {
-        // Oculta el contenido de csbe
-        document.getElementById('csbe-content').classList.add('hidden');
-        document.getElementById('csbe-content').classList.remove('translate-y-0', 'opacity-100');
-
-        // Oculta el contenido de morillon
-        document.getElementById('morillon-content').classList.add('hidden');
-        document.getElementById('morillon-content').classList.remove('translate-y-0', 'opacity-100');
-
-        // Oculta el contenido de cristoRey
-        document.getElementById('cristoRey-content').classList.add('hidden');
-        document.getElementById('cristoRey-content').classList.remove('translate-y-0', 'opacity-100');
-    }
-
-    // Manejador para csbe
-    document.getElementById('csbe-toggle').addEventListener('click', function() {
-        // Oculta todos los otros contenidos
-        hideAllContents();
-
-        // Muestra el contenido de csbe
-        const csbe = document.getElementById('csbe-content');
-        csbe.classList.toggle('hidden');
-        csbe.classList.toggle('translate-y-0');
-        csbe.classList.toggle('opacity-100');
-    });
-
-    // Manejador para morillon
-    document.getElementById('morillon-toggle').addEventListener('click', function() {
-        // Oculta todos los otros contenidos
-        hideAllContents();
-
-        // Muestra el contenido de morillon
-        const morillonContent = document.getElementById('morillon-content');
-        morillonContent.classList.toggle('hidden');
-        morillonContent.classList.toggle('translate-y-0');
-        morillonContent.classList.toggle('opacity-100');
-    });
-
-    // Manejador para cristoRey
-    document.getElementById('cristoRey-toggle').addEventListener('click', function() {
-        // Oculta todos los otros contenidos
-        hideAllContents();
-
-        // Muestra el contenido de cristoRey
-        const cristoRey = document.getElementById('cristoRey-content');
-        cristoRey.classList.toggle('hidden');
-        cristoRey.classList.toggle('translate-y-0');
-        cristoRey.classList.toggle('opacity-100');
-    });
-</script>
