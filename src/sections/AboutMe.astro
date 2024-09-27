@@ -1,5 +1,4 @@
 <section class="h-screen">
-    
     <h1 class="relative text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white font-saira font-black z-10 text-center">
         ABOUT ME
     </h1>
@@ -9,33 +8,93 @@
     </h2>
 
     <div class="flex flex-col sm:flex-row items-center sm:items-start -mt-20 space-y-4 sm:space-y-0 sm:space-x-8">
-    
         <!-- Imagen a la izquierda -->
-        <img src="/ibai.png" alt="Foto de About Me" class="w-80 h-auto object-cover rounded-lg">
-    
+        <img src="/sa.png" alt="Foto de About Me" class="w-64 sm:w-80 h-auto object-cover rounded-lg">
+
         <!-- Contenedor del texto a la derecha -->
         <div class="text-center sm:text-left">
-            <h1 class="text-white text-3xl font-archivo">
-                HI, I'M LUIS 
+            <h1 class="text-white text-2xl sm:text-3xl font-archivo">
+                HI, I'M LUIS
                 <span class="inline-block transform origin-custom-origin hover:animate-wave cursor-pointer">👋</span>
             </h1>
-            <p class="text-lg sm:text-xl md:text-2xl lg:text-2xl text-white font-mplus font-regular mt-4 leading-tight">
-                I am <span class="font-lobster led-effect-aboutMe">18 years old</span>, from Spain, Madrid and I am 
-                currently a <span class="font-lobster led-effect-aboutMe">computer science student</span> in my 
+            <p class="text-lg sm:text-xl md:text-xl lg:text-xl text-white font-mplus font-regular mt-4 leading-tight">
+                I am <span class="font-lobster led-effect-aboutMe">18 years old</span>, from Spain, Madrid and I am
+                currently a <span class="font-lobster led-effect-aboutMe">computer science student</span> in my
                 second year and I love programming. I have knowledge of <span class="font-lobster led-effect-aboutMe">
                 Frontend</span> and <span class="font-lobster led-effect-aboutMe">Backend.</span>
-            </p>            
-        </div>        
-    </div>
-    
+            </p>
 
+            <!-- Contenedor flex para idiomas y redes sociales -->
+            <div class="flex mt-8">
+                <!-- Div de idiomas -->
+                <div class="relative rounded-xl border-2 border-gradient-to-r from-primary to-secondary py-4 px-6 text-white max-w-base">
+                    <h2 class="text-2xl font-archivo">LANGUAGES.</h2>
+                    <div class="space-y-2">
+                        <!-- Deutsch -->
+                        <div class="flex items-center">
+                            <span class="font-mplus text-lg">Deutsch</span>
+                            <div class="flex space-x-1 ml-4 sm:ml-20">
+                                <img src="/star.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10">
+                                <img src="/star.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10">
+                                <img src="/star.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10">
+                            </div>
+                        </div>
+                        <!-- Spanisch -->
+                        <div class="flex items-center">
+                            <span class="font-mplus text-lg">Spanisch</span>
+                            <div class="flex space-x-1 ml-4 sm:ml-20">
+                                <img src="/star.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10">
+                                <img src="/star.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10">
+                                <img src="/star.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10">
+                                <img src="/star.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10">
+                                <img src="/star.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10">
+                            </div>
+                        </div>
+                        <!-- Englisch -->
+                        <div class="flex items-center">
+                            <span class="font-mplus text-lg">Englisch</span>
+                            <div class="flex space-x-1 ml-4 sm:ml-20">
+                                <img src="/star.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10">
+                                <img src="/star.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10">
+                                <img src="/star.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10">
+                                <img src="/star.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Div de redes sociales -->
+                <div class="flex flex-col ml-6 mt-8">
+                    <a href="https://github.com/byluisfer" class="social-icon mb-4" target="_blank">
+                        <i class="fab fa-github fa-2x text-white"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/luisfernandezz/" class="social-icon mb-4" target="_blank">
+                        <i class="fab fa-linkedin fa-2x text-white"></i>
+                    </a>
+                    <a href="mailto:luisferdass@gmail.com" class="social-icon">
+                        <i class="fas fa-envelope fa-2x text-white"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- Fin del contenedor flex -->
+        </div>
+    </div>
 </section>
 
 <style>
     .led-effect-aboutMe {
-      text-shadow:
-        0 0 5px #9D3BE4,
-        0 0 10px #9D3BE4,
-        0 0 15px #9D3BE4;
+        text-shadow:
+            0 0 5px #9D3BE4,
+            0 0 10px #9D3BE4,
+            0 0 15px #9D3BE4;
+    }
+
+    .social-icon {
+        transition: transform 0.3s ease;
+    }
+
+    .social-icon:hover {
+        transform: scale(1.2);
+        filter: drop-shadow(0px 0px 5px rgb(5, 53, 86));
     }
 </style>

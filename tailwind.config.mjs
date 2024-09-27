@@ -42,11 +42,12 @@ export default {
 				'4xl': '4rem',
 				'3xl': '3rem',
 				'2xl': '2rem',
-				'xl': '1rem',
+				'xl': '1.600rem',
 			},
 
 			animation: {
 				'up-down': 'upDown 3s ease-in-out infinite',
+				'wave': 'wave 1s ease-in-out infinite',
 			},
 
 			keyframes: {
@@ -54,7 +55,18 @@ export default {
 					'0%, 100%': { transform: 'translateY(-5px)' },
 					'50%': { transform: 'translateY(-20px)' },
 				},
+				wave: {
+					'0%': { transform: 'rotate(0deg)' },
+					'20%': { transform: 'rotate(15deg)' },
+					'40%': { transform: 'rotate(-10deg)' },
+					'60%': { transform: 'rotate(15deg)' },
+					'80%': { transform: 'rotate(-10deg)' },
+					'100%': { transform: 'rotate(0deg)' },
+				  },
 			},
+			transformOrigin: {
+				'custom-origin': '70% 70%',
+			  },
 		},
 	},
 	plugins: [],
