@@ -19,13 +19,15 @@ const { title } = Astro.props;
 		<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+		<!-- Cargar emailjs -->
+		<script src="https://cdn.emailjs.com/sdk/3.2/email.min.js" defer></script>
 	</head>
 	<body>
 		<div class="max-w-6xl px-10 mx-auto">
 			<slot />
 		</div>
 	</body>
-	<script src="https://kit.fontawesome.com/ebec5f380e.js" crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/ebec5f380e.js" crossorigin="anonymous" defer></script>
 </html>
 <style is:global>
 	html {

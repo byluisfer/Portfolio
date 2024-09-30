@@ -1,0 +1,85 @@
+<section class="h-screen mt-[120rem]">
+    <h1 class="relative text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white font-saira font-black z-10 text-center">
+        CONTACT
+    </h1>
+  
+    <h2 class="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary font-dafoe font-regular z-20 text-center led-effect-aboutMe transform -translate-y-20 sm:-translate-y-[100px] md:-translate-y-[125px] lg:-translate-y-[135px] translate-x-6 sm:translate-x-[38px] md:translate-x-[40px] lg:translate-x-[30px]">
+        Contact
+    </h2>
+
+<!-- Contenedor de la información de contacto -->
+<div class="contact-info relative p-8 font-mplus text-center bg-semi-dark rounded-3xl text-primary -mt-24">
+    <!-- Título grande de contacto -->
+    <h3 class="text-2xl sm:text-5xl md:text-6xl lg:text-3xl font-bold text-left mb-4">
+        Do you have a question, <br>an idea or a project you <br>need help with? <br>Contact Me!
+    </h3>
+
+    <!-- Información de contacto -->
+    <div class="flex flex-wrap gap-6 mt-6">
+        <div class="text-lg border-2 border-primary rounded-full px-6 py-4">
+            luisferdass@gmail.com
+        </div>
+        <div class="text-lg border-2 border-primary rounded-full px-6 py-4">
+            +41 78 736 74 44
+        </div>
+    </div>
+
+    <!-- Círculo con flecha y texto giratorio dentro del div -->
+    <div class="absolute bottom-5 right-5 w-36 h-36 cursor-pointer">
+        <div class="relative w-full h-full flex items-center justify-center">
+            <!-- Flecha estática en el centro -->
+            <div class="absolute text-3xl text-primary">↓</div>
+            <!-- SVG para el texto giratorio alrededor del círculo -->
+            <svg class="absolute w-full h-full animate-[spin_10s_linear_infinite]" viewBox="0 0 100 100">
+                <defs>
+                    <!-- Definimos un path circular -->
+                    <path id="circlePath" d="M 50, 50 m -30, 0 a 30,30 0 1,1 60,0 a 30,30 0 1,1 -60,0"/>
+                </defs>
+                <!-- Texto que sigue el path circular -->
+                <text font-size="10.8" fill="#1C2B62"> <!-- Rojo de Tailwind (#EF4444) -->
+                    <textPath href="#circlePath" startOffset="0%">
+                        &#x2B24; CONTACT FORM &#x2B24; CONTACT FORM
+                    </textPath>
+                </text>                
+            </svg>
+        </div>
+    </div>
+</div>
+
+
+<div class="mt-4 w-full max-w-6xl mx-auto text-left">
+    <form id="contactForm" action="https://formspree.io/f/xkgwdppg" method="POST" class="grid grid-cols-1 md:grid-cols-4 gap-4">
+
+        <!-- Campos del formulario -->
+        <div class="col-span-4 md:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="col-span-1">
+                <input type="text" id="name" name="name" placeholder="Your Name" class="p-4 w-full bg-semi-dark text-white placeholder-primary font-mplus rounded-full border-none focus:outline-none focus:ring-2 focus:ring-primary" required>
+            </div>
+            <div class="col-span-1">
+                <input type="email" id="email" name="email" placeholder="Your Email" class="p-4 w-full bg-semi-dark text-white placeholder-primary font-mplus rounded-full border-none focus:outline-none focus:ring-2 focus:ring-primary" required>
+            </div>
+            <div class="col-span-1">
+                <input type="text" id="subject" name="subject" placeholder="Subject" class="p-4 w-full bg-semi-dark text-white placeholder-primary font-mplus rounded-full border-none focus:outline-none focus:ring-2 focus:ring-primary">
+            </div>
+            <div class="col-span-3">
+                <textarea id="message" name="message" placeholder="Your Message" rows="9" class="p-4 w-full bg-semi-dark text-white placeholder-primary font-mplus rounded-3xl border-none focus:outline-none focus:ring-2 focus:ring-primary" required></textarea>
+            </div>
+        </div>
+
+        <!-- Botón de envío -->
+        <div class="col-span-4 md:col-span-1 flex justify-center md:justify-end">
+            <button type="submit" class="w-full md:w-auto px-20 bg-primary text-gray-900 font-bold rounded-3xl transition-all flex items-center justify-center">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 19l9 2-9-18-9 18 9-4v-4z" /></svg>
+                Submit
+            </button>
+        </div>
+    </form>
+</div>
+
+</section>
+
+<style>
+    .led-effect-aboutMe {
+        text-shadow: 0 0 5px #9D3BE4, 0 0 10px #9D3BE4, 0 0 15px #9D3BE4;
+    }
+</style>
