@@ -1,3 +1,7 @@
+---
+/* Aquí es donde va la lógica del componente en Astro (si la hay). */
+---
+
 <section class="h-screen mt-[120rem]">
     <h1 class="relative text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white font-saira font-black z-10 text-center">
         CONTACT
@@ -13,10 +17,10 @@
         </h3>
 
         <div class="flex flex-wrap gap-6 mt-6">
-            <div class="text-lg border-2 border-primary rounded-full px-6 py-4">
+            <div class="text-lg border-2 border-primary rounded-full px-6 py-4 cursor-pointer" onclick="copyToClipboard('luisferdass@gmail.com')">
                 luisferdass@gmail.com
             </div>
-            <div class="text-lg border-2 border-primary rounded-full px-6 py-4">
+            <div class="text-lg border-2 border-primary rounded-full px-6 py-4 cursor-pointer" onclick="copyToClipboard('+41 78 736 74 44')">
                 +41 78 736 74 44
             </div>
         </div>
@@ -75,7 +79,12 @@
     }
 </style>
 
-<script>
+<script client:load>
+    var emoji = emojione.toShort("👩‍💻"); 
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text);
+    }
+    
     document.getElementById('contactForm').addEventListener('submit', function(event) {
         event.preventDefault(); // Previene el envío y la redirección predeterminada
 
