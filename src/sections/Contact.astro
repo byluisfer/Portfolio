@@ -1,5 +1,5 @@
 ---
-/* Aquí es donde va la lógica del componente en Astro (si la hay). */
+import ClipboardButton from '../components/clipboardbutton.astro';
 ---
 
 <section class="h-screen mt-[120rem]">
@@ -12,18 +12,17 @@
     </h2>
 
     <div class="contact-info relative p-8 font-mplus text-center bg-semi-dark rounded-3xl text-primary -mt-24">
+        <p class="text-left font-mplus text-lg">Get in touch</p>
         <h3 class="text-2xl sm:text-5xl md:text-6xl lg:text-3xl font-bold text-left mb-4">
             Do you have a question, <br>an idea or a project you <br>need help with? <br>Contact Me!
         </h3>
 
-        <div class="flex flex-wrap gap-6 mt-6">
-            <div class="text-lg border-2 border-primary rounded-full px-6 py-4 cursor-pointer" onclick="copyToClipboard('luisferdass@gmail.com')">
-                luisferdass@gmail.com
-            </div>
-            <div class="text-lg border-2 border-primary rounded-full px-6 py-4 cursor-pointer" onclick="copyToClipboard('+41 78 736 74 44')">
-                +41 78 736 74 44
-            </div>
-        </div>
+        <!-- Contenedor para los botones alineados a la izquierda -->
+    <div class="flex flex-wrap gap-6 mt-6">
+        <!-- Utiliza el componente ClipboardButton para el correo y el número -->
+        <ClipboardButton text="luisferdass@gmail.com" label="luisferdass@gmail.com" />
+        <ClipboardButton text="+41 78 736 74 44" label="+41 78 736 74 44" />
+    </div>
 
         <div class="absolute bottom-5 right-5 w-36 h-36 cursor-pointer">
             <div class="relative w-full h-full flex items-center justify-center">
@@ -45,28 +44,34 @@
     <div class="mt-4 w-full max-w-6xl mx-auto text-left">
         <form id="contactForm" action="https://formspree.io/f/xkgwdppg" method="POST" class="grid grid-cols-1 md:grid-cols-4 gap-4">
 
-            <div class="col-span-4 md:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="col-span-4 md:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-3">
                 <div class="col-span-1">
-                    <input type="text" id="name" name="name" placeholder="Your Name" class="p-4 w-full bg-semi-dark text-white placeholder-primary font-mplus rounded-full border-none focus:outline-none focus:ring-2 focus:ring-primary" required>
+                    <input type="text" id="name" name="name" placeholder="Your Name" class="p-4 w-full bg-semi-dark text-primary placeholder-primary font-mplus rounded-full border-none focus:outline-none focus:ring-2 focus:ring-primary" required>
                 </div>
                 <div class="col-span-1">
-                    <input type="email" id="email" name="email" placeholder="Your Email" class="p-4 w-full bg-semi-dark text-white placeholder-primary font-mplus rounded-full border-none focus:outline-none focus:ring-2 focus:ring-primary" required>
+                    <input type="email" id="email" name="email" placeholder="Your Email" class="p-4 w-full bg-semi-dark text-primary placeholder-primary font-mplus rounded-full border-none focus:outline-none focus:ring-2 focus:ring-primary" required>
                 </div>
                 <div class="col-span-1">
-                    <input type="text" id="subject" name="subject" placeholder="Subject" class="p-4 w-full bg-semi-dark text-white placeholder-primary font-mplus rounded-full border-none focus:outline-none focus:ring-2 focus:ring-primary">
+                    <input type="text" id="subject" name="subject" placeholder="Subject" class="p-4 w-full bg-semi-dark text-primary placeholder-primary font-mplus rounded-full border-none focus:outline-none focus:ring-2 focus:ring-primary">
                 </div>
                 <div class="col-span-3">
-                    <textarea id="message" name="message" placeholder="Your Message" rows="9" class="p-4 w-full bg-semi-dark text-white placeholder-primary font-mplus rounded-3xl border-none focus:outline-none focus:ring-2 focus:ring-primary" required></textarea>
+                    <textarea id="message" name="message" placeholder="Your Message" rows="9" class="p-4 w-full bg-semi-dark text-primary placeholder-primary font-mplus rounded-3xl border-none focus:outline-none focus:ring-2 focus:ring-primary resize-none" required></textarea>
                 </div>
             </div>
 
             <div class="col-span-4 md:col-span-1 flex justify-center md:justify-end">
-                <button type="submit" class="w-full md:w-auto px-20 bg-primary text-gray-900 font-bold rounded-3xl transition-all flex items-center justify-center">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 19l9 2-9-18-9 18 9-4v-4z" /></svg>
-                    Submit
+                <!-- Ajustar el ancho con w-full y padding px-20 -->
+                <button type="submit" class="w-full md:w-[300px] px-20 py-6 bg-primary text-semi-dark font-mplus text-lg rounded-3xl transition-all flex flex-col items-center justify-center">
+                  <!-- Ícono con margen inferior -->
+                  <i class="fa-regular fa-paper-plane text-xl mb-2"></i>
+                  Submit
                 </button>
-            </div>
+              </div>  
         </form>
+        <div id="alert-message" class="hidden fixed bottom-10 left-1/2 font-mplus transform -translate-x-1/2 bg-primary text-semi-dark px-4 py-2 rounded-full shadow-lg text-center">
+            The form was sent successfully.
+        </div>
+        
     </div>
 </section>
 
@@ -79,28 +84,33 @@
     }
 </style>
 
-<script client:load>
-    var emoji = emojione.toShort("👩‍💻"); 
-    function copyToClipboard(text) {
-        navigator.clipboard.writeText(text);
-    }
-    
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Previene el envío y la redirección predeterminada
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Previene el envío y la redirección predeterminada
 
-        // Crear un objeto FormData con los datos del formulario
-        const formData = new FormData(event.target);
+    const form = event.target;
+    const formData = new FormData(form);
 
-        // Enviar el formulario usando fetch a la URL especificada en el atributo "action"
-        fetch(event.target.action, {
-            method: 'POST',
-            headers: { 'Accept': 'application/json' },
-            body: formData
-        }).then(response => {
-            // Limpiar el formulario después del envío
-            event.target.reset();
-        }).catch(error => {
-            console.error('Error al enviar el formulario:', error);
-        });
+    fetch(form.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: formData
+    }).then(response => {
+        form.reset();
+
+        // Mostrar mensaje de confirmación
+        const alertMessage = document.getElementById('alert-message');
+        alertMessage.classList.remove('hidden');
+        alertMessage.classList.add('flex');
+
+        // Ocultar mensaje después de 3 segundos
+        setTimeout(() => {
+            alertMessage.classList.add('hidden');
+            alertMessage.classList.remove('flex');
+        }, 3000);
+    }).catch(error => {
+        console.error('Error al enviar el formulario:', error);
     });
+});
 </script>
+    
