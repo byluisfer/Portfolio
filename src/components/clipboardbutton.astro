@@ -1,12 +1,21 @@
 ---
-const { text, label } = Astro.props;
+export interface Props {
+  text: string;
+  label: string;
+}
+
+const { text, label } = Astro.props as Props;
 ---
 
 <!-- Contenedor de los botones con alineación a la izquierda -->
 <div class="flex justify-start items-start space-y-4">
   <!-- Botón que copiará el texto al portapapeles -->
-  <div class="clipboard-button text-lg border-2 border-primary rounded-full px-6 py-4 cursor-pointer" data-text={text}>
+  <div class="clipboard-button text-xs sm:text-sm md:text-base lg:text-lg border-2 border-primary rounded-full px-6 py-4 cursor-pointer relative" data-text={text}>
       {label}
+      <!-- Contenedor de la alerta personalizada -->
+      <div class="copy-alert absolute top-[-40px] left-1/2 transform -translate-x-1/2 px-3 py-2 bg-primary text-white rounded-md text-sm opacity-0 transition-opacity duration-300">
+        📋Copied!
+      </div>
   </div>
 </div>
 
@@ -19,13 +28,46 @@ const { text, label } = Astro.props;
   buttons.forEach((button) => {
     button.addEventListener('click', () => {
       const textToCopy = button.getAttribute('data-text');
-      
+      const alertBox = button.querySelector('.copy-alert');
+
       // Copiar el texto al portapapeles
       navigator.clipboard.writeText(textToCopy).then(() => {
-        alert(`Texto copiado: ${textToCopy}`);
+        // Mostrar la alerta personalizada
+        alertBox.classList.remove('opacity-0');
+        alertBox.classList.add('opacity-100');
+
+        // Ocultar la alerta después de 2 segundos
+        setTimeout(() => {
+          alertBox.classList.remove('opacity-100');
+          alertBox.classList.add('opacity-0');
+        }, 2000);
       }).catch((error) => {
         console.error('Error al copiar al portapapeles:', error);
       });
     });
   });
 </script>
+
+<!-- Estilos adicionales -->
+<style>
+  .clipboard-button {
+    position: relative;
+  }
+
+  .copy-alert {
+    position: absolute;
+    top: -40px; /* Posiciona la alerta encima del botón */
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff; /* Color del texto */
+    padding: 8px 12px;
+    border-radius: 4px;
+    opacity: 0; /* Oculta la alerta inicialmente */
+    pointer-events: none; /* No permite hacer clic en la alerta */
+    transition: opacity 0.3s ease-in-out; /* Transición suave */
+  }
+
+  .copy-alert.opacity-100 {
+    opacity: 1; /* Muestra la alerta cuando tiene la clase 'opacity-100' */
+  }
+</style>

@@ -1,8 +1,9 @@
 ---
 import ClipboardButton from '../components/clipboardbutton.astro';
+import ContactForm from '../components/contactForm.astro'; // Importa el nuevo componente de formulario
 ---
 
-<section class="h-screen mt-[120rem]">
+<section class="h-screen mt-[18rem] sm:mt-[60rem] md:mt-[85rem] lg:mt-[120rem]">
     <h1 class="relative text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white font-saira font-black z-10 text-center">
         CONTACT
     </h1>
@@ -11,20 +12,19 @@ import ClipboardButton from '../components/clipboardbutton.astro';
         Contact
     </h2>
 
-    <div class="contact-info relative p-8 font-mplus text-center bg-semi-dark rounded-3xl text-primary -mt-24">
+    <div class="contact-info relative p-8 font-mplus text-center bg-semi-dark rounded-3xl text-primary -mt-20">
         <p class="text-left font-mplus text-lg">Get in touch</p>
-        <h3 class="text-2xl sm:text-5xl md:text-6xl lg:text-3xl font-bold text-left mb-4">
+        <h3 class="text-xl sm:text-xl md:text-2xl lg:text-3xl font-bold text-left mb-4">
             Do you have a question, <br>an idea or a project you <br>need help with? <br>Contact Me!
         </h3>
 
         <!-- Contenedor para los botones alineados a la izquierda -->
-    <div class="flex flex-wrap gap-6 mt-6">
-        <!-- Utiliza el componente ClipboardButton para el correo y el número -->
-        <ClipboardButton text="luisferdass@gmail.com" label="luisferdass@gmail.com" />
-        <ClipboardButton text="+41 78 736 74 44" label="+41 78 736 74 44" />
-    </div>
+        <div class="flex flex-wrap gap-6 mt-6">
+            <ClipboardButton text="luisferdass@gmail.com" label="luisferdass@gmail.com" />
+            <ClipboardButton text="+41 78 736 74 44" label="+41 78 736 74 44" />
+        </div>
 
-        <div class="absolute bottom-5 right-5 w-36 h-36 cursor-pointer">
+        <div class="absolute bottom-5 right-5 w-36 h-36 cursor-pointer hidden md:block" id="scroll-button">
             <div class="relative w-full h-full flex items-center justify-center">
                 <div class="absolute text-3xl text-primary">↓</div>
                 <svg class="absolute w-full h-full animate-[spin_10s_linear_infinite]" viewBox="0 0 100 100">
@@ -42,36 +42,7 @@ import ClipboardButton from '../components/clipboardbutton.astro';
     </div>
 
     <div class="mt-4 w-full max-w-6xl mx-auto text-left">
-        <form id="contactForm" action="https://formspree.io/f/xkgwdppg" method="POST" class="grid grid-cols-1 md:grid-cols-4 gap-4">
-
-            <div class="col-span-4 md:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-3">
-                <div class="col-span-1">
-                    <input type="text" id="name" name="name" placeholder="Your Name" class="p-4 w-full bg-semi-dark text-primary placeholder-primary font-mplus rounded-full border-none focus:outline-none focus:ring-2 focus:ring-primary" required>
-                </div>
-                <div class="col-span-1">
-                    <input type="email" id="email" name="email" placeholder="Your Email" class="p-4 w-full bg-semi-dark text-primary placeholder-primary font-mplus rounded-full border-none focus:outline-none focus:ring-2 focus:ring-primary" required>
-                </div>
-                <div class="col-span-1">
-                    <input type="text" id="subject" name="subject" placeholder="Subject" class="p-4 w-full bg-semi-dark text-primary placeholder-primary font-mplus rounded-full border-none focus:outline-none focus:ring-2 focus:ring-primary">
-                </div>
-                <div class="col-span-3">
-                    <textarea id="message" name="message" placeholder="Your Message" rows="9" class="p-4 w-full bg-semi-dark text-primary placeholder-primary font-mplus rounded-3xl border-none focus:outline-none focus:ring-2 focus:ring-primary resize-none" required></textarea>
-                </div>
-            </div>
-
-            <div class="col-span-4 md:col-span-1 flex justify-center md:justify-end">
-                <!-- Ajustar el ancho con w-full y padding px-20 -->
-                <button type="submit" class="w-full md:w-[300px] px-20 py-6 bg-primary text-semi-dark font-mplus text-lg rounded-3xl transition-all flex flex-col items-center justify-center">
-                  <!-- Ícono con margen inferior -->
-                  <i class="fa-regular fa-paper-plane text-xl mb-2"></i>
-                  Submit
-                </button>
-              </div>  
-        </form>
-        <div id="alert-message" class="hidden fixed bottom-10 left-1/2 font-mplus transform -translate-x-1/2 bg-primary text-semi-dark px-4 py-2 rounded-full shadow-lg text-center">
-            The form was sent successfully.
-        </div>
-        
+        <ContactForm />
     </div>
 </section>
 
@@ -85,32 +56,8 @@ import ClipboardButton from '../components/clipboardbutton.astro';
 </style>
 
 <script>
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Previene el envío y la redirección predeterminada
-
-    const form = event.target;
-    const formData = new FormData(form);
-
-    fetch(form.action, {
-        method: 'POST',
-        headers: { 'Accept': 'application/json' },
-        body: formData
-    }).then(response => {
-        form.reset();
-
-        // Mostrar mensaje de confirmación
-        const alertMessage = document.getElementById('alert-message');
-        alertMessage.classList.remove('hidden');
-        alertMessage.classList.add('flex');
-
-        // Ocultar mensaje después de 3 segundos
-        setTimeout(() => {
-            alertMessage.classList.add('hidden');
-            alertMessage.classList.remove('flex');
-        }, 3000);
-    }).catch(error => {
-        console.error('Error al enviar el formulario:', error);
+    document.getElementById('scroll-button').addEventListener('click', () => {
+      // Desplazarse suavemente al formulario con el id 'contact-form-section'
+      document.getElementById('contact-form-section').scrollIntoView({ behavior: 'smooth' });
     });
-});
-</script>
-    
+  </script>
