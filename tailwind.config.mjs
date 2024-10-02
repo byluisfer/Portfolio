@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require('tailwindcss/plugin');
+const textShadow = require('tailwindcss-textshadow');
+
 module.exports = {
 	darkMode: 'class', // Habilitar el modo oscuro basado en clases
 	content: [
@@ -8,17 +11,19 @@ module.exports = {
 		extend: {
 			colors: {
 				'primary': '#1C2B62',
+				'primary2': '#10ADBB',
 				'secondary': '#9D3BE4',
-				'accent': '#0E0E11',
+				'secondary2': '#FC4377',
+				'accent': '#505C89',
+				'accent2': '#177C85',
 				'semi-dark': '#17171B',
 				'background': '#0E0E11',
 				'border-dark': '#252525',
-				'semi-white': '#8F8F8F',
+				'semi-white': '#efefef',
 				'brown': '#3c3633',
 				'purple': '#6e51f0',
 				'orange': '#ff5a1f',
 				'semi-secondary': '#b26be7',
-				'accent': '#505C89'
 			},
 
 			fontFamily: {
@@ -70,8 +75,14 @@ module.exports = {
 			},
 			transformOrigin: {
 				'custom-origin': '70% 70%',
-			  },
+			},
+			textShadow: {
+				'led-effect-h2': '0 0 5px #FC4377, 0 0 10px #FC4377, 0 0 15px #FC4377',
+				'dark-led-effect-h2': '0 0 5px #9D3BE4, 0 0 10px #9D3BE4, 0 0 15px #9D3BE4',
+				'led-effect-h3': '0 0 5px #10ADBB, 0 0 10px #10ADBB, 0 0 15px #10ADBB',
+				'dark-led-effect-h3': '0 0 5px #1C2B62, 0 0 10px #1C2B62, 0 0 15px #1C2B62',
+			},
 		},
 	},
-	plugins: [],
+	plugins: [textShadow],
 }
