@@ -8,7 +8,7 @@ const { text, label } = Astro.props as Props;
 ---
 
 <!-- Contenedor de los botones con alineación a la izquierda en dispositivos grandes -->
-<div class="flex flex-col sm:flex-row sm:space-x-4 justify-start items-center sm:items-start space-y-4 sm:space-y-0">
+<div class="flex flex-col sm:flex-row sm:space-x-4 justify-start items-center sm:items-start space-y-4 sm:space-y-2">
   <!-- Botón que copiará el texto al portapapeles -->
   <div class="clipboard-button text-xs sm:text-sm md:text-base lg:text-lg border-2 border-primary rounded-full px-6 py-4 cursor-pointer relative text-center sm:text-left" data-text={text}>
     {label}
