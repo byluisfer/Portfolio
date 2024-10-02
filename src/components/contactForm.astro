@@ -3,28 +3,28 @@
   <form id="contactForm" action="https://formspree.io/f/xkgwdppg" method="POST" class="grid grid-cols-1 lg:grid-cols-4 gap-6">
       <div class="col-span-1 lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <div class="col-span-1">
-              <input type="text" id="name" name="name" placeholder="Your Name" class="p-4 w-full bg-semi-dark text-primary placeholder-primary font-mplus rounded-full border-none focus:outline-none focus:ring-2 focus:ring-primary" required>
+              <input type="text" id="name" name="name" placeholder="Your Name" class="p-4 w-full bg-semi-dark text-accent placeholder-accent font-mplus rounded-full border-none focus:outline-none focus:ring-2 focus:ring-accent" required>
           </div>
           <div class="col-span-1">
-              <input type="email" id="email" name="email" placeholder="Your Email" class="p-4 w-full bg-semi-dark text-primary placeholder-primary font-mplus rounded-full border-none focus:outline-none focus:ring-2 focus:ring-primary" required>
+              <input type="email" id="email" name="email" placeholder="Your Email" class="p-4 w-full bg-semi-dark text-accent placeholder-accent font-mplus rounded-full border-none focus:outline-none focus:ring-2 focus:ring-accent" required>
           </div>
           <div class="col-span-1 sm:col-span-2 lg:col-span-1">
-              <input type="text" id="subject" name="subject" placeholder="Subject" class="p-4 w-full bg-semi-dark text-primary placeholder-primary font-mplus rounded-full border-none focus:outline-none focus:ring-2 focus:ring-primary">
+              <input type="text" id="subject" name="subject" placeholder="Subject" class="p-4 w-full bg-semi-dark text-accent placeholder-accent font-mplus rounded-full border-none focus:outline-none focus:ring-2 focus:ring-accent">
           </div>
           <div class="col-span-1 sm:col-span-2 lg:col-span-3">
-              <textarea id="message" name="message" placeholder="Your Message" rows="8" class="p-4 w-full bg-semi-dark text-primary placeholder-primary font-mplus rounded-3xl border-none focus:outline-none focus:ring-2 focus:ring-primary resize-none" required></textarea>
+              <textarea id="message" name="message" placeholder="Your Message" rows="8" class="p-4 w-full bg-semi-dark text-accent placeholder-accent font-mplus rounded-3xl border-none focus:outline-none focus:ring-2 focus:ring-accent resize-none" required></textarea>
           </div>
       </div>
 
       <div class="col-span-1 lg:col-span-1 flex justify-center lg:justify-end">
-          <button type="submit" class="w-full lg:w-[300px] px-12 py-4 sm:py-6 bg-primary text-semi-dark font-mplus text-base sm:text-lg rounded-3xl transition-all flex flex-col items-center justify-center">
+          <button type="submit" class="w-full lg:w-[300px] px-12 py-4 sm:py-6 bg-accent text-semi-dark font-mplus text-base sm:text-lg rounded-3xl transition-all flex flex-col items-center justify-center">
               <i class="fa-regular fa-paper-plane text-lg sm:text-xl mb-2"></i>
               Submit
           </button>
       </div>
   </form>
 
-  <div id="alert-message" class="hidden fixed bottom-10 left-1/2 font-mplus transform -translate-x-1/2 bg-primary text-semi-dark px-4 py-2 rounded-full shadow-lg text-center">
+  <div id="alert-message" class="hidden fixed bottom-10 left-1/2 font-mplus transform -translate-x-1/2 bg-accent text-semi-dark px-4 py-2 rounded-full shadow-lg text-center">
       The form was sent successfully.
   </div>
 </section>
