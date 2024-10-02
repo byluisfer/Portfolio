@@ -1,36 +1,36 @@
 ---
 interface Props {
-	title: string;
+    title: string;
 }
 
 const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="TODO" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>{title}</title>
-		<link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@900&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
-	</head>
-	<body>
-		<div class="max-w-6xl px-10 mx-auto">
-			<slot />
-		</div>
-	</body>
-	<script src="https://kit.fontawesome.com/ebec5f380e.js" crossorigin="anonymous" defer></script>
-	<script src="../scripts/navbar.js"></script>
+<html lang="en" class="dark"> <!-- Si deseas que inicie en modo oscuro, puedes dejar la clase 'dark' -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="TODO" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <title>{title}</title>
+        <link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    </head>
+    <body class="bg-white dark:bg-background text-white dark:text-black"> <!-- Usar solo dark: -->
+        <div class="max-w-6xl px-10 mx-auto">
+            <slot />
+        </div>
+    </body>
+    <script src="https://kit.fontawesome.com/ebec5f380e.js" crossorigin="anonymous" defer></script>
+    <script src="../scripts/navbar.js"></script>
 </html>
+
 <style is:global>
-	html {
-		font-family: system-ui, sans-serif;
-		background: #0E0E11;
-	}
+    html {
+        font-family: system-ui, sans-serif;
+    }
 </style>

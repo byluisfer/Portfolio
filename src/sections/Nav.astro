@@ -1,5 +1,4 @@
 ---
- // Aquí podrías importar algunos estilos si es necesario o manejar tus props si planeas hacer algo dinámico más adelante.
 ---
 
 <nav class="fixed z-40 top-6 left-1/2 transform -translate-x-1/2 bg-primary bg-opacity-50 border-2 border-accent shadow-lg rounded-full flex items-center justify-around w-2/8 max-w-xl py-3 px-5">
@@ -11,3 +10,19 @@
     <li><a href="#contact" class="text-white transition duration-300">Contact</a></li>
   </ul>
 </nav>
+
+<div class="fixed z-20 top-6 right-56 flex flex-col items-center">
+  <div class="relative flex items-center justify-center rounded-full border-2 bg-primary border-accent p-1"> 
+    <!-- Icono de Luna -->
+    <button id="moon-toggle" class="flex items-center justify-center w-10 h-10 rounded-full transition duration-300" data-theme="dark">
+      <i class="fas fa-moon text-white"></i>
+    </button>
+
+    <!-- Icono de Sol -->
+    <button id="sun-toggle" class="flex items-center justify-center w-10 h-10 rounded-full transition duration-300" data-theme="light">
+      <i class="fas fa-sun text-white"></i>
+    </button>
+  </div>
+</div>
+
+<script src="../scripts/changeTheme.js"></script>
