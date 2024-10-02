@@ -1,23 +1,22 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
-import Hero from '../sections/Hero.astro'
-import AboutMe from '../sections/AboutMe.astro'
-import Projects from '../sections/Projects.astro'
-import Contact from '../sections/Contact.astro'
-import Nav from '../sections/Nav.astro'
-import Skills from '../sections/Skills.astro'
-import Education from '../sections/Education.astro'
+import Hero from '../sections/Hero.astro';
+import AboutMe from '../sections/AboutMe.astro';
+import Projects from '../sections/Projects.astro';
+import Contact from '../sections/Contact.astro';
+import Nav from '../sections/Nav.astro';
+import Skills from '../sections/Skills.astro';
+import Education from '../sections/Education.astro';
 ---
 
 <Layout title="Luis Fernández">
-	<Nav />
-	<Hero />
-	<main>
-		<AboutMe />
-		<Skills />
-		<Education />
-		<Projects />
-		<Contact />
-	</main>
+  <Nav />
+  <Hero />
+  <main>
+    <section id="about"><AboutMe /></section>
+    <section id="skills"><Skills /></section>
+    <section id="education"><Education /></section>
+    <section id="projects"><Projects /></section>
+    <section id="contact"><Contact /></section>
+  </main>
 </Layout>

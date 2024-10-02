@@ -15,6 +15,7 @@ export default {
 				'purple': '#6e51f0',
 				'orange': '#ff5a1f',
 				'semi-secondary': '#b26be7',
+				'accent': '#505C89'
 			},
 
 			fontFamily: {
