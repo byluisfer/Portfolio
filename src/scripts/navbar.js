@@ -14,12 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // Verifica si la sección está en la vista
         if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
           // Remueve la clase 'active' de todos los enlaces
-          links.forEach(link => link.classList.remove('bg-blue-500', 'rounded', 'px-2'));
+          links.forEach(link => link.classList.remove('bg-accent', 'rounded-full', 'px-4', 'py-2'));
   
           // Agrega la clase 'active' al enlace correspondiente
           const activeLink = document.querySelector(`nav ul li a[href="#${sectionId}"]`);
           if (activeLink) {
-            activeLink.classList.add('bg-blue-500', 'rounded-full', 'px-2', 'py-1');
+            activeLink.classList.add('bg-accent', 'rounded-full', 'px-4', 'py-2');
           }
         }
       });
@@ -27,5 +27,17 @@ document.addEventListener('DOMContentLoaded', () => {
   
     // Agrega el evento scroll para resaltar el enlace activo
     window.addEventListener('scroll', highlightActiveLink);
+  
+    // Añadir suavidad al desplazamiento al hacer clic en el enlace
+    links.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault(); // Evita el comportamiento predeterminado del enlace
+        const targetId = link.getAttribute('href').substring(1); // Obtén el ID de la sección
+        const targetSection = document.getElementById(targetId); // Selecciona la sección objetivo
+  
+        // Desplazamiento suave hacia la sección
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
   });
   
