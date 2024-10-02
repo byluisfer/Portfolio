@@ -3,31 +3,32 @@ import ClipboardButton from '../components/clipboardbutton.astro';
 import ContactForm from '../components/contactForm.astro'; // Importa el nuevo componente de formulario
 ---
 
-<section class="h-screen mt-[18rem] sm:mt-[60rem] md:mt-[85rem] lg:mt-[120rem]">
+<section class="min-h-screen mt-[38rem] sm:mt-[60rem] md:mt-[85rem] lg:mt-[115rem] xl:mt-[120rem]">
     <h1 class="relative text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white font-saira font-black z-10 text-center">
         CONTACT
     </h1>
-  
+
     <h2 class="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary font-dafoe font-regular z-20 text-center led-effect-aboutMe transform -translate-y-20 sm:-translate-y-[100px] md:-translate-y-[125px] lg:-translate-y-[135px] translate-x-6 sm:translate-x-[38px] md:translate-x-[40px] lg:translate-x-[30px]">
         Contact
     </h2>
 
-    <div class="contact-info relative p-8 font-mplus text-center bg-semi-dark rounded-3xl text-primary -mt-20">
-        <p class="text-left font-mplus text-lg">Get in touch</p>
+    <div class="contact-info relative p-6 sm:p-8 md:p-12 font-mplus text-center bg-semi-dark rounded-3xl text-primary -mt-12 sm:-mt-16 md:-mt-24 lg:-mt-32">
+        <p class="text-left font-mplus text-base sm:text-lg md:text-xl">Get in touch</p>
         <h3 class="text-xl sm:text-xl md:text-2xl lg:text-3xl font-bold text-left mb-4">
             Do you have a question, <br>an idea or a project you <br>need help with? <br>Contact Me!
         </h3>
 
         <!-- Contenedor para los botones alineados a la izquierda -->
-        <div class="flex flex-wrap gap-6 mt-6">
+        <div class="flex flex-col sm:flex-row sm:gap-4 md:gap-6 mt-6 text-center sm:text-left">
             <ClipboardButton text="luisferdass@gmail.com" label="luisferdass@gmail.com" />
             <ClipboardButton text="+41 78 736 74 44" label="+41 78 736 74 44" />
         </div>
 
-        <div class="absolute bottom-5 right-5 w-36 h-36 cursor-pointer hidden md:block" id="scroll-button">
+        <!-- Botón de scroll que solo aparece en pantallas md y superiores -->
+        <div class="absolute bottom-5 right-5 w-24 sm:w-28 md:w-32 lg:w-36 h-24 sm:h-28 md:h-32 lg:h-36 cursor-pointer hidden md:block" id="scroll-button">
             <div class="relative w-full h-full flex items-center justify-center">
-                <div class="absolute text-3xl text-primary">↓</div>
-                <svg class="absolute w-full h-full animate-[spin_10s_linear_infinite]" viewBox="0 0 100 100">
+                <div class="absolute text-2xl sm:text-3xl text-primary">↓</div>
+                <svg class="absolute w-full h-full animate-spin-slow" viewBox="0 0 100 100">
                     <defs>
                         <path id="circlePath" d="M 50, 50 m -30, 0 a 30,30 0 1,1 60,0 a 30,30 0 1,1 -60,0"/>
                     </defs>
@@ -35,13 +36,13 @@ import ContactForm from '../components/contactForm.astro'; // Importa el nuevo c
                         <textPath href="#circlePath" startOffset="0%">
                             &#x2B24; CONTACT FORM &#x2B24; CONTACT FORM
                         </textPath>
-                    </text>                
+                    </text>             
                 </svg>
             </div>
         </div>
     </div>
 
-    <div class="mt-4 w-full max-w-6xl mx-auto text-left">
+    <div class="mt-5 w-full max-w-6xl mx-auto text-left">
         <ContactForm />
     </div>
 </section>
@@ -53,11 +54,25 @@ import ContactForm from '../components/contactForm.astro'; // Importa el nuevo c
             0 0 10px #9D3BE4,
             0 0 15px #9D3BE4;
     }
+    
+    /* Animación más lenta para el ícono de scroll */
+    .animate-spin-slow {
+        animation: spin 10s linear infinite;
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
 </style>
 
 <script>
     document.getElementById('scroll-button').addEventListener('click', () => {
-      // Desplazarse suavemente al formulario con el id 'contact-form-section'
-      document.getElementById('contact-form-section').scrollIntoView({ behavior: 'smooth' });
+        // Desplazarse suavemente al formulario con el id 'contact-form-section'
+        document.getElementById('contact-form-section').scrollIntoView({ behavior: 'smooth' });
     });
-  </script>
+</script>
