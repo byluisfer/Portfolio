@@ -1,11 +1,20 @@
-<div class="fixed z-20 top-6 left-56 flex items-center">
+<!-- Botón de menú para móvil -->
+<div class="fixed z-20 top-6 left-6 flex items-center md:hidden"> <!-- Oculto en pantallas medianas y mayores -->
+  <button id="menu-toggle" class="flex items-center justify-center w-12 h-12 rounded-full bg-primary bg-opacity-90 border-2 border-accent shadow-lg transition duration-300">
+    <!-- Icono de menú hamburguesa -->
+    <i class="fas fa-bars text-white text-2xl"></i>
+  </button>
+</div>
+
+<!-- Botón para volver arriba, visible en pantallas medianas y mayores -->
+<div class="fixed z-20 top-6 left-56 flex items-center hidden md:flex"> <!-- Oculto en pantallas pequeñas -->
   <button id="back-to-top" class="flex items-center justify-center w-12 h-12 rounded-full bg-primary bg-opacity-90 border-2 border-accent shadow-lg transition duration-300">
     <img src="/logo_dark.svg" alt="Back to Top" class="w-10 h-10" />
   </button>
 </div>
 
-<!-- Navigation Bar con altura ajustada -->
-<nav class="fixed z-40 top-6 left-1/2 transform -translate-x-1/2 bg-primary bg-opacity-90 border border-accent shadow-lg rounded-full flex items-center justify-around w-2/4 max-w-xl h-12">
+<!-- Navigation Bar con altura ajustada y responsive -->
+<nav class="fixed z-40 top-6 left-1/2 transform -translate-x-1/2 bg-primary bg-opacity-90 border border-accent shadow-lg rounded-full flex items-center justify-around w-2/4 max-w-xl h-12 hidden md:flex"> <!-- Oculto en pantallas pequeñas -->
   <div class="relative w-full flex items-center justify-between h-full">
     <!-- Barra LED superior con efecto de neón -->
     <div id="led-bar" class="absolute top-0 left-0 h-1 w-20 bg-secondary rounded-full shadow-lg transition-all duration-300 ease-in-out transform"
@@ -25,7 +34,7 @@
 </nav>
 
 <!-- Botones de cambio de tema -->
-<div class="fixed z-20 top-6 right-56 flex flex-col items-center">
+<div class="fixed z-20 top-6 right-56 flex flex-col items-center hidden md:flex"> <!-- Oculto en pantallas pequeñas -->
   <div class="relative flex items-center justify-center rounded-full border-2 bg-primary bg-opacity-90 border-accent p-1 h-12"> 
     <!-- Icono de Luna -->
     <button id="moon-toggle" class="flex items-center justify-center w-12 h-12 rounded-full transition duration-300" data-theme="dark">
@@ -38,6 +47,7 @@
     </button>
   </div>
 </div>
+
 
 <!-- Script para el movimiento del indicador y el botón de inicio -->
 <script>
