@@ -1,35 +1,49 @@
+
 document.addEventListener('DOMContentLoaded', () => {
-  const links = document.querySelectorAll('nav ul li a');
-  const sections = document.querySelectorAll('main > section'); // Asegúrate de que las secciones están dentro de <main>
+    const links = document.querySelectorAll('nav a');
+    const indicator = document.getElementById('active-indicator');
 
-  const highlightActiveLink = () => {
-      let scrollPos = window.scrollY + window.innerHeight / 2; // Tomar la mitad de la altura de la ventana para el cálculo
-
-      sections.forEach(section => {
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.clientHeight;
-          const sectionId = section.getAttribute('id');
-
-          if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-              links.forEach(link => link.classList.remove('bg-accent', 'rounded-full', 'px-4', 'py-2'));
-
-              const activeLink = document.querySelector(`nav ul li a[href="#${sectionId}"]`);
-              if (activeLink) {
-                  activeLink.classList.add('bg-accent', 'rounded-full', 'px-4', 'py-2'); // Establecer relleno aquí
-              }
-          }
-      });
-  };
-
-  window.addEventListener('scroll', highlightActiveLink);
-
-  links.forEach(link => {
+    // Mover el indicador basado en el índice del enlace clicado
+    links.forEach((link, index) => {
       link.addEventListener('click', (e) => {
-          e.preventDefault(); // Evita el comportamiento predeterminado del enlace
-          const targetId = link.getAttribute('href').substring(1); // Obtén el ID de la sección
-          const targetSection = document.getElementById(targetId); // Selecciona la sección objetivo
+        e.preventDefault(); // Evita el comportamiento predeterminado del enlace
 
-          targetSection.scrollIntoView({ behavior: 'smooth' });
+        // Obtener las dimensiones y posición del enlace clicado
+        const linkRect = link.getBoundingClientRect();
+
+        // Ajustar el tamaño del indicador y su posición según el enlace
+        indicator.style.width = `${linkRect.width}px`;
+        indicator.style.left = `${link.offsetLeft}px`;
+
+        // Obtener la sección correspondiente al ID del enlace
+        const targetId = link.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+
+        // Hacer scroll suave hacia la sección seleccionada
+        targetSection.scrollIntoView({ behavior: 'smooth' });
       });
+    });
+
+    // Ajustar el indicador con el scroll de la página
+    const sections = document.querySelectorAll('main > section');
+    window.addEventListener('scroll', () => {
+      let scrollPos = window.scrollY + window.innerHeight / 2;
+
+      sections.forEach((section, index) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        const sectionId = section.getAttribute('id');
+
+        // Verificar si el scroll actual está dentro de la sección
+        if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+          const activeLink = document.querySelector(`nav a[href="#${sectionId}"]`);
+          if (activeLink) {
+            // Ajustar el tamaño del indicador y su posición según el enlace activo
+            const activeLinkRect = activeLink.getBoundingClientRect();
+            indicator.style.width = `${activeLinkRect.width}px`;
+            indicator.style.left = `${activeLink.offsetLeft}px`;
+          }
+        }
+      });
+    });
   });
-});

@@ -1,18 +1,28 @@
 ---
 ---
 
-<nav class="fixed z-40 top-6 left-1/2 transform -translate-x-1/2 bg-primary2 dark:bg-primary bg-opacity-50 border-2 border-accent2 dark:border-accent shadow-lg rounded-full flex items-center justify-around w-2/8 max-w-xl py-3 px-5">
-  <ul class="flex space-x-4 text-base font-semibold">
-    <li><a href="#about" class="text-black dark:text-white transition duration-300">About Me</a></li>
-    <li><a href="#skills" class="text-black dark:text-white transition duration-300">Skills</a></li>
-    <li><a href="#education" class="text-black dark:text-white transition duration-300">Education</a></li>
-    <li><a href="#projects" class="text-black dark:text-white transition duration-300">Projects</a></li>
-    <li><a href="#contact" class="text-black dark:text-white transition duration-300">Contact</a></li>
-  </ul>
+<div class="fixed z-20 top-6 left-56 flex items-center">
+  <button id="back-to-top" class="flex items-center justify-center w-12 h-12 rounded-full bg-primary bg-opacity-70 border-2 border-accent shadow-lg transition duration-300">
+    <img src="/logo_dark.svg" alt="Back to Top" class="w-10 h-10" />
+  </button>
+</div>
+
+<nav class="fixed z-40 top-6 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-70 border border-gray-600 shadow-lg rounded-full flex items-center justify-around w-2/4 max-w-xl py-3 px-4">
+  <div class="relative w-full flex items-center justify-between">
+    <!-- Indicador de posición -->
+    <div id="active-indicator" class="absolute top-1/2 left-0 h-10 bg-gray-600 rounded-full transition-all duration-300 ease-in-out transform -translate-y-1/2"></div>
+
+    <!-- Botones de navegación con enlaces a secciones -->
+    <a href="#about" class="relative z-10 px-6 py-2 rounded-full text-white font-medium">About Me</a>
+    <a href="#skills" class="relative z-10 px-6 py-2 rounded-full text-white font-medium">Skills</a>
+    <a href="#education" class="relative z-10 px-6 py-2 rounded-full text-white font-medium">Education</a>
+    <a href="#projects" class="relative z-10 px-6 py-2 rounded-full text-white font-medium">Projects</a>
+    <a href="#contact" class="relative z-10 px-6 py-2 rounded-full text-white font-medium">Contact</a>
+  </div>
 </nav>
 
 <div class="fixed z-20 top-6 right-56 flex flex-col items-center">
-  <div class="relative flex items-center justify-center rounded-full border-2 bg-primary border-accent p-1"> 
+  <div class="relative flex items-center justify-center rounded-full border-2 bg-primary bg-opacity-70 border-accent p-1"> 
     <!-- Icono de Luna -->
     <button id="moon-toggle" class="flex items-center justify-center w-10 h-10 rounded-full transition duration-300" data-theme="dark">
       <i class="fas fa-moon text-white"></i>
@@ -26,3 +36,9 @@
 </div>
 
 <script src="../scripts/changeTheme.js"></script>
+
+<script>
+  document.getElementById("back-to-top").addEventListener("click", function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
