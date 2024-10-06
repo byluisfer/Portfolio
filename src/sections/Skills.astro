@@ -1,11 +1,65 @@
 <section class="h-screen">
-    <h1 class="relative text-5xl  mt-28 sm:text-6xl md:text-7xl lg:text-8xl text-white font-saira font-black z-10 text-center">
+    <h1 class="relative text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white font-saira font-black z-10 text-center">
         SKILLS
     </h1>
 
     <h2 class="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary font-dafoe font-regular z-20 text-center led-effect-aboutMe transform -translate-y-20 sm:-translate-y-[100px] md:-translate-y-[125px] lg:-translate-y-[135px] translate-x-6 sm:translate-x-[38px] md:translate-x-[40px] lg:translate-x-[30px]">
         Skills
     </h2>
+
+    <!-- Contenedor de íconos -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-20 text-white text-center">
+        <!-- HTML -->
+        <div class="flex flex-col items-center justify-center group">
+            <img src="skills/html.svg" alt="HTML" class="h-24 w-24 text-white group-hover:translate-y-[-20px] group-hover:filter-none transition-all duration-300 ease-in-out">
+            <span class="text-white text-lg font-mplus mt-2 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out w-full text-center">HTML</span>
+        </div>
+        <!-- CSS -->
+        <div class="flex flex-col items-center justify-center group">
+            <img src="skills/css.svg" alt="CSS" class="h-24 w-24 text-white group-hover:translate-y-[-20px] group-hover:filter-none transition-all duration-300 ease-in-out">
+            <span class="text-white text-lg font-mplus mt-2 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out w-full text-center">CSS</span>
+        </div>
+        <!-- JavaScript -->
+        <div class="flex flex-col items-center justify-center group">
+            <img src="skills/javascript.svg" alt="JavaScript" class="h-24 w-24 text-white group-hover:translate-y-[-20px] group-hover:filter-none transition-all duration-300 ease-in-out">
+            <span class="text-white text-lg font-mplus mt-2 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out w-full text-center">JavaScript</span>
+        </div>
+        <!-- Python -->
+        <div class="flex flex-col items-center justify-center group">
+            <img src="skills/python.svg" alt="Python" class="h-24 w-24 text-white group-hover:translate-y-[-20px] group-hover:filter-none transition-all duration-300 ease-in-out">
+            <span class="text-white text-lg font-mplus mt-2 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out w-full text-center">Python</span>
+        </div>
+        <!-- Tailwind -->
+        <div class="flex flex-col items-center justify-center group">
+            <img src="skills/tailwind.svg" alt="Tailwind CSS" class="h-24 w-24 text-white group-hover:translate-y-[-20px] group-hover:filter-none transition-all duration-300 ease-in-out">
+            <span class="text-white text-lg font-mplus mt-2 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out w-full text-center">Tailwind</span>
+        </div>
+        <!-- Jest -->
+        <div class="flex flex-col items-center justify-center group">
+            <img src="skills/jest.svg" alt="Jest" class="h-24 w-24 text-white group-hover:translate-y-[-20px] group-hover:filter-none transition-all duration-300 ease-in-out">
+            <span class="text-white text-lg font-mplus mt-2 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out w-full text-center">Jest</span>
+        </div>
+        <!-- Astro -->
+        <div class="flex flex-col items-center justify-center group">
+            <img src="skills/astro.svg" alt="Astro" class="h-24 w-24 text-white group-hover:translate-y-[-20px] group-hover:filter-none transition-all duration-300 ease-in-out">
+            <span class="text-white text-lg font-mplus mt-2 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out w-full text-center">Astro</span>
+        </div>
+        <!-- Java -->
+        <div class="flex flex-col items-center justify-center group">
+            <img src="skills/java.svg" alt="Java" class="h-24 w-24 text-white group-hover:translate-y-[-20px] group-hover:filter-none transition-all duration-300 ease-in-out">
+            <span class="text-white text-lg font-mplus mt-2 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out w-full text-center">Java</span>
+        </div>
+        <!-- MongoDB -->
+        <div class="flex flex-col items-center justify-center group">
+            <img src="skills/mongodb.svg" alt="MongoDB" class="h-24 w-24 text-white group-hover:translate-y-[-20px] group-hover:filter-none transition-all duration-300 ease-in-out">
+            <span class="text-white text-lg font-mplus mt-2 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out w-full text-center">MongoDB</span>
+        </div>
+        <!-- MySQL -->
+        <div class="flex flex-col items-center justify-center group">
+            <img src="skills/mysql.svg" alt="MySQL" class="h-24 w-24 text-white group-hover:translate-y-[-20px] group-hover:filter-none transition-all duration-300 ease-in-out">
+            <span class="text-white text-lg font-mplus mt-2 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out w-full text-center">MySQL</span>
+        </div>
+    </div>
 </section>
 
 <style>
@@ -14,5 +68,39 @@
             0 0 5px #9D3BE4,
             0 0 10px #9D3BE4,
             0 0 15px #9D3BE4;
+    }
+
+    .group {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .group:hover {
+        transform: translateY(-10px);
+    }
+
+    .group:hover img {
+        transform: translateY(-20px);
+    }
+
+    /* Estilo para las imágenes SVG en blanco */
+    img {
+        filter: brightness(0) invert(1); /* Cambia el color a blanco */
+    }
+
+    /* Texto de cada skill oculto por defecto */
+    .group span {
+        opacity: 0;
+        margin-top: 0;
+    }
+
+    /* Mostrar texto al hacer hover */
+    .group:hover span {
+        opacity: 1;
+        margin-top: 4px; /* Ajuste para que se muestre debajo del ícono */
+    }
+
+    /* Mostrar color original de los SVGs al hacer hover */
+    .group:hover img {
+        filter: none; /* Elimina el filtro blanco */
     }
 </style>
