@@ -1,5 +1,4 @@
 // src/components/EducationTimeline.jsx
-import React from "react";
 import VerticalTimelineModule from "react-vertical-timeline-component";
 const { VerticalTimeline, VerticalTimelineElement } = VerticalTimelineModule;
 import { FaBriefcase, FaGraduationCap, FaStar } from "react-icons/fa";
@@ -35,10 +34,6 @@ const EducationTimeline = () => {
           Management, Team Leading
         </p>
       </VerticalTimelineElement>
-
-      {/* Repite los mismos cambios para los demás elementos */}
-
-      {/* Elemento de educación */}
       <VerticalTimelineElement
         className="vertical-timeline-element--education"
         contentStyle={{ background: "#0e0e11", color: "#ffffff" }}
@@ -64,10 +59,6 @@ const EducationTimeline = () => {
         </h4>
         <p>Strategy, Social Media</p>
       </VerticalTimelineElement>
-
-      {/* Continúa aplicando los mismos cambios a los demás elementos */}
-
-      {/* Elemento final (estrella) */}
     </VerticalTimeline>
   );
 };
