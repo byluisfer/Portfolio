@@ -47,27 +47,27 @@
 
 <!-- Código JavaScript/TypeScript Actualizado -->
 <script>
-  document.addEventListener('scroll', () => {
-    const coloredLine = document.getElementById('coloredLine');
-    const section = document.querySelector('.education-section');
+document.addEventListener('scroll', () => {
+  const coloredLine = document.getElementById('coloredLine');
+  const section = document.querySelector('.education-section');
 
-    // Verificar que los elementos existan y sean HTMLElement
-    if (coloredLine instanceof HTMLElement && section instanceof HTMLElement) {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      const scrollY = window.scrollY;
-      const windowHeight = window.innerHeight;
+  // Verificar que los elementos existan y sean HTMLElement
+  if (coloredLine instanceof HTMLElement && section instanceof HTMLElement) {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
 
-      // Calcular el progreso del scroll dentro de la sección
-      const scrollProgress = (scrollY + windowHeight - sectionTop) / sectionHeight;
+    // Calcular el progreso del scroll dentro de la sección
+    const scrollProgress = (scrollY + windowHeight - sectionTop) / sectionHeight;
 
-      // Limitar el valor entre 0 y 1
-      const limitedScrollProgress = Math.min(Math.max(scrollProgress, 0), 1);
+    // Ajustar el progreso del scroll para que la animación comience más tarde
+    const adjustedScrollProgress = Math.min(Math.max(scrollProgress - 0.2, 0), 1);
 
-      // Actualizar la escala Y de la línea de acuerdo con el progreso del scroll
-      coloredLine.style.transform = `scaleY(${limitedScrollProgress})`;
-    }
-  });
+    // Actualizar la escala Y de la línea de acuerdo con el progreso del scroll ajustado
+    coloredLine.style.transform = `scaleY(${adjustedScrollProgress})`;
+  }
+});
 </script>
 
 <!-- Estilos CSS -->
