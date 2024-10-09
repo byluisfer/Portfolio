@@ -1,4 +1,8 @@
-<section class="h-screen">
+---
+---
+
+<section class="h-screen relative overflow-hidden">
+    <!-- Títulos de la sección -->
     <h1 class="relative text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white font-saira font-black z-10 text-center">
         EDUCATION
     </h1>
@@ -6,7 +10,61 @@
     <h2 class="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary font-dafoe font-regular z-20 text-center led-effect-aboutMe transform -translate-y-20 sm:-translate-y-[100px] md:-translate-y-[125px] lg:-translate-y-[135px] translate-x-6 sm:translate-x-[38px] md:translate-x-[40px] lg:translate-x-[30px]">
         Education
     </h2>
+
+    <!-- Línea de fondo gris estática -->
+    <div class="absolute left-[10%] top-[5%] h-[90%] border-l-4 border-gray-400"></div>
+
+    <!-- Contenedor de la línea dinámica -->
+    <div class="absolute left-[10%] top-[5%] h-[90%]">
+        <!-- Línea dinámica que se colorea progresivamente -->
+        <div id="coloredLine" class="w-0.5 h-0 bg-blue-500 transition-all duration-[2000ms] ease-linear"></div>
+
+        <!-- Indicadores de los puntos -->
+        <!-- Punto 1 (2024) -->
+        <div class="w-8 h-8 bg-black border-4 border-gray-500 rounded-full flex items-center justify-center -ml-[18px] absolute top-[10%]">
+            <div class="w-4 h-4 bg-gradient rounded-full"></div>
+        </div>
+        <div class="absolute left-[50px] top-[10%] text-3xl md:text-4xl text-gray-500 font-bold">
+            2024
+        </div>
+    
+        <!-- Punto 2 (2021) -->
+        <div class="w-8 h-8 bg-black border-4 border-gray-500 rounded-full flex items-center justify-center -ml-[18px] absolute top-[50%]">
+            <div class="w-4 h-4 bg-gradient rounded-full"></div>
+        </div>
+        <div class="absolute left-[50px] top-[50%] text-3xl md:text-4xl text-gray-500 font-bold">
+            2021
+        </div>
+    
+        <!-- Punto 3 (2019) -->
+        <div class="w-8 h-8 bg-black border-4 border-gray-500 rounded-full flex items-center justify-center -ml-[18px] absolute top-[90%]">
+            <div class="w-4 h-4 bg-gradient rounded-full"></div>
+        </div>
+        <div class="absolute left-[50px] top-[90%] text-3xl md:text-4xl text-gray-500 font-bold">
+            2019
+        </div>
+    </div>
+
 </section>
+
+<script>
+  document.addEventListener('scroll', () => {
+    const coloredLine = document.getElementById('coloredLine');
+    const section = document.querySelector('section');
+    const scrollPosition = window.scrollY + window.innerHeight;
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+
+    // Calcular cuánto se ha desplazado dentro de la sección
+    const scrollProgress = (scrollPosition - sectionTop) / sectionHeight;
+
+    // Limitar el valor entre 0 y 1
+    const limitedScrollProgress = Math.min(Math.max(scrollProgress, 0), 1);
+
+    // Actualizar la altura de la línea de acuerdo con el progreso del scroll
+    coloredLine.style.height = `${limitedScrollProgress * 100}%`;
+  });
+</script>
 
 <style>
     .led-effect-aboutMe {
@@ -14,5 +72,8 @@
             0 0 5px #9D3BE4,
             0 0 10px #9D3BE4,
             0 0 15px #9D3BE4;
+    }
+    .bg-gradient {
+      background: linear-gradient(180deg, #9D3BE4, #1C7CEB); /* Color de degradado para los puntos */
     }
 </style>
