@@ -1,5 +1,5 @@
 <!-- Sección Education -->
-<section class="education-section h-screen relative overflow-hidden">
+<section class="education-section h-[175vh] relative overflow-hidden">
     <!-- Títulos de la sección -->
     <h1 class="relative text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white font-saira font-black z-10 text-center">
         EDUCATION
@@ -11,7 +11,7 @@
 
     <!-- Línea de fondo gris estática con bordes redondeados y mayor grosor -->
     <!-- Ajustar 'top' para agregar más espacio entre el título y el timeline -->
-    <div class="absolute left-[10%] top-[15%] h-[80%] border-l-8 border-gray-400 rounded-full"></div>
+    <div class="absolute left-[10%] top-[15%] h-[80%] bg-line border-l-8 border-gray-400 rounded-full"></div>
 
     <!-- Contenedor de la línea dinámica -->
     <div class="absolute left-[10%] top-[15%] h-[80%] w-2 rounded-full">
@@ -78,20 +78,25 @@ document.addEventListener('scroll', () => {
             0 0 10px #9D3BE4,
             0 0 15px #9D3BE4;
     }
+
     .bg-gradient {
-      background: linear-gradient(180deg, #9D3BE4, #1C7CEB);
+        background: #17171B;
+    }  
+    .bg-line {
+        background: linear-gradient(to bottom, #17171B);
     }
+
     #coloredLine {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 8px; /* Ancho de la línea igual al borde */
-      height: 100%;
-      background-color: #1C7CEB; /* Color de la línea coloreada */
-      border-radius: 9999px; /* Bordes redondeados */
-      transform: scaleY(0); /* Inicialmente sin colorear */
-      transform-origin: top; /* Escalar desde la parte superior */
-      transition: transform 0.2s linear; /* Transición suave */
-      z-index: 1;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 8px; /* Ancho de la línea igual al borde */
+        height: 100%;
+        background: linear-gradient(to bottom, transparent, #1C2B62, #9D3BE4);
+        border-radius: 9999px; /* Bordes redondeados */
+        transform: scaleY(0); /* Inicialmente sin colorear */
+        transform-origin: top; /* Escalar desde la parte superior */
+        transition: transform 0.2s linear; /* Transición suave */
+        z-index: 1;
     }
 </style>
