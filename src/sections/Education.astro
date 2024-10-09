@@ -9,18 +9,18 @@
         Education
     </h2>
 
-    <!-- Línea de fondo gris estática -->
-    <div class="absolute left-[10%] top-[5%] h-[90%] border-l-4 border-gray-400"></div>
+    <!-- Línea de fondo gris estática con bordes redondeados y mayor grosor -->
+    <!-- Ajustar 'top' para agregar más espacio entre el título y el timeline -->
+    <div class="absolute left-[10%] top-[15%] h-[80%] border-l-8 border-gray-400 rounded-full"></div>
 
     <!-- Contenedor de la línea dinámica -->
-    <div class="absolute left-[10%] top-[5%] h-[90%]">
-        <!-- Línea dinámica que se colorea progresivamente -->
-        <div id="coloredLine" class="w-0.5 bg-blue-500"
-             style="position: absolute; left: 0; top: 0; height: 0%;"></div>
+    <div class="absolute left-[10%] top-[15%] h-[80%] w-2 rounded-full">
+        <!-- Línea dinámica que se colorea progresivamente con bordes redondeados y mayor grosor -->
+        <div id="coloredLine"></div>
 
         <!-- Indicadores de los puntos -->
         <!-- Punto 1 (2024) -->
-        <div class="w-8 h-8 bg-black border-4 border-gray-500 rounded-full flex items-center justify-center -ml-[18px] absolute top-[10%]">
+        <div class="w-8 h-8 bg-black border-4 z-10 border-gray-500 rounded-full flex items-center justify-center -ml-[14px] absolute top-[10%]">
             <div class="w-4 h-4 bg-gradient rounded-full"></div>
         </div>
         <div class="absolute left-[50px] top-[10%] text-3xl md:text-4xl text-gray-500 font-bold">
@@ -28,7 +28,7 @@
         </div>
     
         <!-- Punto 2 (2021) -->
-        <div class="w-8 h-8 bg-black border-4 border-gray-500 rounded-full flex items-center justify-center -ml-[18px] absolute top-[50%]">
+        <div class="w-8 h-8 bg-black border-4 z-10 border-gray-500 rounded-full flex items-center justify-center -ml-[14px] absolute top-[50%]">
             <div class="w-4 h-4 bg-gradient rounded-full"></div>
         </div>
         <div class="absolute left-[50px] top-[50%] text-3xl md:text-4xl text-gray-500 font-bold">
@@ -36,7 +36,7 @@
         </div>
     
         <!-- Punto 3 (2019) -->
-        <div class="w-8 h-8 bg-black border-4 border-gray-500 rounded-full flex items-center justify-center -ml-[18px] absolute top-[90%]">
+        <div class="w-8 h-8 bg-black border-4 z-10 border-gray-500 rounded-full flex items-center justify-center -ml-[14px] absolute top-[90%]">
             <div class="w-4 h-4 bg-gradient rounded-full"></div>
         </div>
         <div class="absolute left-[50px] top-[90%] text-3xl md:text-4xl text-gray-500 font-bold">
@@ -45,30 +45,28 @@
     </div>
 </section>
 
-<!-- Código JavaScript actualizado -->
+<!-- Código JavaScript/TypeScript Actualizado -->
 <script>
   document.addEventListener('scroll', () => {
-    const coloredLine = document.getElementById('coloredLine') as HTMLElement;
-    const section = document.querySelector('.education-section') as HTMLElement;
+    const coloredLine = document.getElementById('coloredLine');
+    const section = document.querySelector('.education-section');
 
-    // Verificar que los elementos existan
-    if (!section || !coloredLine) {
-      return;
+    // Verificar que los elementos existan y sean HTMLElement
+    if (coloredLine instanceof HTMLElement && section instanceof HTMLElement) {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+
+      // Calcular el progreso del scroll dentro de la sección
+      const scrollProgress = (scrollY + windowHeight - sectionTop) / sectionHeight;
+
+      // Limitar el valor entre 0 y 1
+      const limitedScrollProgress = Math.min(Math.max(scrollProgress, 0), 1);
+
+      // Actualizar la escala Y de la línea de acuerdo con el progreso del scroll
+      coloredLine.style.transform = `scaleY(${limitedScrollProgress})`;
     }
-
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.offsetHeight;
-    const scrollY = window.scrollY;
-    const windowHeight = window.innerHeight;
-
-    // Calcular el progreso del scroll dentro de la sección
-    const scrollProgress = (scrollY - sectionTop) / (sectionHeight - windowHeight);
-
-    // Limitar el valor entre 0 y 1
-    const limitedScrollProgress = Math.min(Math.max(scrollProgress, 0), 1);
-
-    // Actualizar la altura de la línea de acuerdo con el progreso del scroll
-    coloredLine.style.height = `${limitedScrollProgress * 100}%`;
   });
 </script>
 
@@ -84,7 +82,16 @@
       background: linear-gradient(180deg, #9D3BE4, #1C7CEB);
     }
     #coloredLine {
-      transition: height 0.2s linear;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 8px; /* Ancho de la línea igual al borde */
+      height: 100%;
+      background-color: #1C7CEB; /* Color de la línea coloreada */
+      border-radius: 9999px; /* Bordes redondeados */
+      transform: scaleY(0); /* Inicialmente sin colorear */
+      transform-origin: top; /* Escalar desde la parte superior */
+      transition: transform 0.2s linear; /* Transición suave */
       z-index: 1;
     }
 </style>
