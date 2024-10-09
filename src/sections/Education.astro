@@ -1,7 +1,5 @@
----
----
-
-<section class="h-screen relative overflow-hidden">
+<!-- Sección Education -->
+<section class="education-section h-screen relative overflow-hidden">
     <!-- Títulos de la sección -->
     <h1 class="relative text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white font-saira font-black z-10 text-center">
         EDUCATION
@@ -17,7 +15,8 @@
     <!-- Contenedor de la línea dinámica -->
     <div class="absolute left-[10%] top-[5%] h-[90%]">
         <!-- Línea dinámica que se colorea progresivamente -->
-        <div id="coloredLine" class="w-0.5 h-0 bg-blue-500 transition-all duration-[2000ms] ease-linear"></div>
+        <div id="coloredLine" class="w-0.5 bg-blue-500"
+             style="position: absolute; left: 0; top: 0; height: 0%;"></div>
 
         <!-- Indicadores de los puntos -->
         <!-- Punto 1 (2024) -->
@@ -44,19 +43,26 @@
             2019
         </div>
     </div>
-
 </section>
 
+<!-- Código JavaScript actualizado -->
 <script>
   document.addEventListener('scroll', () => {
-    const coloredLine = document.getElementById('coloredLine');
-    const section = document.querySelector('section');
-    const scrollPosition = window.scrollY + window.innerHeight;
+    const coloredLine = document.getElementById('coloredLine') as HTMLElement;
+    const section = document.querySelector('.education-section') as HTMLElement;
+
+    // Verificar que los elementos existan
+    if (!section || !coloredLine) {
+      return;
+    }
+
     const sectionTop = section.offsetTop;
     const sectionHeight = section.offsetHeight;
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
 
-    // Calcular cuánto se ha desplazado dentro de la sección
-    const scrollProgress = (scrollPosition - sectionTop) / sectionHeight;
+    // Calcular el progreso del scroll dentro de la sección
+    const scrollProgress = (scrollY - sectionTop) / (sectionHeight - windowHeight);
 
     // Limitar el valor entre 0 y 1
     const limitedScrollProgress = Math.min(Math.max(scrollProgress, 0), 1);
@@ -66,6 +72,7 @@
   });
 </script>
 
+<!-- Estilos CSS -->
 <style>
     .led-effect-aboutMe {
         text-shadow:
@@ -74,6 +81,10 @@
             0 0 15px #9D3BE4;
     }
     .bg-gradient {
-      background: linear-gradient(180deg, #9D3BE4, #1C7CEB); /* Color de degradado para los puntos */
+      background: linear-gradient(180deg, #9D3BE4, #1C7CEB);
+    }
+    #coloredLine {
+      transition: height 0.2s linear;
+      z-index: 1;
     }
 </style>
