@@ -11,7 +11,7 @@
 
     <!-- Línea de fondo gris estática con bordes redondeados y mayor grosor -->
     <!-- Ajustar 'top' para agregar más espacio entre el título y el timeline -->
-    <div class="absolute left-[10%] top-[15%] h-[80%] bg-line border-l-8 border-gray-400 rounded-full"></div>
+    <div class="absolute left-[10%] top-[15%] h-[80%] border-l-8 border-gray-400 rounded-full"></div>
 
     <!-- Contenedor de la línea dinámica -->
     <div class="absolute left-[10%] top-[15%] h-[80%] w-2 rounded-full">
@@ -23,7 +23,7 @@
         <div class="w-8 h-8 bg-black border-4 z-10 border-gray-500 rounded-full flex items-center justify-center -ml-[14px] absolute top-[10%]">
             <div class="w-4 h-4 bg-gradient rounded-full"></div>
         </div>
-        <div class="absolute left-[50px] top-[10%] text-3xl md:text-4xl text-gray-500 font-bold">
+        <div class="absolute left-[50px] top-[7%] text-3xl md:text-4xl text-gray-500 font-bold">
             2024
         </div>
     
@@ -31,7 +31,7 @@
         <div class="w-8 h-8 bg-black border-4 z-10 border-gray-500 rounded-full flex items-center justify-center -ml-[14px] absolute top-[50%]">
             <div class="w-4 h-4 bg-gradient rounded-full"></div>
         </div>
-        <div class="absolute left-[50px] top-[50%] text-3xl md:text-4xl text-gray-500 font-bold">
+        <div class="absolute left-[50px] top-[47%] text-3xl md:text-4xl text-gray-500 font-bold">
             2021
         </div>
     
@@ -39,7 +39,7 @@
         <div class="w-8 h-8 bg-black border-4 z-10 border-gray-500 rounded-full flex items-center justify-center -ml-[14px] absolute top-[90%]">
             <div class="w-4 h-4 bg-gradient rounded-full"></div>
         </div>
-        <div class="absolute left-[50px] top-[90%] text-3xl md:text-4xl text-gray-500 font-bold">
+        <div class="absolute left-[50px] top-[87%] text-3xl md:text-4xl text-gray-500 font-bold">
             2019
         </div>
     </div>
@@ -81,10 +81,7 @@ document.addEventListener('scroll', () => {
 
     .bg-gradient {
         background: #17171B;
-    }  
-    .bg-line {
-        background: linear-gradient(to bottom, #17171B);
-    }
+    } 
 
     #coloredLine {
         position: absolute;
@@ -92,7 +89,7 @@ document.addEventListener('scroll', () => {
         top: 0;
         width: 8px; /* Ancho de la línea igual al borde */
         height: 100%;
-        background: linear-gradient(to bottom, transparent, #1C2B62, #9D3BE4);
+        background: linear-gradient(to bottom, #1C2B62, #9D3BE4);
         border-radius: 9999px; /* Bordes redondeados */
         transform: scaleY(0); /* Inicialmente sin colorear */
         transform-origin: top; /* Escalar desde la parte superior */
