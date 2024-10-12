@@ -1,48 +1,99 @@
 <!-- Botón de menú para pantallas móviles y medianas -->
-<div class="fixed z-20 top-6 left-6 flex items-center sm:flex md:hidden"> <!-- Visible en pantallas móviles, oculto en pantallas medianas y grandes -->
-  <button id="menu-toggle" class="flex items-center justify-center w-12 h-12 rounded-full bg-primary bg-opacity-90 border-2 border-accent shadow-lg transition duration-300">
+<div class="fixed z-20 top-6 left-6 flex items-center sm:flex md:hidden">
+  <!-- Visible en pantallas móviles, oculto en pantallas medianas y grandes -->
+  <button
+    id="menu-toggle"
+    class="flex items-center justify-center w-12 h-12 rounded-full bg-primary bg-opacity-90 border-2 border-accent shadow-lg transition duration-300"
+  >
     <!-- Icono de menú hamburguesa -->
     <i class="fas fa-bars text-white text-2xl"></i>
   </button>
 </div>
 
 <!-- Botón para volver arriba, visible solo en pantallas grandes -->
-<div class="fixed z-20 top-6 left-6 lg:left-56 hidden md:flex items-center"> <!-- Oculto en pantallas pequeñas -->
-  <button id="back-to-top" class="flex items-center justify-center w-12 h-12 rounded-full bg-primary bg-opacity-90 border-2 border-accent shadow-lg transition duration-300">
+<div class="fixed z-20 top-6 left-6 lg:left-56 hidden md:flex items-center">
+  <!-- Oculto en pantallas pequeñas -->
+  <button
+    id="back-to-top"
+    class="flex items-center justify-center w-12 h-12 rounded-full bg-primary bg-opacity-90 border-2 border-accent shadow-lg transition duration-300"
+  >
     <img src="/logo_dark.svg" alt="Back to Top" class="w-10 h-10" />
   </button>
 </div>
 
 <!-- Navigation Bar con altura ajustada y responsive para pantallas medianas y grandes -->
-<nav class="fixed z-40 top-6 left-1/2 transform -translate-x-1/2 bg-primary bg-opacity-90 border border-accent shadow-lg rounded-full items-center justify-around w-full md:w-3/4 lg:w-2/8 max-w-xl h-12 hidden md:flex"> <!-- Ajuste de tamaño para pantallas medianas y grandes -->
+<nav
+  class="fixed z-40 top-6 left-1/2 transform -translate-x-1/2 bg-primary bg-opacity-90 border border-accent shadow-lg rounded-full items-center justify-around w-full md:w-3/4 lg:w-2/8 max-w-xl h-12 hidden md:flex"
+>
+  <!-- Ajuste de tamaño para pantallas medianas y grandes -->
   <div class="relative w-full flex items-center justify-between h-full">
     <!-- Barra LED superior con efecto de neón -->
-    <div id="led-bar" class="absolute top-0 left-0 h-1 w-20 bg-secondary rounded-full shadow-lg transition-all duration-300 ease-in-out transform"
-         style="box-shadow: 0 0 5px #9D3BE4, 0 0 10px #9D3BE4, 0 0 15px #9D3BE4;">
+    <div
+      id="led-bar"
+      class="absolute top-0 left-0 h-1 w-20 bg-secondary rounded-full shadow-lg transition-all duration-300 ease-in-out transform"
+      style="box-shadow: 0 0 5px #9D3BE4, 0 0 10px #9D3BE4, 0 0 15px #9D3BE4;"
+    >
     </div>
-    
+
     <!-- Indicador de posición con menos redondez y tamaño ajustado -->
-    <div id="active-indicator" class="absolute top-1/2 left-0 h-8 bg-accent rounded-lg transition-all duration-300 ease-in-out transform -translate-y-1/2"></div>
+    <div
+      id="active-indicator"
+      class="absolute top-1/2 left-0 h-8 bg-accent rounded-lg transition-all duration-300 ease-in-out transform -translate-y-1/2"
+    >
+    </div>
 
     <!-- Botones de navegación con enlaces a secciones -->
-    <a href="#about" class="relative z-10 px-4 py-0 rounded-full text-white font-medium h-full flex items-center text-sm md:text-base">About Me</a>
-    <a href="#skills" class="relative z-10 px-4 py-0 rounded-full text-white font-medium h-full flex items-center text-sm md:text-base">Skills</a>
-    <a href="#education" class="relative z-10 px-4 py-0 rounded-full text-white font-medium h-full flex items-center text-sm md:text-base">Education</a>
-    <a href="#projects" class="relative z-10 px-4 py-0 rounded-full text-white font-medium h-full flex items-center text-sm md:text-base">Projects</a>
-    <a href="#contact" class="relative z-10 px-4 py-0 rounded-full text-white font-medium h-full flex items-center text-sm md:text-base">Contact</a>
+    <a
+      href="#aboutMe"
+      class="relative z-10 px-4 py-0 rounded-full text-white font-medium h-full flex items-center text-sm md:text-base"
+      >About Me</a
+    >
+    <a
+      href="#skills"
+      class="relative z-10 px-4 py-0 rounded-full text-white font-medium h-full flex items-center text-sm md:text-base"
+      >Skills</a
+    >
+    <a
+      href="#education"
+      class="relative z-10 px-4 py-0 rounded-full text-white font-medium h-full flex items-center text-sm md:text-base"
+      >Education</a
+    >
+    <a
+      href="#projects"
+      class="relative z-10 px-4 py-0 rounded-full text-white font-medium h-full flex items-center text-sm md:text-base"
+      >Projects</a
+    >
+    <a
+      href="#contact"
+      class="relative z-10 px-4 py-0 rounded-full text-white font-medium h-full flex items-center text-sm md:text-base"
+      >Contact</a
+    >
   </div>
 </nav>
 
 <!-- Botones de cambio de tema, visibles solo en pantallas grandes -->
-<div class="fixed z-20 top-6 right-6 lg:right-56 hidden md:flex flex-col items-center"> <!-- Oculto en pantallas pequeñas y medianas -->
-  <div class="relative flex items-center justify-center rounded-full border-2 bg-primary bg-opacity-90 border-accent p-1 h-12"> 
+<div
+  class="fixed z-20 top-6 right-6 lg:right-56 hidden md:flex flex-col items-center"
+>
+  <!-- Oculto en pantallas pequeñas y medianas -->
+  <div
+    class="relative flex items-center justify-center rounded-full border-2 bg-primary bg-opacity-90 border-accent p-1 h-12"
+  >
     <!-- Icono de Luna -->
-    <button id="moon-toggle" class="flex items-center justify-center w-12 h-12 rounded-full transition duration-300" data-theme="dark">
+    <button
+      id="moon-toggle"
+      class="flex items-center justify-center w-12 h-12 rounded-full transition duration-300"
+      data-theme="dark"
+    >
       <i class="fas fa-moon text-white"></i>
     </button>
 
     <!-- Icono de Sol -->
-    <button id="sun-toggle" class="flex items-center justify-center w-12 h-12 rounded-full transition duration-300" data-theme="light">
+    <button
+      id="sun-toggle"
+      class="flex items-center justify-center w-12 h-12 rounded-full transition duration-300"
+      data-theme="light"
+    >
       <i class="fas fa-sun text-white"></i>
     </button>
   </div>
@@ -50,7 +101,7 @@
 
 <!-- Script para el movimiento del indicador y el botón de inicio -->
 <script>
-  document.getElementById("back-to-top").addEventListener("click", function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  document.getElementById("back-to-top").addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 </script>

@@ -1,70 +1,69 @@
-<footer class="text-white py-10 mt-20">
-    <div class="container mx-auto px-6 md:px-12 lg:px-20 flex flex-wrap justify-between items-start space-y-8 md:space-y-0 md:space-x-10">
-      <!-- Logo o Nombre -->
-      <div class="w-full md:w-1/4">
-        <h1 class="text-3xl font-extrabold text-primary mb-2">Luis Fernández</h1>
-      </div>
-  
-      <!-- Navegación -->
-      <div class="w-full md:w-1/4">
-        <h2 class="text-lg font-semibold mb-4 text-primary">Navigation</h2>
-        <ul class="space-y-2 text-sm">
-          <li><a href="#aboutme" class="hover:text-primary transition duration-300">About Me</a></li>
-          <li><a href="#skills" class="hover:text-primary transition duration-300">Skills</a></li>
-          <li><a href="#education" class="hover:text-primary transition duration-300">Education</a></li>
-          <li><a href="#projects" class="hover:text-primary transition duration-300">Projects</a></li>
-          <li><a href="#contact" class="hover:text-primary transition duration-300">Contact</a></li>
+<footer class="text-white py-16">
+  <!-- Línea superior con efecto LED y bordes redondeados -->
+  <div class="led-line w-full"></div>
+
+  <div class="container mx-auto flex flex-col lg:flex-row justify-between items-start lg:items-center mt-10 space-y-10 lg:space-y-0">
+    
+    <!-- Logo y Footer Bottom -->
+    <div class="logo-container mb-10 md:mb-0">
+      <img src="logo.svg" alt="Logo" class="w-24 h-24 mt-10">
+      <!-- Footer bottom aligned under the logo and only visible in lg -->
+      <p class="text-white text-lg mt-24 hidden lg:block">© 2024 Luis Fernández. All Rights Reserved.</p>
+    </div>
+    
+    <!-- Navegación -->
+    <div class="flex flex-row w-full lg:w-auto justify-between space-x-12 text-left">
+      <!-- Main -->
+      <div>
+        <h3 class="text-lg font-mplus text-gray-400">NAVIGATION</h3>
+        <ul class="space-y-2 mt-2">
+          <li><a href="#aboutMe" class="text-white font-mplus text-base hover:underline">About Me</a></li>
+          <li><a href="#skills" class="text-white font-mplus text-base hover:underline">Skills</a></li>
+          <li><a href="#education" class="text-white font-mplus text-base hover:underline">Education</a></li>
+          <li><a href="#projects" class="text-white font-mplus text-base hover:underline">Projects</a></li>
+          <li><a href="#contact" class="text-white font-mplus text-base hover:underline">Contact</a></li>
         </ul>
       </div>
-  
-      <!-- Redes Sociales -->
-      <div class="w-full md:w-1/4">
-        <h2 class="text-lg font-semibold mb-4 text-primary">Sígueme</h2>
-        <div class="flex space-x-4">
-          <a href="#" class="text-gray-400 hover:text-primary transition duration-300">
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-              <!-- Ícono de GitHub -->
-              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.11.82-.26.82-.58v-2.17c-3.338.73-4.04-1.61-4.04-1.61-.547-1.387-1.335-1.755-1.335-1.755-1.09-.745.08-.73.08-.73 1.205.08 1.84 1.24 1.84 1.24 1.07 1.833 2.81 1.304 3.495.995.107-.775.418-1.304.76-1.605-2.665-.305-5.467-1.335-5.467-5.93 0-1.31.465-2.383 1.235-3.222-.125-.305-.535-1.527.115-3.18 0 0 1.005-.323 3.3 1.23a11.48 11.48 0 013-.405c1.02.005 2.045.14 3 .405 2.28-1.555 3.285-1.23 3.285-1.23.655 1.653.245 2.875.12 3.18.765.84 1.23 1.912 1.23 3.222 0 4.61-2.805 5.62-5.475 5.92.43.37.815 1.1.815 2.215v3.285c0 .32.215.7.82.58C20.565 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/>
-            </svg>
-          </a>
-          <a href="#" class="text-gray-400 hover:text-primary transition duration-300">
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-              <!-- Ícono de LinkedIn -->
-              <path d="M19 0h-14c-2.75 0-5 2.25-5 5v14c0 2.75 2.25 5 5 5h14c2.75 0 5-2.25 5-5v-14c0-2.75-2.25-5-5-5zm-11.75 20h-2.5v-10h2.5v10zm-1.25-11.5c-.825 0-1.5-.675-1.5-1.5s.675-1.5 1.5-1.5 1.5.675 1.5 1.5-.675 1.5-1.5 1.5zm13.25 11.5h-2.5v-5c0-1.11-.9-2-2-2h-1c-1.1 0-2 .89-2 2v5h-2.5v-10h2.5v1.45c.7-1.05 2.15-1.45 3.5-1.45h1c2.5 0 4.5 2 4.5 4.5v5.5z"/>
-            </svg>
-          </a>
-          <a href="#" class="text-gray-400 hover:text-primary transition duration-300">
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-              <!-- Ícono de Twitter -->
-              <path d="M24 4.56c-.885.392-1.83.656-2.828.775 1.017-.609 1.796-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.554-3.594-1.554-2.717 0-4.923 2.205-4.923 4.917 0 .385.045.76.128 1.12-4.09-.205-7.72-2.16-10.15-5.135-.424.728-.666 1.573-.666 2.475 0 1.71.87 3.217 2.19 4.1-.807-.026-1.566-.248-2.228-.617v.062c0 2.385 1.698 4.374 3.946 4.827-.414.113-.85.173-1.3.173-.315 0-.626-.03-.927-.085.626 1.953 2.444 3.376 4.6 3.415-1.68 1.318-3.804 2.105-6.104 2.105-.396 0-.787-.024-1.174-.07 2.179 1.394 4.768 2.207 7.548 2.207 9.057 0 14.01-7.498 14.01-13.986 0-.215-.005-.428-.014-.64.961-.694 1.796-1.56 2.457-2.548z"/>
-            </svg>
-          </a>
-        </div>
+      
+      <!-- Social Media -->
+      <div>
+        <h3 class="text-lg font-mplus text-gray-400">SOCIAL MEDIA</h3>
+        <ul class="space-y-2 mt-2">
+          <li><a href="https://github.com/byluisfer" target="_blank" class="text-white text-base font-mplus hover:underline">Github ↗</a></li>
+          <li><a href="https://www.linkedin.com/in/luisfernandezz/" target="_blank" class="text-white text-base font-mplus hover:underline">LinkedIn ↗</a></li>
+          <li><a href="mailto:luisferdass@gmail.com" target="_blank" class="text-white text-base font-mplus hover:underline">Gmail ↗</a></li>
+          <li><a href="/CV_Luis_Fernandez.pdf" target="_blank" class="text-white text-base font-mplus hover:underline">Resume ↗</a></li>
+        </ul>
       </div>
     </div>
-    <div class="border-t mt-12 pt-6 led-effect-line">
-      <p class="text-center text-sm text-gray-500">
-        © 2024 Luis Fernández. Todos los derechos reservados.
-      </p>
-    </div>
-  </footer>
-  
-  <style>
-    .led-effect-line {
-      border-top: 1px solid transparent;
-      position: relative;
-    }
-  
-    .led-effect-line::before {
-      content: "";
-      position: absolute;
-      top: -1px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: #9D3BE4;
-      box-shadow: 0 0 5px #9D3BE4, 0 0 10px #9D3BE4, 0 0 15px #9D3BE4;
-      border-radius: 5px;
-    }
+
+  </div>
+
+  <!-- Footer bottom aligned under the entire content for sm and md -->
+  <div class="block lg:hidden mt-12">
+    <p class="text-white text-base text-center">© 2024 Luis Fernández. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- Tailwind CSS y custom CSS para la línea -->
+<style>
+  .led-line {
+    position: relative;
+    height: 3px;
+    background-color: #9D3BE4; /* Color de la línea LED */
+    box-shadow: 0 10px 20px rgba(157, 59, 228, 0.8); /* Efecto de luz proyectada hacia abajo */
+    border-radius: 100px; /* Bordes redondeados */
+  }
+
+  .led-line::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #9D3BE4;
+    box-shadow: 0 0 5px #9D3BE4, 0 0 10px #9D3BE4, 0 0 15px #9D3BE4;
+    border-radius: 5px;
+  }
 </style>
-  
