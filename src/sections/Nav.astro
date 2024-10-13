@@ -71,18 +71,18 @@
 
 <!-- Botón de cambio de idioma con menú desplegable -->
 <div
-  class="fixed z-20 top-6 right-[5%] hidden md:flex flex-col items-center"
+  class="fixed z-20 top-6 right-6 lg:right-[22%] hidden md:flex flex-col items-center"
 >
   <!-- Oculto en pantallas pequeñas y medianas -->
   <div
     class="relative flex items-center justify-center rounded-full border-2 bg-primary bg-opacity-90 border-accent p-1 h-12 w-12"
   >
-    <!-- Botón con la bandera de USA -->
+    <!-- Botón con la bandera de idioma -->
     <button
       id="language-toggle"
       class="flex items-center justify-center w-12 h-12 rounded-full transition duration-300"
     >
-      <img src="/usa.png" alt="Change Language to English" class="w-10 h-10 rounded-full object-cover" />
+      <img src="/usa.png" alt="Change Language" class="w-10 h-10 rounded-full object-cover" />
     </button>
   </div>
 
@@ -98,8 +98,8 @@
         </button>
       </li>
       <li>
-        <button onclick="changeLanguage('de')" class="flex items-center justify-center w-10 h-10 rounded-full">
-          <img src="/german.png" alt="Change Language to German" class="w-8 h-8 rounded-full object-cover" />
+        <button onclick="changeLanguage('en')" class="flex items-center justify-center w-10 h-10 rounded-full">
+          <img src="/usa.png" alt="Change Language to English" class="w-8 h-8 rounded-full object-cover" />
         </button>
       </li>
     </ul>
