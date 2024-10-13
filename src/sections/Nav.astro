@@ -1,4 +1,4 @@
-<!-- Botón de menú para pantallas móviles y medianas -->
+<!-- Botón de menú para pantallas móviles y pequeñas -->
 <div class="fixed z-20 top-6 left-6 flex items-center sm:flex md:hidden">
   <!-- Visible en pantallas móviles, oculto en pantallas medianas y grandes -->
   <button
@@ -10,8 +10,30 @@
   </button>
 </div>
 
+<!-- Menú lateral (hamburguesa) oculto inicialmente -->
+<div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-primary bg-opacity-90 z-30 transform -translate-x-full transition-transform duration-300">
+  <div class="flex flex-col items-center justify-center h-full space-y-6">
+    <!-- Enlaces a las secciones -->
+    <a href="#aboutMe" class="text-white text-xl" id="menu-aboutMe">Über mich</a>
+    <a href="#skills" class="text-white text-xl" id="menu-skills">Fähigkeiten</a>
+    <a href="#education" class="text-white text-xl" id="menu-education">Ausbildung</a>
+    <a href="#projects" class="text-white text-xl" id="menu-projects">Projekte</a>
+    <a href="#contact" class="text-white text-xl" id="menu-contact">Kontakt</a>
+
+    <!-- Cambio de idioma dentro del menú hamburguesa -->
+    <div class="flex space-x-4 mt-8">
+      <button onclick="changeLanguage('de', '/german.png')" class="text-white">Deutsch</button>
+      <button onclick="changeLanguage('en', '/usa.png')" class="text-white">English</button>
+      <button onclick="changeLanguage('es', '/spanish.png')" class="text-white">Español</button>
+    </div>
+
+    <!-- Botón para cerrar el menú -->
+    <button id="menu-close" class="absolute top-6 right-6 text-white text-3xl">&times;</button>
+  </div>
+</div>
+
 <!-- Botón para volver arriba, visible solo en pantallas grandes -->
-<div class="fixed z-20 top-6 left-[5%] hidden md:flex items-center">
+<div class="fixed z-40 top-6 left-6 lg:left-[22%] hidden md:flex flex-col items-center">
   <a href="#top">
     <button
       id="back-to-top"
@@ -41,49 +63,33 @@
     ></div>
 
     <!-- Botones de navegación con enlaces a secciones -->
-        <a
+    <a
       href="#aboutMe"
-      id="nav-aboutMe"
       class="relative z-10 px-4 py-0 ml-2 rounded-full text-white font-medium h-full flex items-center text-sm md:text-base"
       >Über mich</a
     >
     <a
       href="#skills"
-      id="nav-skills"
       class="relative z-10 px-4 py-0 rounded-full text-white font-medium h-full flex items-center text-sm md:text-base"
       >Fähigkeiten</a
     >
     <a
       href="#education"
-      id="nav-education"
       class="relative z-10 px-4 py-0 rounded-full text-white font-medium h-full flex items-center text-sm md:text-base"
       >Ausbildung</a
     >
     <a
       href="#projects"
-      id="nav-projects"
       class="relative z-10 px-4 py-0 rounded-full text-white font-medium h-full flex items-center text-sm md:text-base"
       >Projekte</a
     >
     <a
       href="#contact"
-      id="nav-contact"
       class="relative z-10 px-4 py-0 mr-2 rounded-full text-white font-medium h-full flex items-center text-sm md:text-base"
       >Kontakt</a
     >
   </div>
 </nav>
-
-<!-- Botón de menú para pantallas móviles y medianas -->
-<div class="fixed z-20 top-6 left-6 flex items-center sm:flex md:hidden">
-  <!-- Visible en pantallas móviles, oculto en pantallas medianas y grandes -->
-  <button
-    id="menu-toggle"
-    class="flex items-center justify-center w-12 h-12 rounded-full bg-primary bg-opacity-90 border-2 border-accent shadow-lg transition duration-300"
-  >
-    <img id="menu-flag-icon" src="/usa.png" alt="Menu Flag" class="w-8 h-8 rounded-full object-cover" />
-  </button>
-</div>
 
 <!-- Botón de cambio de idioma con menú desplegable -->
 <div class="fixed z-40 top-6 right-6 lg:right-[22%] hidden md:flex flex-col items-center">
@@ -115,3 +121,28 @@
     </ul>
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    // Abrir el menú al hacer clic en el botón hamburguesa
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.remove('-translate-x-full');
+    });
+
+    // Cerrar el menú al hacer clic en el botón de cerrar
+    menuClose.addEventListener('click', () => {
+      mobileMenu.classList.add('-translate-x-full');
+    });
+
+    // Cerrar el menú cuando se hace clic en un enlace de sección
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('-translate-x-full');
+      });
+    });
+  });
+</script>

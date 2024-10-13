@@ -32,5 +32,27 @@ const { title } = Astro.props;
 <style is:global>
     html {
         font-family: system-ui, sans-serif;
+        scroll-behavior: smooth;
+    }
+     /* Estilo del contenedor de la barra de desplazamiento */
+     ::-webkit-scrollbar {
+      width: 8px; /* Ancho de la barra de desplazamiento */
+      background-color: transparent; /* Fondo de la barra (puedes ponerlo en transparente o un color específico) */
+    }
+
+    /* Estilo del "pulgar" o la parte que se mueve en la barra */
+    ::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.1); /* Color del pulgar con opacidad */
+      border-radius: 10px; /* Bordes redondeados */
+    }
+
+    /* Estilo del pulgar cuando está activo (al hacer clic o desplazar) */
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: rgba(255, 255, 255, 0.3); /* Cambiar color al pasar el cursor o interactuar */
+    }
+
+    /* Opcional: estilo de la barra de desplazamiento cuando está inactiva */
+    ::-webkit-scrollbar-track {
+      background-color: transparent; /* Fondo del track de la barra */
     }
 </style>
