@@ -6,6 +6,36 @@ document.addEventListener('DOMContentLoaded', () => {
   const navHeight = document.querySelector('nav').offsetHeight; // Obtener la altura del nav
   let isScrolling = false; // Variable para rastrear si se está desplazando
 
+  const languageToggle = document.getElementById('language-toggle');
+  const languageDropdown = document.getElementById('language-dropdown');
+  const currentFlagIcon = document.getElementById('current-flag-icon'); // Botón de idioma para pantallas grandes
+
+  // Texto de la sección hero
+  const welcomeText = document.getElementById('welcome-text');
+  const nameText = document.getElementById('name-text');
+  const computerScienceText = document.getElementById('computer-science-text');
+  const imText = document.getElementById('im-text');
+
+  // Texto de la sección About Me
+  const aboutTitle = document.getElementById('about-title');
+  const aboutSubtitle = document.getElementById('about-subtitle');
+  const aboutGreeting = document.getElementById('about-greeting');
+  const aboutDescription = document.getElementById('about-description');
+
+  // Span de edad en About Me
+  const ageSpan = aboutDescription.querySelector('.age-span');
+  const roleSpan = aboutDescription.querySelector('.role-span');
+  const skillsSpans = aboutDescription.querySelector('.skills-span');
+
+  // Texto de la sección Skills
+  const skillsTitle = document.getElementById('skills-title');
+  const skillsSubtitle = document.getElementById('skills-subtitle');
+
+  // Elementos de los nombres de idiomas en la sección About Me
+  const germanLanguage = document.getElementById('german-language');
+  const spanishLanguage = document.getElementById('spanish-language');
+  const englishLanguage = document.getElementById('english-language');
+
   // Función para mover el indicador y la barra LED
   const moveIndicator = (element) => {
     const linkRect = element.getBoundingClientRect();
@@ -82,11 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
     moveIndicator(activeLink);
   }
 
-  // Funcionalidad del menú desplegable de idiomas
-  const languageToggle = document.getElementById('language-toggle');
-  const languageDropdown = document.getElementById('language-dropdown');
-  const languageIcon = document.querySelector('#language-toggle img');
-
   // Función para mostrar/ocultar el menú desplegable de idiomas
   function toggleDropdown() {
     languageDropdown.classList.toggle('hidden');
@@ -98,67 +123,80 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleDropdown();
   });
 
-  // Función para cambiar los textos a español y actualizar el ícono de la bandera
-  const changeToSpanish = () => {
-    // Cambiar el texto del hero
-    document.getElementById('welcome-text').textContent = "BIENVENIDO";
+  // Función para cambiar el idioma y actualizar la bandera y los textos en la sección hero y About Me
+  window.changeLanguage = (lang, flagSrc) => {
+    // Cambiar la imagen de la bandera en el botón de idioma
+    currentFlagIcon.src = flagSrc;
 
-    // Cambiar el texto de "Computer Science"
-    document.getElementById('computer-science-text').textContent = "Ciencias de la Computación";
+    // Actualizar los textos según el idioma seleccionado
+    if (lang === 'de') {
+      // Hero section
+      welcomeText.textContent = "WILLKOMMEN";
+      imText.textContent = "Ich bin";
+      computerScienceText.textContent = "Applikationsentwickler Student";
 
-    // Cambiar el texto de "I'm"
-    document.getElementById('im-text').textContent = "Soy";
+      // About Me section
+      aboutTitle.textContent = "ÜBER MICH";
+      aboutSubtitle.textContent = "Über mich";
+      aboutGreeting.textContent = "HALLO, ICH BIN LUIS";
+      ageSpan.textContent = "18 Jahre alt";
+      roleSpan.textContent = "Applikationsentwickler Student";
+      skillsSpans.textContent = "Frontend und Backend";
 
-    document.getElementById('greeting').textContent = "Hola, soy Luis 👋";
-    document.getElementById('description').textContent = "Tengo 18 años, soy de España, Madrid, y actualmente soy estudiante de informática en mi segundo año y me encanta programar. Tengo conocimientos de Frontend y Backend.";
+      // Nombres de los idiomas
+      germanLanguage.textContent = "Deutsch";
+      spanishLanguage.textContent = "Spanisch";
+      englishLanguage.textContent = "Englisch";
 
-    // Cambiar textos del menú
-    document.querySelector('a[href="#aboutMe"]').textContent = "Sobre Mí";
-    document.querySelector('a[href="#skills"]').textContent = "Habilidades";
-    document.querySelector('a[href="#education"]').textContent = "Educación";
-    document.querySelector('a[href="#projects"]').textContent = "Proyectos";
-    document.querySelector('a[href="#contact"]').textContent = "Contacto";
+      skillsTitle.textContent = "FÄHIGKEITEN";
+      skillsSubtitle.textContent = "Fähigkeiten";
+    } else if (lang === 'en') {
+      // Hero section
+      welcomeText.textContent = "WELCOME";
+      imText.textContent = "I am";
+      computerScienceText.textContent = "Computer Science Student";
 
-    // Cambiar la imagen del botón de idioma
-    languageIcon.src = "/spanish.png"; // Cambia la ruta a la imagen de la bandera de España
+      // About Me section
+      aboutTitle.textContent = "ABOUT ME";
+      aboutSubtitle.textContent = "About Me";
+      aboutGreeting.textContent = "HELLO, I'M LUIS";
+      ageSpan.textContent = "18 years old";
+      roleSpan.textContent = "computer science student";
+      skillsSpans.textContent = "Frontend and Backend";
+
+      // Nombres de los idiomas
+      germanLanguage.textContent = "German";
+      spanishLanguage.textContent = "Spanish";
+      englishLanguage.textContent = "English";
+
+      skillsTitle.textContent = "SKILLS";
+      skillsSubtitle.textContent = "Skills";
+    } else if (lang === 'es') {
+      // Hero section
+      welcomeText.textContent = "BIENVENIDO";
+      imText.textContent = "Soy";
+      computerScienceText.textContent = "Estudiante de Desarrollo de Aplicaciones";
+
+      // About Me section
+      aboutTitle.textContent = "SOBRE MÍ";
+      aboutSubtitle.textContent = "Sobre mí";
+      aboutGreeting.textContent = "HOLA, SOY LUIS";
+      ageSpan.textContent = "18 años";
+      roleSpan.textContent = "estudiante de desarrollo de aplicaciones";
+      skillsSpans.textContent = "Frontend y Backend";
+
+      // Nombres de los idiomas
+      germanLanguage.textContent = "Alemán";
+      spanishLanguage.textContent = "Español";
+      englishLanguage.textContent = "Inglés";
+
+      skillsTitle.textContent = "HABILIDADES";
+      skillsSubtitle.textContent = "Habilidades";
+    }
+
+    // Cerrar el menú desplegable después de seleccionar el idioma
+    languageDropdown.classList.add('hidden');
   };
-
-  // Función para cambiar los textos a inglés y actualizar el ícono de la bandera
-  const changeToEnglish = () => {
-    // Cambiar el texto del hero
-    document.getElementById('welcome-text').textContent = "WELCOME";
-
-    // Cambiar el texto de "Ciencias de la Computación" a "Computer Science"
-    document.getElementById('computer-science-text').textContent = "Computer Science";
-
-    // Cambiar el texto de "Soy" a "I'm"
-    document.getElementById('im-text').textContent = "I'm";
-
-    document.getElementById('greeting').textContent = "Hi, I'm Luis 👋";
-    document.getElementById('description').textContent = "I am 18 years old, from Spain, Madrid and I am currently a computer science student in my second year and I love programming. I have knowledge of Frontend and Backend.";
-
-    // Cambiar textos del menú
-    document.querySelector('a[href="#aboutMe"]').textContent = "About Me";
-    document.querySelector('a[href="#skills"]').textContent = "Skills";
-    document.querySelector('a[href="#education"]').textContent = "Education";
-    document.querySelector('a[href="#projects"]').textContent = "Projects";
-    document.querySelector('a[href="#contact"]').textContent = "Contact";
-
-    // Cambiar la imagen del botón de idioma
-    languageIcon.src = "/usa.png"; // Cambia la ruta a la imagen de la bandera de USA
-  };
-
-  // Listener para cambiar al español
-  const spanishFlag = document.querySelector('button[onclick="changeLanguage(\'es\')"]');
-  if (spanishFlag) {
-    spanishFlag.addEventListener('click', changeToSpanish);
-  }
-
-  // Listener para cambiar al inglés
-  const englishFlag = document.querySelector('button[onclick="changeLanguage(\'en\')"]');
-  if (englishFlag) {
-    englishFlag.addEventListener('click', changeToEnglish);
-  }
 
   // Cierra el menú desplegable si se hace clic fuera de él
   window.addEventListener('click', (event) => {

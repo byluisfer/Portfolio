@@ -69,37 +69,42 @@
   </div>
 </nav>
 
-<!-- Botón de cambio de idioma con menú desplegable -->
-<div
-  class="fixed z-20 top-6 right-6 lg:right-[22%] hidden md:flex flex-col items-center"
->
-  <!-- Oculto en pantallas pequeñas y medianas -->
-  <div
-    class="relative flex items-center justify-center rounded-full border-2 bg-primary bg-opacity-90 border-accent p-1 h-12 w-12"
+<!-- Botón de menú para pantallas móviles y medianas -->
+<div class="fixed z-20 top-6 left-6 flex items-center sm:flex md:hidden">
+  <!-- Visible en pantallas móviles, oculto en pantallas medianas y grandes -->
+  <button
+    id="menu-toggle"
+    class="flex items-center justify-center w-12 h-12 rounded-full bg-primary bg-opacity-90 border-2 border-accent shadow-lg transition duration-300"
   >
-    <!-- Botón con la bandera de idioma -->
-    <button
-      id="language-toggle"
-      class="flex items-center justify-center w-12 h-12 rounded-full transition duration-300"
-    >
-      <img src="/usa.png" alt="Change Language" class="w-10 h-10 rounded-full object-cover" />
+    <img id="menu-flag-icon" src="/usa.png" alt="Menu Flag" class="w-8 h-8 rounded-full object-cover" />
+  </button>
+</div>
+
+<!-- Botón de cambio de idioma con menú desplegable -->
+<div class="fixed z-40 top-6 right-6 lg:right-[22%] hidden md:flex flex-col items-center">
+  <!-- Botón con la bandera de idioma -->
+  <div class="relative flex items-center justify-center rounded-full border-2 bg-primary bg-opacity-90 border-accent p-1 h-12 w-12">
+    <button id="language-toggle" class="flex items-center justify-center w-12 h-12 rounded-full transition duration-300">
+      <img id="current-flag-icon" src="/german.png" alt="Change Language" class="w-10 h-10 rounded-full object-cover" />
     </button>
   </div>
 
   <!-- Menú desplegable de idiomas -->
-  <div
-    id="language-dropdown"
-    class="absolute top-14 right-0 bg-primary bg-opacity-90 border border-accent rounded-lg shadow-lg hidden"
-  >
-    <ul class="flex flex-col items-center p-2">
-      <li class="mb-2">
-        <button onclick="changeLanguage('es')" class="flex items-center justify-center w-10 h-10 rounded-full">
-          <img src="/spanish.png" alt="Change Language to Spanish" class="w-8 h-8 rounded-full object-cover" />
+  <div id="language-dropdown" class="absolute top-14 right-0 bg-primary bg-opacity-90 border border-accent rounded-lg shadow-lg hidden">
+    <ul class="flex flex-col items-center p-2 space-y-2"> <!-- Agregando espacio entre los botones -->
+      <li>
+        <button onclick="changeLanguage('de', '/german.png')" class="flex items-center justify-center w-10 h-10 rounded-full">
+          <img src="/german.png" alt="German Language" class="w-8 h-8 rounded-full object-cover" />
         </button>
       </li>
       <li>
-        <button onclick="changeLanguage('en')" class="flex items-center justify-center w-10 h-10 rounded-full">
-          <img src="/usa.png" alt="Change Language to English" class="w-8 h-8 rounded-full object-cover" />
+        <button onclick="changeLanguage('en', '/usa.png')" class="flex items-center justify-center w-10 h-10 rounded-full">
+          <img src="/usa.png" alt="English Language" class="w-8 h-8 rounded-full object-cover" />
+        </button>
+      </li>
+      <li>
+        <button onclick="changeLanguage('es', '/spanish.png')" class="flex items-center justify-center w-10 h-10 rounded-full">
+          <img src="/spanish.png" alt="Spanish Language" class="w-8 h-8 rounded-full object-cover" />
         </button>
       </li>
     </ul>

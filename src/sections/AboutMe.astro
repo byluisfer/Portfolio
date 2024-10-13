@@ -1,10 +1,12 @@
 <section class="h-screen">
-    <h1 class="relative text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-black dark:text-white font-saira font-black z-10 text-center">
-        ABOUT ME
+    <!-- Título de la sección -->
+    <h1 id="about-title" class="relative text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-black dark:text-white font-saira font-black z-10 text-center">
+        ÜBER MICH
     </h1>
 
-    <h2 class="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary font-dafoe font-regular z-20 text-center transform -translate-y-20 sm:-translate-y-[100px] md:-translate-y-[125px] lg:-translate-y-[135px] translate-x-6 sm:translate-x-[38px] md:translate-x-[40px] lg:translate-x-[30px] text-shadow-led-effect-h2 dark:text-shadow-dark-led-effect-h2">
-        About Me
+    <!-- Subtítulo -->
+    <h2 id="about-subtitle" class="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary font-dafoe font-regular z-20 text-center transform -translate-y-20 sm:-translate-y-[100px] md:-translate-y-[125px] lg:-translate-y-[135px] translate-x-6 sm:translate-x-[38px] md:translate-x-[40px] lg:translate-x-[30px] text-shadow-led-effect-h2 dark:text-shadow-dark-led-effect-h2">
+        Über mich
     </h2>
 
     <div class="flex flex-col sm:flex-row items-center sm:items-start -mt-20 space-y-4 sm:space-y-0 sm:space-x-8">
@@ -13,26 +15,26 @@
 
         <!-- Contenedor del texto a la derecha -->
         <div class="text-center sm:text-left">
-            <h1 class="text-black dark:text-white text-2xl sm:text-3xl font-archivo">
-                HI, I'M LUIS
+            <h1 id="about-greeting" class="text-black dark:text-white text-lg sm:text-xl md:text-2xl lg:text-3xl font-archivo">
+                HALLO, ICH BIN LUIS
                 <span class="inline-block transform origin-custom-origin hover:animate-wave cursor-pointer">👋</span>
             </h1>
-            <p class="text-lg sm:text-xl md:text-xl lg:text-xl text-black dark:text-white font-mplus font-regular mt-4 leading-tight">
-                I am <span class="font-lobster led-effect-aboutMe">18 years old</span>, from Spain, Madrid and I am
-                currently a <span class="font-lobster led-effect-aboutMe">computer science student</span> in my
-                second year and I love programming. I have knowledge of <span class="font-lobster led-effect-aboutMe">
-                Frontend</span> and <span class="font-lobster led-effect-aboutMe">Backend.</span>
-            </p>
+            <p id="about-description" class="text-lg sm:text-xl md:text-xl lg:text-xl text-black dark:text-white font-mplus font-regular mt-4 leading-tight">
+                Ich bin <span class="font-lobster led-effect-aboutMe age-span">18 Jahre alt</span>, aus Spanien, Madrid und ich bin
+                derzeit <span class="font-lobster led-effect-aboutMe role-span">Applikationsentwickler Student</span> in meinem
+                zweiten Jahr und ich liebe das Programmieren. Ich habe Kenntnisse in <span class="font-lobster led-effect-aboutMe skills-span">
+                Frontend</span> und <span class="font-lobster led-effect-aboutMe">Backend</span>.
+            </p>            
 
             <!-- Contenedor flex para idiomas y redes sociales -->
             <div class="flex mt-8">
                 <!-- Div de idiomas -->
                 <div class="relative rounded-xl border-2 border-black dark:border-white py-4 px-6 text-black dark:text-white max-w-base">
-                    <h2 class="text-2xl font-archivo">LANGUAGES.</h2>
+                    <h2 class="text-2xl font-archivo">SPRACHEN.</h2>
                     <div class="space-y-2">
                         <!-- Deutsch -->
                         <div class="flex items-center">
-                            <span class="font-mplus text-lg">Deutsch</span>
+                            <span id="german-language" class="font-mplus text-lg">Deutsch</span>
                             <div class="flex space-x-1 ml-2 sm:ml-20">
                                 <img src="/star.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10">
                                 <img src="/star.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10">
@@ -42,7 +44,7 @@
                         </div>
                         <!-- Spanisch -->
                         <div class="flex items-center">
-                            <span class="font-mplus text-lg">Spanisch</span>
+                            <span id="spanish-language" class="font-mplus text-lg">Spanisch</span>
                             <div class="flex space-x-1 ml-2 sm:ml-20">
                                 <img src="/star.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10">
                                 <img src="/star.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10">
@@ -53,7 +55,7 @@
                         </div>
                         <!-- Englisch -->
                         <div class="flex items-center">
-                            <span class="font-mplus text-lg">Englisch</span>
+                            <span id="english-language" class="font-mplus text-lg">Englisch</span>
                             <div class="flex space-x-1 ml-2 sm:ml-20">
                                 <img src="/star.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10">
                                 <img src="/star.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10">
@@ -62,7 +64,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>                
 
                 <!-- Div de redes sociales -->
                 <div class="flex flex-col ml-6 mt-4">
@@ -84,6 +86,7 @@
         </div>
     </div>
 </section>
+
 
 <style>
     .led-effect-aboutMe {
