@@ -36,10 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const spanishLanguage = document.getElementById('spanish-language');
   const englishLanguage = document.getElementById('english-language');
 
-  // Texto de la sección Skills
-  const contactTitle = document.getElementById('contact-title');
-  const contactSubtitle = document.getElementById('contact-subtitle');
-
   // Función para mover el indicador y la barra LED
   const moveIndicator = (element) => {
     const linkRect = element.getBoundingClientRect();
@@ -162,6 +158,32 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('project3-title').textContent = "Online Shop mit AJAX";
       document.getElementById('project3-description').innerHTML = "CsBe, 24 - Dies ist ein Online-Musikshop mit implementiertem AJAX";
 
+      // Contacto
+      document.getElementById('contact-title').textContent = "KONTAKT";
+      document.getElementById('contact-subtitle').textContent = "Kontakt";
+      document.getElementById('contact-info-text').textContent = "Kontaktieren Sie mich";
+      document.getElementById('contact-prompt').innerHTML = "Haben Sie eine Frage, <br>eine Idee oder ein Projekt, <br>bei dem Sie Hilfe benötigen? <br>Kontaktieren Sie mich!";
+      document.getElementById('name').placeholder = "Ihr Name";
+      document.getElementById('email').placeholder = "Ihre E-Mail";
+      document.getElementById('subject').placeholder = "Thema";
+      document.getElementById('message').placeholder = "Ihre Nachricht";
+      document.getElementById('submit-button').textContent = "Einreichen";
+      document.getElementById('alert-message').textContent = "Das Formular wurde erfolgreich versendet.";
+
+      // Cambiar mensaje de copiado
+      window.changeCopiedMessage('de');
+
+      // Footer
+      document.getElementById('footer-navigation-title').textContent = "NAVIGATION";
+      document.getElementById('footer-aboutMe').textContent = "Über mich";
+      document.getElementById('footer-skills').textContent = "Fähigkeiten";
+      document.getElementById('footer-education').textContent = "Ausbildung";
+      document.getElementById('footer-projects').textContent = "Projekte";
+      document.getElementById('footer-contact').textContent = "Kontakt";
+      document.getElementById('footer-social-title').textContent = "SOZIALE MEDIEN";
+      document.getElementById('footer-rights-lg').textContent = "© 2024 Luis Fernández. Alle Rechte vorbehalten.";
+      document.getElementById('footer-rights-sm').textContent = "© 2024 Luis Fernández. Alle Rechte vorbehalten.";
+
       // Idiomas
       germanLanguage.textContent = "Deutsch";
       spanishLanguage.textContent = "Spanisch";
@@ -169,9 +191,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       skillsTitle.textContent = "FÄHIGKEITEN";
       skillsSubtitle.textContent = "Fähigkeiten";
-
-      contactTitle.textContent = "KONTAKT";
-      contactSubtitle.textContent = "Kontakt";
     } else if (lang === 'en') {
       // Navegación
       document.getElementById('nav-aboutMe').textContent = "About Me";
@@ -201,6 +220,32 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('project3-title').textContent = "Online Shop with AJAX";
       document.getElementById('project3-description').innerHTML = "CsBe, 24 - This is an online music shop with implemented AJAX";
 
+      // Contacto
+      document.getElementById('contact-title').textContent = "CONTACT";
+      document.getElementById('contact-subtitle').textContent = "Contact";
+      document.getElementById('contact-info-text').textContent = "Get in touch";
+      document.getElementById('contact-prompt').innerHTML = "Do you have a question, <br>an idea or a project <br>you need help with? <br>Contact Me!";
+      document.getElementById('name').placeholder = "Your Name";
+      document.getElementById('email').placeholder = "Your Email";
+      document.getElementById('subject').placeholder = "Subject";
+      document.getElementById('message').placeholder = "Your Message";
+      document.getElementById('submit-button').textContent = "Submit";
+      document.getElementById('alert-message').textContent = "The form was submitted successfully.";
+
+      // Cambiar mensaje de copiado
+      window.changeCopiedMessage('en');
+
+      // Footer
+      document.getElementById('footer-navigation-title').textContent = "NAVIGATION";
+      document.getElementById('footer-aboutMe').textContent = "About Me";
+      document.getElementById('footer-skills').textContent = "Skills";
+      document.getElementById('footer-education').textContent = "Education";
+      document.getElementById('footer-projects').textContent = "Projects";
+      document.getElementById('footer-contact').textContent = "Contact";
+      document.getElementById('footer-social-title').textContent = "SOCIAL MEDIA";
+      document.getElementById('footer-rights-lg').textContent = "© 2024 Luis Fernández. All rights reserved.";
+      document.getElementById('footer-rights-sm').textContent = "© 2024 Luis Fernández. All rights reserved.";
+
       // Idiomas
       germanLanguage.textContent = "German";
       spanishLanguage.textContent = "Spanish";
@@ -208,9 +253,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       skillsTitle.textContent = "SKILLS";
       skillsSubtitle.textContent = "Skills";
-
-      contactTitle.textContent = "CONTACT";
-      contactSubtitle.textContent = "Contact";
     } else if (lang === 'es') {
       // Navegación
       document.getElementById('nav-aboutMe').textContent = "Sobre mí";
@@ -240,6 +282,32 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('project3-title').textContent = "Tienda en línea con AJAX";
       document.getElementById('project3-description').innerHTML = "CsBe, 24 - Esta es una tienda de música en línea con AJAX implementado";
 
+      // Contacto
+      document.getElementById('contact-title').textContent = "CONTACTO";
+      document.getElementById('contact-subtitle').textContent = "Contacto";
+      document.getElementById('contact-info-text').textContent = "Ponte en contacto";
+      document.getElementById('contact-prompt').innerHTML = "¿Tienes una pregunta, <br>una idea o un proyecto <br>con el que necesitas ayuda? <br>¡Contáctame!";
+      document.getElementById('name').placeholder = "Tu Nombre";
+      document.getElementById('email').placeholder = "Tu Correo Electrónico";
+      document.getElementById('subject').placeholder = "Asunto";
+      document.getElementById('message').placeholder = "Tu Mensaje";
+      document.getElementById('submit-button').textContent = "Enviar";
+      document.getElementById('alert-message').textContent = "El formulario se ha enviado con éxito.";
+
+      // Cambiar mensaje de copiado
+      window.changeCopiedMessage('es');
+
+      // Footer
+      document.getElementById('footer-navigation-title').textContent = "NAVEGACIÓN";
+      document.getElementById('footer-aboutMe').textContent = "Sobre mí";
+      document.getElementById('footer-skills').textContent = "Habilidades";
+      document.getElementById('footer-education').textContent = "Educación";
+      document.getElementById('footer-projects').textContent = "Proyectos";
+      document.getElementById('footer-contact').textContent = "Contacto";
+      document.getElementById('footer-social-title').textContent = "REDES SOCIALES";
+      document.getElementById('footer-rights-lg').textContent = "© 2024 Luis Fernández. Todos los derechos reservados.";
+      document.getElementById('footer-rights-sm').textContent = "© 2024 Luis Fernández. Todos los derechos reservados.";
+
       // Idiomas
       germanLanguage.textContent = "Alemán";
       spanishLanguage.textContent = "Español";
@@ -247,9 +315,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       skillsTitle.textContent = "HABILIDADES";
       skillsSubtitle.textContent = "Habilidades";
-
-      contactTitle.textContent = "CONTACTO";
-      contactSubtitle.textContent = "Contacto";
     }
 
     // Cerrar el menú desplegable después de seleccionar el idioma
@@ -262,4 +327,18 @@ document.addEventListener('DOMContentLoaded', () => {
       languageDropdown.classList.add('hidden');
     }
   });
+
+  // Función para cambiar el idioma del mensaje de copiado
+  window.changeCopiedMessage = (lang) => {
+    const copiedMsgElements = document.querySelectorAll('#copied-msg');
+    copiedMsgElements.forEach((element) => {
+      if (lang === 'de') {
+        element.textContent = '📋 Kopiert!';
+      } else if (lang === 'en') {
+        element.textContent = '📋 Copied!';
+      } else if (lang === 'es') {
+        element.textContent = '📋 Copiado!';
+      }
+    });
+  };
 });

@@ -13,8 +13,8 @@ const { text, label } = Astro.props as Props;
   <div class="clipboard-button text-xs sm:text-sm md:text-base lg:text-lg border-2 border-accent rounded-full px-6 py-4 cursor-pointer relative text-center sm:text-left" data-text={text}>
     {label}
     <!-- Contenedor de la alerta personalizada -->
-    <div class="copy-alert absolute top-[-40px] left-1/2 transform -translate-x-1/2 px-3 py-2 bg-accent text-white rounded-md text-sm opacity-0 transition-opacity duration-300">
-      📋 Copied!
+    <div id="copied-msg" class="copy-alert absolute top-[-40px] left-1/2 transform -translate-x-1/2 px-3 py-2 bg-accent text-white rounded-md text-sm opacity-0 transition-opacity duration-300">
+      📋 Kopiert! <!-- Este mensaje será dinámico -->
     </div>
   </div>
 </div>
@@ -46,6 +46,27 @@ const { text, label } = Astro.props as Props;
       });
     });
   });
+
+  // Extiende la interfaz de Window para incluir la función changeCopiedMessage
+  declare global {
+    interface Window {
+      changeCopiedMessage: (lang: string) => void;
+    }
+  }
+
+  // Función para cambiar el idioma del mensaje de copiado
+  window.changeCopiedMessage = (lang: string) => {
+    const copiedMsgElements = document.querySelectorAll('#copied-msg');
+    copiedMsgElements.forEach((element) => {
+      if (lang === 'de') {
+        element.textContent = '📋 Kopiert!';
+      } else if (lang === 'en') {
+        element.textContent = '📋 Copied!';
+      } else if (lang === 'es') {
+        element.textContent = '📋 Copiado!';
+      }
+    });
+  };
 </script>
 
 <!-- Estilos adicionales -->
