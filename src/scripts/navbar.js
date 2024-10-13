@@ -36,6 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const spanishLanguage = document.getElementById('spanish-language');
   const englishLanguage = document.getElementById('english-language');
 
+  // Texto de la sección Skills
+  const contactTitle = document.getElementById('contact-title');
+  const contactSubtitle = document.getElementById('contact-subtitle');
+
   // Función para mover el indicador y la barra LED
   const moveIndicator = (element) => {
     const linkRect = element.getBoundingClientRect();
@@ -123,19 +127,24 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleDropdown();
   });
 
-  // Función para cambiar el idioma y actualizar la bandera y los textos en la sección hero y About Me
+  // Función para cambiar el idioma y actualizar la bandera y los textos en la barra de navegación y las secciones
   window.changeLanguage = (lang, flagSrc) => {
     // Cambiar la imagen de la bandera en el botón de idioma
     currentFlagIcon.src = flagSrc;
 
-    // Actualizar los textos según el idioma seleccionado
+    // Actualizar los textos de navegación y las secciones según el idioma seleccionado
     if (lang === 'de') {
-      // Hero section
+      // Navegación
+      document.getElementById('nav-aboutMe').textContent = "Über mich";
+      document.getElementById('nav-skills').textContent = "Fähigkeiten";
+      document.getElementById('nav-education').textContent = "Ausbildung";
+      document.getElementById('nav-projects').textContent = "Projekte";
+      document.getElementById('nav-contact').textContent = "Kontakt";
+
+      // Sección Hero y Sobre mí
       welcomeText.textContent = "WILLKOMMEN";
       imText.textContent = "Ich bin";
       computerScienceText.textContent = "Applikationsentwickler Student";
-
-      // About Me section
       aboutTitle.textContent = "ÜBER MICH";
       aboutSubtitle.textContent = "Über mich";
       aboutGreeting.textContent = "HALLO, ICH BIN LUIS";
@@ -143,20 +152,38 @@ document.addEventListener('DOMContentLoaded', () => {
       roleSpan.textContent = "Applikationsentwickler Student";
       skillsSpans.textContent = "Frontend und Backend";
 
-      // Nombres de los idiomas
+      // Proyectos
+      document.getElementById('projects-title').textContent = "PROJEKTE";
+      document.getElementById('projects-subtitle').textContent = "Projekte";
+      document.getElementById('project1-title').textContent = "Tic Tac Toe mit KI";
+      document.getElementById('project1-description').innerHTML = "CsBe, 24 - Dies ist mein eigenes Tic-Tac-Toe-Spiel mit eigenem vs. KI-Modus";
+      document.getElementById('project2-title').textContent = "Real Madrid Website";
+      document.getElementById('project2-description').innerHTML = "CsBe, 24 - Dies ist eine responsive Website basierend auf Real Madrid";
+      document.getElementById('project3-title').textContent = "Online Shop mit AJAX";
+      document.getElementById('project3-description').innerHTML = "CsBe, 24 - Dies ist ein Online-Musikshop mit implementiertem AJAX";
+
+      // Idiomas
       germanLanguage.textContent = "Deutsch";
       spanishLanguage.textContent = "Spanisch";
       englishLanguage.textContent = "Englisch";
 
       skillsTitle.textContent = "FÄHIGKEITEN";
       skillsSubtitle.textContent = "Fähigkeiten";
+
+      contactTitle.textContent = "KONTAKT";
+      contactSubtitle.textContent = "Kontakt";
     } else if (lang === 'en') {
-      // Hero section
+      // Navegación
+      document.getElementById('nav-aboutMe').textContent = "About Me";
+      document.getElementById('nav-skills').textContent = "Skills";
+      document.getElementById('nav-education').textContent = "Education";
+      document.getElementById('nav-projects').textContent = "Projects";
+      document.getElementById('nav-contact').textContent = "Contact";
+
+      // Sección Hero y Sobre mí
       welcomeText.textContent = "WELCOME";
       imText.textContent = "I am";
       computerScienceText.textContent = "Computer Science Student";
-
-      // About Me section
       aboutTitle.textContent = "ABOUT ME";
       aboutSubtitle.textContent = "About Me";
       aboutGreeting.textContent = "HELLO, I'M LUIS";
@@ -164,20 +191,38 @@ document.addEventListener('DOMContentLoaded', () => {
       roleSpan.textContent = "computer science student";
       skillsSpans.textContent = "Frontend and Backend";
 
-      // Nombres de los idiomas
+      // Proyectos
+      document.getElementById('projects-title').textContent = "PROJECTS";
+      document.getElementById('projects-subtitle').textContent = "Projects";
+      document.getElementById('project1-title').textContent = "Tic Tac Toe with AI";
+      document.getElementById('project1-description').innerHTML = "CsBe, 24 - This is my own Tic-Tac-Toe game with an AI mode";
+      document.getElementById('project2-title').textContent = "Real Madrid Website";
+      document.getElementById('project2-description').innerHTML = "CsBe, 24 - This is a responsive website based on Real Madrid";
+      document.getElementById('project3-title').textContent = "Online Shop with AJAX";
+      document.getElementById('project3-description').innerHTML = "CsBe, 24 - This is an online music shop with implemented AJAX";
+
+      // Idiomas
       germanLanguage.textContent = "German";
       spanishLanguage.textContent = "Spanish";
       englishLanguage.textContent = "English";
 
       skillsTitle.textContent = "SKILLS";
       skillsSubtitle.textContent = "Skills";
+
+      contactTitle.textContent = "CONTACT";
+      contactSubtitle.textContent = "Contact";
     } else if (lang === 'es') {
-      // Hero section
+      // Navegación
+      document.getElementById('nav-aboutMe').textContent = "Sobre mí";
+      document.getElementById('nav-skills').textContent = "Habilidades";
+      document.getElementById('nav-education').textContent = "Educación";
+      document.getElementById('nav-projects').textContent = "Proyectos";
+      document.getElementById('nav-contact').textContent = "Contacto";
+
+      // Sección Hero y Sobre mí
       welcomeText.textContent = "BIENVENIDO";
       imText.textContent = "Soy";
       computerScienceText.textContent = "Estudiante de Desarrollo de Aplicaciones";
-
-      // About Me section
       aboutTitle.textContent = "SOBRE MÍ";
       aboutSubtitle.textContent = "Sobre mí";
       aboutGreeting.textContent = "HOLA, SOY LUIS";
@@ -185,13 +230,26 @@ document.addEventListener('DOMContentLoaded', () => {
       roleSpan.textContent = "estudiante de desarrollo de aplicaciones";
       skillsSpans.textContent = "Frontend y Backend";
 
-      // Nombres de los idiomas
+      // Proyectos
+      document.getElementById('projects-title').textContent = "PROYECTOS";
+      document.getElementById('projects-subtitle').textContent = "Proyectos";
+      document.getElementById('project1-title').textContent = "Tic Tac Toe con IA";
+      document.getElementById('project1-description').innerHTML = "CsBe, 24 - Este es mi propio juego de Tic-Tac-Toe con un modo de IA";
+      document.getElementById('project2-title').textContent = "Sitio web de Real Madrid";
+      document.getElementById('project2-description').innerHTML = "CsBe, 24 - Este es un sitio web responsivo basado en el Real Madrid";
+      document.getElementById('project3-title').textContent = "Tienda en línea con AJAX";
+      document.getElementById('project3-description').innerHTML = "CsBe, 24 - Esta es una tienda de música en línea con AJAX implementado";
+
+      // Idiomas
       germanLanguage.textContent = "Alemán";
       spanishLanguage.textContent = "Español";
       englishLanguage.textContent = "Inglés";
 
       skillsTitle.textContent = "HABILIDADES";
       skillsSubtitle.textContent = "Habilidades";
+
+      contactTitle.textContent = "CONTACTO";
+      contactSubtitle.textContent = "Contacto";
     }
 
     // Cerrar el menú desplegable después de seleccionar el idioma
