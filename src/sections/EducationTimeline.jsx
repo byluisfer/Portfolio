@@ -14,7 +14,7 @@ const EducationTimeline = () => {
         contentArrowStyle={{ borderRight: "7px solid  #0e0e11" }}
         date="August 23 - Aktualität"
         iconStyle={{ background: "#1a285a", color: "#ffffff" }}
-        icon={<FaBriefcase />}
+        icon={<img src="/spanish.png" alt="Icon" style={{ width: '100%', height: '100%', borderRadius: '50%' }} /> }
       >
         <h3 className="vertical-timeline-element-title">ICT Ausbildung</h3>
         <h4
@@ -64,7 +64,7 @@ const EducationTimeline = () => {
         className="vertical-timeline-element--education"
         contentStyle={{ background: "#0e0e11", color: "#ffffff" }}
         contentArrowStyle={{ borderRight: "7px solid  #0e0e11" }}
-        date="August 21 - Juli 22"
+        date="September 19 - Juli 20"
         iconStyle={{ background: "#9D3BE4", color: "#ffffff" }}
         icon={<FaGraduationCap />}
       >
