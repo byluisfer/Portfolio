@@ -9,17 +9,17 @@
         Über mich
     </h2>
 
-    <div class="flex flex-col sm:flex-row items-center sm:items-start -mt-20 space-y-4 sm:space-y-0 sm:space-x-8">
+    <div class="flex flex-col sm:flex-row items-center sm:items-start -mt-10 sm:-mt-16 lg:-mt-20 space-y-4 sm:space-y-0 sm:space-x-8">
         <!-- Imagen a la izquierda -->
-        <img src="/sa.png" alt="Foto de About Me" class="w-64 sm:w-80 h-auto object-cover rounded-lg">
+        <img src="/sa.png" alt="Foto de About Me" class="w-64 sm:w-80 md:w-96 lg:w-96 h-auto object-cover rounded-lg">
 
         <!-- Contenedor del texto a la derecha -->
-        <div class="text-center sm:text-left">
-            <h1 id="about-greeting" class="text-black dark:text-white text-lg sm:text-xl md:text-2xl lg:text-3xl font-archivo">
+        <div class="text-center sm:text-left space-y-6">
+            <h1 id="about-greeting" class="text-black mb-10 dark:text-white text-lg sm:text-xl md:text-2xl lg:text-3xl font-archivo">
                 HALLO, ICH BIN LUIS
                 <span class="inline-block transform origin-custom-origin hover:animate-wave cursor-pointer">👋</span>
             </h1>
-            <p id="about-description" class="text-lg sm:text-xl md:text-xl lg:text-xl text-black dark:text-white font-mplus font-regular mt-4 leading-tight">
+            <p id="about-description" class="text-lg sm:text-xl md:text-xl lg:text-xl text-black dark:text-white font-mplus font-regular leading-snug">
                 Ich bin <span class="font-lobster led-effect-aboutMe age-span">18 Jahre alt</span>, aus Spanien, Madrid und ich bin
                 derzeit <span class="font-lobster led-effect-aboutMe role-span">Applikationsentwickler Student</span> in meinem
                 zweiten Jahr und ich liebe das Programmieren. Ich habe Kenntnisse in <span class="font-lobster led-effect-aboutMe skills-span">
@@ -27,73 +27,68 @@
             </p>            
 
             <!-- Contenedor flex para idiomas y redes sociales -->
-            <div class="flex mt-8">
+            <div class="flex flex-col sm:flex-row sm:space-x-8">
                 <!-- Div de idiomas -->
-                <div class="relative rounded-xl border-2 border-black dark:border-white py-4 px-6 text-black dark:text-white max-w-base">
-                    <h2 class="text-2xl font-archivo">SPRACHEN.</h2>
+                <div class="relative rounded-xl border-2 border-black mt-2 sm:mt-10 dark:border-white py-4 px-6 text-black dark:text-white w-[24rem]"> <!-- Cambié max-w-xs a max-w-lg -->
+                    <h2 class="text-2xl font-archivo mb-4">SPRACHEN.</h2>
                     <div class="space-y-2">
                         <!-- Deutsch -->
-                        <div class="flex items-center">
+                        <div class="flex justify-between items-center">
                             <span id="german-language" class="font-mplus text-lg">Deutsch</span>
-                            <div class="flex space-x-1 ml-2 sm:ml-20">
-                                <img src="/star.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10">
-                                <img src="/star.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10">
-                                <img src="/star.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10">
-                                <img src="/star.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10">
+                            <div class="flex space-x-1">
+                                <img src="/star.svg" alt="" class="w-6 sm:w-8">
+                                <img src="/star.svg" alt="" class="w-6 sm:w-8">
+                                <img src="/star.svg" alt="" class="w-6 sm:w-8">
+                                <img src="/star.svg" alt="" class="w-6 sm:w-8">
                             </div>
                         </div>
                         <!-- Spanisch -->
-                        <div class="flex items-center">
+                        <div class="flex justify-between items-center">
                             <span id="spanish-language" class="font-mplus text-lg">Spanisch</span>
-                            <div class="flex space-x-1 ml-2 sm:ml-20">
-                                <img src="/star.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10">
-                                <img src="/star.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10">
-                                <img src="/star.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10">
-                                <img src="/star.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10">
-                                <img src="/star.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10">
+                            <div class="flex space-x-1">
+                                <img src="/star.svg" alt="" class="w-6 sm:w-8">
+                                <img src="/star.svg" alt="" class="w-6 sm:w-8">
+                                <img src="/star.svg" alt="" class="w-6 sm:w-8">
+                                <img src="/star.svg" alt="" class="w-6 sm:w-8">
+                                <img src="/star.svg" alt="" class="w-6 sm:w-8">
                             </div>
                         </div>
                         <!-- Englisch -->
-                        <div class="flex items-center">
+                        <div class="flex justify-between items-center">
                             <span id="english-language" class="font-mplus text-lg">Englisch</span>
-                            <div class="flex space-x-1 ml-2 sm:ml-20">
-                                <img src="/star.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10">
-                                <img src="/star.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10">
-                                <img src="/star.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10">
-                                <img src="/star.svg" alt="" class="w-8 h-8 sm:w-10 sm:h-10">
+                            <div class="flex space-x-1">
+                                <img src="/star.svg" alt="" class="w-6 sm:w-8">
+                                <img src="/star.svg" alt="" class="w-6 sm:w-8">
+                                <img src="/star.svg" alt="" class="w-6 sm:w-8">
+                                <img src="/star.svg" alt="" class="w-6 sm:w-8">
                             </div>
                         </div>
                     </div>
                 </div>                
 
                 <!-- Div de redes sociales -->
-                <div class="flex flex-col ml-6 mt-4">
-                    <a href="https://github.com/byluisfer" class="social-icon mb-4" target="_blank" aria-label="Github">
+                <div class="flex flex-row sm:flex-col justify-center sm:justify-start mt-4 sm:mt-10 space-x-6 sm:space-x-0 sm:space-y-5">
+                    <a href="https://github.com/byluisfer" class="social-icon" target="_blank" aria-label="Github">
                         <i class="fab fa-github fa-2x text-black dark:text-white"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/luisfernandezz/" class="social-icon mb-4" target="_blank" aria-label="Linkedin">
+                    <a href="https://www.linkedin.com/in/luisfernandezz/" class="social-icon" target="_blank" aria-label="Linkedin">
                         <i class="fab fa-linkedin fa-2x text-black dark:text-white"></i>
                     </a>
-                    <a href="mailto:luisferdass@gmail.com" class="social-icon mb-4" target="_blank" aria-label="Gmail">
-                        <i class="fas fa-envelope fa-2x text-black dark:text-white"></i>
+                    <a href="mailto:luisferdass@gmail.com" class="social-icon" target="_blank" aria-label="Gmail">
+                        <i class="fa-regular fa-envelope fa-2x text-black dark:text-white"></i>
                     </a>
-                    <a href="/CV_Luis_Fernandez.pdf" download="/CV_Luis_Fernandez.pdf" class="social-icon mb-4" target="_blank" aria-label="CV">
-                        <i class="fa-solid fa-file fa-2x text-black dark:text-white"></i>
+                    <a href="/CV_Luis_Fernandez.pdf" download="/CV_Luis_Fernandez.pdf" class="social-icon" target="_blank" aria-label="CV">
+                        <i class="fa-regular fa-address-book fa-2x text-black dark:text-white"></i>
                     </a>
                 </div>
             </div>
-            <!-- Fin del contenedor flex -->
         </div>
     </div>
 </section>
 
-
 <style>
     .led-effect-aboutMe {
-        text-shadow:
-            0 0 5px #9D3BE4,
-            0 0 10px #9D3BE4,
-            0 0 15px #9D3BE4;
+        text-shadow: 0 0 5px #9D3BE4, 0 0 10px #9D3BE4, 0 0 15px #9D3BE4;
     }
 
     .social-icon {
