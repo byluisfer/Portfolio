@@ -12,11 +12,11 @@ const EducationTimeline = () => {
         className="vertical-timeline-element--work"
         contentStyle={{ background: "#0e0e11", color: "#ffffff" }}
         contentArrowStyle={{ borderRight: "7px solid  #0e0e11" }}
-        date="2011 - present"
+        date="August 23 - Aktualität"
         iconStyle={{ background: "#1a285a", color: "#ffffff" }}
         icon={<FaBriefcase />}
       >
-        <h3 className="vertical-timeline-element-title">Creative Director</h3>
+        <h3 className="vertical-timeline-element-title">ICT Ausbildung</h3>
         <h4
           className="vertical-timeline-element-subtitle"
           style={{
@@ -27,7 +27,7 @@ const EducationTimeline = () => {
             `,
           }}
         >
-          Miami, FL
+          Computer Schule Bern
         </h4>
         <p>
           Creative Direction, User Experience, Visual Design, Project
@@ -38,12 +38,12 @@ const EducationTimeline = () => {
         className="vertical-timeline-element--education"
         contentStyle={{ background: "#0e0e11", color: "#ffffff" }}
         contentArrowStyle={{ borderRight: "7px solid  #0e0e11" }}
-        date="April 2013"
+        date="August 21 - Juli 22"
         iconStyle={{ background: "#9D3BE4", color: "#ffffff" }}
         icon={<FaGraduationCap />}
       >
         <h3 className="vertical-timeline-element-title">
-          Content Marketing for Web, Mobile and Social Media
+          Sekundarschule
         </h3>
         <h4
           className="vertical-timeline-element-subtitle"
@@ -55,7 +55,33 @@ const EducationTimeline = () => {
             `,
           }}
         >
-          Online Course
+          Schulhaus Morillon
+        </h4>
+        <p>Strategy, Social Media</p>
+      </VerticalTimelineElement>
+
+      <VerticalTimelineElement
+        className="vertical-timeline-element--education"
+        contentStyle={{ background: "#0e0e11", color: "#ffffff" }}
+        contentArrowStyle={{ borderRight: "7px solid  #0e0e11" }}
+        date="August 21 - Juli 22"
+        iconStyle={{ background: "#9D3BE4", color: "#ffffff" }}
+        icon={<FaGraduationCap />}
+      >
+        <h3 className="vertical-timeline-element-title">
+          Sekundarschule
+        </h3>
+        <h4
+          className="vertical-timeline-element-subtitle"
+          style={{
+            textShadow: `
+              0 0 5px #9D3BE4,
+              0 0 10px #9D3BE4,
+              0 0 15px #9D3BE4
+            `,
+          }}
+        >
+          Colegio Cristo Rey
         </h4>
         <p>Strategy, Social Media</p>
       </VerticalTimelineElement>
