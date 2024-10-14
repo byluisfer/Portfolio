@@ -1,3 +1,23 @@
-<section>
+---
+import EducationTimeline from './EducationTimeline.jsx';
+---
+<section id="education" class="mb-5">
+    <h1 class="relative text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white font-saira font-black z-10 text-center">
+        EDUCATION
+    </h1>
 
+    <h2 class="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary font-dafoe font-regular z-20 text-center led-effect-aboutMe transform -translate-y-20 sm:-translate-y-[100px] md:-translate-y-[125px] lg:-translate-y-[135px] translate-x-6 sm:translate-x-[38px] md:translate-x-[40px] lg:translate-x-[30px]">
+        Education
+    </h2>
+    <EducationTimeline client:load />
 </section>
+
+
+<style>
+    .led-effect-aboutMe {
+        text-shadow:
+            0 0 5px #9D3BE4,
+            0 0 10px #9D3BE4,
+            0 0 15px #9D3BE4;
+    }
+</style>
