@@ -39,7 +39,6 @@ const EducationTimeline = () => {
         contentArrowStyle={{ borderRight: "7px solid  #0e0e11" }}
         date="August 21 - Juli 22"
         iconStyle={{ background: "#9D3BE4", color: "#ffffff" }}
-        icon={<img src="/morillon.png" alt="Icon" style={{ width: '100%', height: '100%', borderRadius: '50%' }} /> }
       >
         <h3 className="vertical-timeline-element-title">
           Sekundarschule
@@ -65,7 +64,6 @@ const EducationTimeline = () => {
         contentArrowStyle={{ borderRight: "7px solid  #0e0e11" }}
         date="September 19 - Juli 20"
         iconStyle={{ background: "#9D3BE4", color: "#ffffff" }}
-        icon={<img src="/cristoRey.png" alt="Icon" style={{ width: '100%', height: '100%', borderRadius: '50%' }} /> }
       >
         <h3 className="vertical-timeline-element-title">
           Sekundarschule
