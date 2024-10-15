@@ -1,12 +1,18 @@
+---
+import i18next from '../i18n.js';
+const { lang } = Astro.props;
+i18next.changeLanguage(lang || 'de');
+---
+
 <section class="h-screen">
     <!-- Título de la sección -->
     <h1 id="about-title" class="relative text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-black dark:text-white font-saira font-black z-10 text-center">
-        ÜBER MICH
+        {i18next.t('aboutmeTitle')}
     </h1>
 
     <!-- Subtítulo -->
     <h2 id="about-subtitle" class="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary font-dafoe font-regular z-20 text-center transform -translate-y-20 sm:-translate-y-[100px] md:-translate-y-[125px] lg:-translate-y-[135px] translate-x-6 sm:translate-x-[38px] md:translate-x-[40px] lg:translate-x-[30px] text-shadow-led-effect-h2 dark:text-shadow-dark-led-effect-h2">
-        Über mich
+        {i18next.t('aboutmeSubtitle')}
     </h2>
 
     <div class="flex flex-col md:flex-row items-center md:items-start -mt-10 sm:-mt-16 lg:-mt-20 space-y-4 sm:space-y-0 sm:space-x-8">
@@ -16,7 +22,7 @@
         <!-- Contenedor del texto a la derecha -->
         <div class="text-center sm:text-left space-y-6">
             <h1 id="about-greeting" class="text-black mb-10 dark:text-white text-lg sm:text-xl md:text-2xl lg:text-3xl font-archivo">
-                HALLO, ICH BIN LUIS
+                {i18next.t('aboutmeGreeting')}
                 <span class="inline-block transform origin-custom-origin hover:animate-wave cursor-pointer">👋</span>
             </h1>
             <p id="about-description" class="text-lg sm:text-xl md:text-xl lg:text-xl text-black dark:text-white font-mplus font-regular leading-snug">
