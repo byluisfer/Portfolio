@@ -1,10 +1,16 @@
+---
+import i18next from '../i18n.js';
+const { lang } = Astro.props;
+i18next.changeLanguage(lang || 'de');
+---
+
 <section class="h-screen mt-24">
   <h1 id="projects-title" class="relative text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white font-saira font-black z-10 text-center">
-    PROJEKTE
+    {i18next.t('projectsTitle')}
   </h1>
 
   <h2 id="projects-subtitle" class="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary font-dafoe font-regular z-20 text-center led-effect-projects transform -translate-y-20 sm:-translate-y-[100px] md:-translate-y-[125px] lg:-translate-y-[135px] translate-x-6 sm:translate-x-[38px] md:translate-x-[40px] lg:translate-x-[30px]">
-    Projekte
+    {i18next.t('projectsSubtitle')}
   </h2>
   
     <!-- Tic Tac Toe Project -->
@@ -16,10 +22,10 @@
         </div>
     
         <div class="mt-10 relative z-10">
-          <h2 id="project1-title" class="text-lg font-mplus font-bold sm:text-2xl">Tic Tac Toe mit KI</h2>
+          <h2 id="project1-title" class="text-lg font-mplus font-bold sm:text-2xl">{i18next.t('tictactoeTitle')}</h2>
           <p id="project1-description" class="text-base text-gray-300 sm:text-xl mt-4">
             CsBe, 24
-            <span>- Dies ist mein eigenes Tic-Tac-Toe-Spiel mit eigenem vs. KI-Modus</span>
+            <span>{i18next.t('tictactoeDescribe')}</span>
           </p>
     
           <div class="mt-5 sm:mt-10 md:mt-15 lg:mt-20">
@@ -39,10 +45,10 @@
     </div>
 
     <div class="mt-10 relative z-10">
-      <h2 id="project2-title" class="text-lg font-mplus font-bold sm:text-2xl">Real Madrid Website</h2>
+      <h2 id="project2-title" class="text-lg font-mplus font-bold sm:text-2xl">{i18next.t('realmadridTitle')}</h2>
       <p id="project2-description" class="text-base text-gray-300 sm:text-xl mt-4">
         CsBe, 24
-        <span>- Dies ist eine responsive Website basierend auf Real Madrid</span>
+        <span>{i18next.t('realmadridDescribe')}</span>
       </p>
 
       <div class="mt-5 sm:mt-10 md:mt-15 lg:mt-20">
@@ -62,10 +68,10 @@
     </div>
 
     <div class="mt-10 relative z-10">
-      <h2 id="project3-title" class="text-lg font-mplus font-bold sm:text-2xl">Online Shop mit AJAX</h2>
+      <h2 id="project3-title" class="text-lg font-mplus font-bold sm:text-2xl">{i18next.t('onlineshopTitle')}</h2>
       <p id="project3-description" class="text-base text-gray-300 sm:text-xl mt-4">
         CsBe, 24
-        <span>- Dies ist ein Online-Musikshop mit implementiertem AJAX</span>
+        <span>{i18next.t('onlineshopDescribe')}</span>
       </p>
 
       <div class="mt-5 sm:mt-10 md:mt-15 lg:mt-20">

@@ -2,6 +2,8 @@
 import i18next from '../i18n.js';
 const { lang } = Astro.props;
 i18next.changeLanguage(lang || 'de');
+
+const aboutDescription = i18next.t('aboutMeDescription');
 ---
 
 <section class="h-screen">
@@ -25,22 +27,17 @@ i18next.changeLanguage(lang || 'de');
                 {i18next.t('aboutmeGreeting')}
                 <span class="inline-block transform origin-custom-origin hover:animate-wave cursor-pointer">👋</span>
             </h1>
-            <p id="about-description" class="text-lg sm:text-xl md:text-xl lg:text-xl text-black dark:text-white font-mplus font-regular leading-snug">
-                Ich bin <span class="font-lobster led-effect-aboutMe age-span">18 Jahre alt</span>, aus Spanien, Madrid und ich bin
-                derzeit <span class="font-lobster led-effect-aboutMe role-span">Applikationsentwickler Student</span> in meinem
-                zweiten Jahr und ich liebe das Programmieren. Ich habe Kenntnisse in <span class="font-lobster led-effect-aboutMe skills-span">
-                Frontend</span> und <span class="font-lobster led-effect-aboutMe">Backend</span>.
-            </p>            
+            <p id="about-description" class="text-lg sm:text-xl md:text-xl lg:text-xl text-black dark:text-white font-mplus font-regular leading-snug" set:html={aboutDescription}></p>          
 
             <!-- Contenedor flex para idiomas y redes sociales -->
             <div class="flex flex-col sm:flex-row sm:space-x-8">
                 <!-- Div de idiomas -->
                 <div class="relative rounded-xl border-2 border-black mt-2 sm:mt-10 dark:border-white py-4 px-6 text-black dark:text-white w-[24rem]"> <!-- Cambié max-w-xs a max-w-lg -->
-                    <h2 class="text-2xl font-archivo mb-4">SPRACHEN.</h2>
+                    <h2 class="text-2xl font-archivo mb-4">{i18next.t('languages')}</h2>
                     <div class="space-y-2">
                         <!-- Deutsch -->
                         <div class="flex justify-between items-center">
-                            <span id="german-language" class="font-mplus text-lg">Deutsch</span>
+                            <span id="german-language" class="font-mplus text-lg">{i18next.t('german')}</span>
                             <div class="flex space-x-1">
                                 <img src="/star.svg" alt="" class="w-6 sm:w-8">
                                 <img src="/star.svg" alt="" class="w-6 sm:w-8">
@@ -50,7 +47,7 @@ i18next.changeLanguage(lang || 'de');
                         </div>
                         <!-- Spanisch -->
                         <div class="flex justify-between items-center">
-                            <span id="spanish-language" class="font-mplus text-lg">Spanisch</span>
+                            <span id="spanish-language" class="font-mplus text-lg">{i18next.t('spanish')}</span>
                             <div class="flex space-x-1">
                                 <img src="/star.svg" alt="" class="w-6 sm:w-8">
                                 <img src="/star.svg" alt="" class="w-6 sm:w-8">
@@ -61,7 +58,7 @@ i18next.changeLanguage(lang || 'de');
                         </div>
                         <!-- Englisch -->
                         <div class="flex justify-between items-center">
-                            <span id="english-language" class="font-mplus text-lg">Englisch</span>
+                            <span id="english-language" class="font-mplus text-lg">{i18next.t('english')}</span>
                             <div class="flex space-x-1">
                                 <img src="/star.svg" alt="" class="w-6 sm:w-8">
                                 <img src="/star.svg" alt="" class="w-6 sm:w-8">
@@ -92,7 +89,7 @@ i18next.changeLanguage(lang || 'de');
     </div>
 </section>
 
-<style>
+<style is:global>
     .led-effect-aboutMe {
         text-shadow: 0 0 5px #9D3BE4, 0 0 10px #9D3BE4, 0 0 15px #9D3BE4;
     }

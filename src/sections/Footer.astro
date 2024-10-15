@@ -1,3 +1,9 @@
+---
+import i18next from '../i18n.js';
+const { lang } = Astro.props;
+i18next.changeLanguage(lang || 'de');
+---
+
 <footer class="text-white py-16">
   <!-- Línea superior con efecto LED y bordes redondeados -->
   <div class="led-line w-full"></div>
@@ -6,28 +12,28 @@
     
     <!-- Logo y Footer Bottom -->
     <div class="logo-container mb-10 md:mb-0">
-      <img src="logo.svg" alt="Logo" class="w-24 h-24 mt-10">
+      <img src="/logo.svg" alt="Logo" class="w-24 h-24 mt-10">
       <!-- Footer bottom aligned under the logo and only visible in lg -->
-      <p id="footer-rights-lg" class="text-white text-lg mt-12 hidden lg:block">© 2024 Luis Fernández. Alle Rechte vorbehalten.</p>
+      <p id="footer-rights-lg" class="text-white text-lg mt-12 hidden lg:block">{i18next.t('copyright')}</p>
     </div>
     
     <!-- Navegación -->
     <div class="flex flex-row w-full lg:w-auto justify-between space-x-12 text-left">
       <!-- Main -->
       <div>
-        <h3 id="footer-navigation-title" class="text-lg font-mplus text-gray-400">NAVIGATION</h3>
+        <h3 id="footer-navigation-title" class="text-lg font-mplus text-gray-400">{i18next.t('footerNavigation')}</h3>
         <ul class="space-y-2 mt-2">
-          <li><a id="footer-aboutMe" href="#aboutMe" class="text-white font-mplus text-base hover:underline">Über mich</a></li>
-          <li><a id="footer-skills" href="#skills" class="text-white font-mplus text-base hover:underline">Fähigkeiten</a></li>
-          <li><a id="footer-education" href="#education" class="text-white font-mplus text-base hover:underline">Ausbildung</a></li>
-          <li><a id="footer-projects" href="#projects" class="text-white font-mplus text-base hover:underline">Projekte</a></li>
-          <li><a id="footer-contact" href="#contact" class="text-white font-mplus text-base hover:underline">Kontakt</a></li>
+          <li><a id="footer-aboutMe" href="#aboutMe" class="text-white font-mplus text-base hover:underline">{i18next.t('aboutMe')}</a></li>
+          <li><a id="footer-skills" href="#skills" class="text-white font-mplus text-base hover:underline">{i18next.t('skills')}</a></li>
+          <li><a id="footer-education" href="#education" class="text-white font-mplus text-base hover:underline">{i18next.t('education')}</a></li>
+          <li><a id="footer-projects" href="#projects" class="text-white font-mplus text-base hover:underline">{i18next.t('projects')}</a></li>
+          <li><a id="footer-contact" href="#contact" class="text-white font-mplus text-base hover:underline">{i18next.t('contact')}</a></li>
         </ul>
       </div>
       
       <!-- Social Media -->
       <div>
-        <h3 id="footer-social-title" class="text-lg font-mplus text-gray-400">SOZIALE MEDIEN</h3>
+        <h3 id="footer-social-title" class="text-lg font-mplus text-gray-400">{i18next.t('footerSocialMedia')}</h3>
         <ul class="space-y-2 mt-2">
           <li><a href="https://github.com/byluisfer" target="_blank" class="text-white text-base font-mplus hover:underline">Github ↗</a></li>
           <li><a href="https://www.linkedin.com/in/luisfernandezz/" target="_blank" class="text-white text-base font-mplus hover:underline">LinkedIn ↗</a></li>
@@ -41,7 +47,7 @@
 
   <!-- Footer bottom aligned under the entire content for sm and md -->
   <div class="block lg:hidden mt-12">
-    <p id="footer-rights-sm" class="text-white text-base text-center">© 2024 Luis Fernández. Alle Rechte vorbehalten.</p>
+    <p id="footer-rights-sm" class="text-white text-base text-center">{i18next.t('footerNavigation')}</p>
   </div>
 </footer>
 

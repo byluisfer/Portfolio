@@ -2,8 +2,15 @@
 import VerticalTimelineModule from "react-vertical-timeline-component";
 const { VerticalTimeline, VerticalTimelineElement } = VerticalTimelineModule;
 import "react-vertical-timeline-component/style.min.css";
+import { useTranslation } from 'react-i18next';
+import i18n from '../i18n.js';
 
-const EducationTimeline = () => {
+
+const EducationTimeline = ({ lang }) => {
+  const { t } = useTranslation();
+
+  i18n.changeLanguage(lang || 'de');
+
   return (
     <VerticalTimeline>
       {/* Elemento de trabajo */}
@@ -11,7 +18,7 @@ const EducationTimeline = () => {
         className="vertical-timeline-element--work"
         contentStyle={{ background: "#17171B", color: "#fff" }}
         contentArrowStyle={{ borderRight: "7px solid  #17171B" }}
-        date="August 23 - Aktualität"
+        date={t('dateCsbe')}
         iconStyle={{ background: "#fff" }}
         icon={
           <img 
@@ -29,7 +36,7 @@ const EducationTimeline = () => {
           />
         }
       >
-        <h3 className="vertical-timeline-element-title">ICT Ausbildung</h3>
+        <h3 className="vertical-timeline-element-title">{t('educationTitleCsbe')}</h3>
         <h4
           className="vertical-timeline-element-subtitle"
           style={{
@@ -43,8 +50,8 @@ const EducationTimeline = () => {
           Computer Schule Bern
         </h4>
         <ul className="mt-5 list-disc ml-5 space-y-2">
-          <li>Entwerfen und Erstellen von Webanwendungen mit HTML, CSS und JavaScript.</li>
-          <li>Collaborating effectively in team projects and independently solving tasks.</li>
+          <li>{t('educationDescribeCsbe1')}.</li>
+          <li>{t('educationDescribeCsbe2')}.</li>
         </ul>
       </VerticalTimelineElement>
 
@@ -52,7 +59,7 @@ const EducationTimeline = () => {
         className="vertical-timeline-element--work"
         contentStyle={{ background: "#17171B", color: "#fff" }}
         contentArrowStyle={{ borderRight: "7px solid  #17171B" }}
-        date="August 21 - Juli 22"
+        date={t('dateMorillon')}
         iconStyle={{ background: "#fff" }}
         icon={
           <img 
@@ -70,7 +77,7 @@ const EducationTimeline = () => {
           />
         }
       >
-        <h3 className="vertical-timeline-element-title">Sekundarschule</h3>
+        <h3 className="vertical-timeline-element-title">{t('educationTitleMorillon')}</h3>
         <h4
           className="vertical-timeline-element-subtitle"
           style={{
@@ -84,8 +91,8 @@ const EducationTimeline = () => {
           Schulhaus Morillon
         </h4>
         <ul className="mt-5 list-disc ml-5 space-y-2">
-          <li>Sich schnell an eine neue akademische Umgebung anpassen und gleichzeitig in einer Fremdsprache lernen.</li>
-          <li>Aufbau von Grundlagenwissen in verschiedenen Fächern und gleichzeitige Integration in die Schweizer Schulkultur.</li>
+          <li>{t('educationDescribeMorillon1')}.</li>
+          <li>{t('educationDescribeMorillon2')}.</li>
         </ul>
       </VerticalTimelineElement>
 
@@ -93,7 +100,7 @@ const EducationTimeline = () => {
         className="vertical-timeline-element--work"
         contentStyle={{ background: "#17171B", color: "#fff" }}
         contentArrowStyle={{ borderRight: "7px solid  #17171B" }}
-        date="September 19 - Juli 20"
+        date={t('dateCristoRey')}
         iconStyle={{ background: "#fff" }}
         icon={
           <img 
@@ -111,7 +118,7 @@ const EducationTimeline = () => {
           />
         }
       >
-        <h3 className="vertical-timeline-element-title">Sekundarschule</h3>
+        <h3 className="vertical-timeline-element-title">{t('educationTitleCristoRey')}</h3>
         <h4
           className="vertical-timeline-element-subtitle"
           style={{
@@ -125,8 +132,8 @@ const EducationTimeline = () => {
           Colegio Cristo Rey
         </h4>
         <ul className="mt-5 list-disc ml-5 space-y-2">
-          <li>Konsolidierung wichtiger akademischer Kenntnisse aus verschiedenen Fächern in einer dynamischen Lernumgebung.</li>
-          <li>Teilnahme an Gruppenprojekten, die Zusammenarbeit und Problemlösung fördern.</li>
+          <li>{t('educationDescribeCristoRey1')}.</li>
+          <li>{t('educationDescribeCristoRey2')}.</li>
         </ul>
       </VerticalTimelineElement>
     </VerticalTimeline>
