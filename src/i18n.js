@@ -7,6 +7,7 @@ i18n
   .init({
     fallbackLng: 'de',
     supportedLngs: ['de', 'en', 'es'],
+    defaultLocale: 'de', // Idioma por defecto
     interpolation: {  
       escapeValue: false,
     },
