@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Hero section
         welcomeText.textContent = "BIENVENIDO";
         imText.textContent = "Soy";
-        computerScienceText.textContent = "Estudiante de Desarrollo de Aplicaciones";
+        computerScienceText.textContent = "Estudiante de Informatica";
 
         // About Me section
         aboutTitle.textContent = "SOBRE MÍ";
