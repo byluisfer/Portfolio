@@ -42,7 +42,7 @@ const EducationTimeline = () => {
         >
           Computer Schule Bern
         </h4>
-        <ul class="mt-5 list-disc ml-5 space-y-2">
+        <ul className="mt-5 list-disc ml-5 space-y-2">
           <li>Entwerfen und Erstellen von Webanwendungen mit HTML, CSS und JavaScript.</li>
           <li>Collaborating effectively in team projects and independently solving tasks.</li>
         </ul>
@@ -83,7 +83,7 @@ const EducationTimeline = () => {
         >
           Schulhaus Morillon
         </h4>
-        <ul class="mt-5 list-disc ml-5 space-y-2">
+        <ul className="mt-5 list-disc ml-5 space-y-2">
           <li>Sich schnell an eine neue akademische Umgebung anpassen und gleichzeitig in einer Fremdsprache lernen.</li>
           <li>Aufbau von Grundlagenwissen in verschiedenen Fächern und gleichzeitige Integration in die Schweizer Schulkultur.</li>
         </ul>
@@ -124,7 +124,7 @@ const EducationTimeline = () => {
         >
           Colegio Cristo Rey
         </h4>
-        <ul class="mt-5 list-disc ml-5 space-y-2">
+        <ul className="mt-5 list-disc ml-5 space-y-2">
           <li>Konsolidierung wichtiger akademischer Kenntnisse aus verschiedenen Fächern in einer dynamischen Lernumgebung.</li>
           <li>Teilnahme an Gruppenprojekten, die Zusammenarbeit und Problemlösung fördern.</li>
         </ul>
