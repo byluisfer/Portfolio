@@ -1,0 +1,6 @@
+---
+export const prerender = false; // Necesario para redirección en tiempo real si está habilitado el prerender
+
+Astro.response.status = 302;
+Astro.response.headers.set('Location', '/de'); // Cambia 'de' por el idioma predeterminado
+---
