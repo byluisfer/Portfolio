@@ -3,12 +3,12 @@ import i18next from '../i18n.js';
 const { lang } = Astro.props;
 i18next.changeLanguage(lang || 'de');
 
-let currentFlagIcon = '/german.png';
+let currentFlagIcon = '/german.webp';
 
 if (lang === 'en') {
-  currentFlagIcon = '/usa.png';
+  currentFlagIcon = '/english.webp';
 } else if (lang === 'es') {
-  currentFlagIcon = '/spanish.png';
+  currentFlagIcon = '/spanish.webp';
 }
 ---
 
@@ -123,17 +123,17 @@ if (lang === 'en') {
     <ul class="flex flex-col items-center p-2 space-y-2">
       <li>
         <a href="/de/" class="flex items-center justify-center w-10 h-10 rounded-full">
-          <img src="/german.png" alt="Deutsch" class="w-8 h-8 rounded-full object-cover" />
+          <img src="/german.webp" alt="Deutsch" class="w-8 h-8 rounded-full object-cover" />
         </a>
       </li>
       <li>
         <a href="/en/" class="flex items-center justify-center w-10 h-10 rounded-full">
-          <img src="/usa.png" alt="English" class="w-8 h-8 rounded-full object-cover" />
+          <img src="/english.webp" alt="English" class="w-8 h-8 rounded-full object-cover" />
         </a>
       </li>
       <li>
         <a href="/es/" class="flex items-center justify-center w-10 h-10 rounded-full">
-          <img src="/spanish.png" alt="Español" class="w-8 h-8 rounded-full object-cover" />
+          <img src="/spanish.webp" alt="Español" class="w-8 h-8 rounded-full object-cover" />
         </a>
       </li>
     </ul>

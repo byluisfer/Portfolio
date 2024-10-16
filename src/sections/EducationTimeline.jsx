@@ -22,8 +22,9 @@ const EducationTimeline = ({ lang }) => {
         iconStyle={{ background: "#fff" }}
         icon={
           <img 
-            src="/csbe.png" 
+            src="/csbe.webp" 
             alt="Icon" 
+            loading="lazy"
             style={{ 
               width: '85%', 
               height: '85%', 
@@ -63,8 +64,9 @@ const EducationTimeline = ({ lang }) => {
         iconStyle={{ background: "#fff" }}
         icon={
           <img 
-            src="/morillon.png" 
-            alt="Icon" 
+            src="/morillon.webp" 
+            alt="Icon"
+            loading="lazy" 
             style={{ 
               width: '85%', 
               height: '85%', 
@@ -104,8 +106,9 @@ const EducationTimeline = ({ lang }) => {
         iconStyle={{ background: "#fff" }}
         icon={
           <img 
-            src="/cristoRey.png" 
+            src="/cristoRey.webp" 
             alt="Icon" 
+            loading="lazy"
             style={{ 
               width: '85%', 
               height: '85%', 
