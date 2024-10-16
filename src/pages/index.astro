@@ -1,6 +1,17 @@
 ---
-export const prerender = false; // Necesario para redirección en tiempo real si está habilitado el prerender
-
-Astro.response.status = 302;
-Astro.response.headers.set('Location', '/de'); // Cambia 'de' por el idioma predeterminado
+// Este es el código en el componente principal para manejar la redirección.
 ---
+
+<html>
+  <head>
+    <meta http-equiv="refresh" content="0; url=/de" />
+    <script>
+      if (typeof window !== "undefined") {
+        window.location.href = "/de";
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Este cuerpo permanece vacío ya que se hace una redirección automática -->
+  </body>
+</html>
