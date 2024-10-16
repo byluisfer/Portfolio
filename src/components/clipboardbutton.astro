@@ -1,4 +1,6 @@
 ---
+import i18n from '../i18n.js';
+
 export interface Props {
   text: string;
   label: string;
@@ -19,8 +21,9 @@ const { text, label } = Astro.props as Props;
   </div>
 </div>
 
-<!-- Script que se ejecuta en el cliente -->
 <script>
+  import i18n from '../i18n.js';
+
   // Seleccionar todos los botones con la clase 'clipboard-button'
   const buttons = document.querySelectorAll('.clipboard-button');
 
@@ -32,6 +35,9 @@ const { text, label } = Astro.props as Props;
 
       // Copiar el texto al portapapeles
       navigator.clipboard.writeText(textToCopy).then(() => {
+        // Actualizar el mensaje traducido
+        alertBox.textContent = i18n.t('alertCopied');
+
         // Mostrar la alerta personalizada
         alertBox.classList.remove('opacity-0');
         alertBox.classList.add('opacity-100');
@@ -46,28 +52,8 @@ const { text, label } = Astro.props as Props;
       });
     });
   });
-
-  // Extiende la interfaz de Window para incluir la función changeCopiedMessage
-  declare global {
-    interface Window {
-      changeCopiedMessage: (lang: string) => void;
-    }
-  }
-
-  // Función para cambiar el idioma del mensaje de copiado
-  window.changeCopiedMessage = (lang: string) => {
-    const copiedMsgElements = document.querySelectorAll('#copied-msg');
-    copiedMsgElements.forEach((element) => {
-      if (lang === 'de') {
-        element.textContent = '📋 Kopiert!';
-      } else if (lang === 'en') {
-        element.textContent = '📋 Copied!';
-      } else if (lang === 'es') {
-        element.textContent = '📋 Copiado!';
-      }
-    });
-  };
 </script>
+
 
 <!-- Estilos adicionales -->
 <style>

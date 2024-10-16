@@ -68,7 +68,8 @@ i18n
         alertMessageError: 'Beim Senden des Formulars ist ein Fehler aufgetreten.',
         copyright: '© 2024 Luis Fernández. Alle Rechte vorbehalten.',
         footerNavigation: 'NAVIGATION',
-        footerSocialMedia: 'SOZIALE MEDIEN'
+        footerSocialMedia: 'SOZIALE MEDIEN',
+        alertCopied: '📋Kopiert!',
       },
     },
     en: {
@@ -128,6 +129,7 @@ i18n
         copyright: '© 2024 Luis Fernández. All rights reserved.',
         footerNavigation: 'NAVIGATION',
         footerSocialMedia: 'SOCIAL MEDIA',
+        alertCopied: '📋Copied!',
       },
     },
     es: {
@@ -187,6 +189,7 @@ i18n
         copyright: '© 2024 Luis Fernández. Todos los derechos reservados.',
         footerNavigation: 'NAVEGACIÓN',
         footerSocialMedia: 'REDES SOCIALES',
+        alertCopied: '📋Copiado!',
       },
     },
   },
