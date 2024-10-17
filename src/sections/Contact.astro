@@ -1,6 +1,6 @@
 ---
 import ClipboardButton from '../components/clipboardbutton.astro';
-import ContactForm from '../components/contactForm.astro'; // Importa el nuevo componente de formulario
+import ContactForm from '../components/contactForm.astro';
 
 import i18next from '../i18n.js';
 const { lang } = Astro.props;
@@ -13,7 +13,7 @@ const contactMessage = i18next.t('contactMessage');
         {i18next.t('contactTitle')}
     </h1>
 
-    <h2 id="contact-subtitle" class="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary font-dafoe font-regular z-20 text-center led-effect-aboutMe transform -translate-y-20 sm:-translate-y-[100px] md:-translate-y-[125px] lg:-translate-y-[135px] translate-x-6 sm:translate-x-[38px] md:translate-x-[40px] lg:translate-x-[30px]">
+    <h2 id="contact-subtitle" class="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary font-dafoe font-regular z-20 text-center led-effect transform -translate-y-20 sm:-translate-y-[100px] md:-translate-y-[125px] lg:-translate-y-[135px] translate-x-6 sm:translate-x-[38px] md:translate-x-[40px] lg:translate-x-[30px]">
         {i18next.t('contactSubtitle')}
     </h2>
 
@@ -23,13 +23,12 @@ const contactMessage = i18next.t('contactMessage');
             <p class="contact-message" set:html={contactMessage}></p>
         </h3>
 
-        <!-- Contenedor para los botones alineados a la izquierda -->
         <div class="flex flex-col space-y-0 sm:flex-row sm:gap-4 md:gap-6 mt-6 text-center sm:text-left">
-            <ClipboardButton text="luisferdass@gmail.com" label="luisferdass@gmail.com" />
+            <ClipboardButton text="luisferdas06@gmail.com" label="luisferdas06@gmail.com" />
             <ClipboardButton text="+41 78 736 74 44" label="+41 78 736 74 44" />
         </div>
 
-        <!-- Botón de scroll que solo aparece en pantallas md y superiores -->
+        
         <div class="absolute bottom-5 right-5 w-24 sm:w-28 md:w-32 lg:w-36 h-24 sm:h-28 md:h-32 lg:h-36 cursor-pointer hidden md:block" id="scroll-button">
             <div class="relative w-full h-full flex items-center justify-center">
                 <div class="absolute text-2xl sm:text-3xl text-accent">↓</div>
@@ -53,14 +52,6 @@ const contactMessage = i18next.t('contactMessage');
 </section>
 
 <style>
-    .led-effect-aboutMe {
-        text-shadow:
-            0 0 5px #9D3BE4,
-            0 0 10px #9D3BE4,
-            0 0 15px #9D3BE4;
-    }
-    
-    /* Animación más lenta para el ícono de scroll */
     .animate-spin-slow {
         animation: spin 10s linear infinite;
     }
@@ -77,7 +68,6 @@ const contactMessage = i18next.t('contactMessage');
 
 <script>
     document.getElementById('scroll-button').addEventListener('click', () => {
-        // Desplazarse suavemente al formulario con el id 'contact-form-section'
         document.getElementById('contact-form-section').scrollIntoView({ behavior: 'smooth' });
     });
 </script>

@@ -5,21 +5,17 @@ i18next.changeLanguage(lang || 'de');
 ---
 
 <footer class="text-white py-16">
-  <!-- Línea superior con efecto LED y bordes redondeados -->
+
   <div class="led-line w-full"></div>
 
   <div class="container mx-auto flex flex-col lg:flex-row justify-between items-start lg:items-center mt-10 space-y-10 lg:space-y-0">
     
-    <!-- Logo y Footer Bottom -->
     <div class="logo-container mb-10 md:mb-0">
       <img src="/logo.svg" alt="Logo" loading="lazy" class="w-24 h-24 mt-10">
-      <!-- Footer bottom aligned under the logo and only visible in lg -->
       <p id="footer-rights-lg" class="text-white text-lg mt-12 hidden lg:block">{i18next.t('copyright')}</p>
     </div>
     
-    <!-- Navegación -->
     <div class="flex flex-row w-full lg:w-auto justify-between space-x-12 text-left">
-      <!-- Main -->
       <div>
         <h3 id="footer-navigation-title" class="text-lg font-mplus text-gray-400">{i18next.t('footerNavigation')}</h3>
         <ul class="space-y-2 mt-2">
@@ -31,7 +27,6 @@ i18next.changeLanguage(lang || 'de');
         </ul>
       </div>
       
-      <!-- Social Media -->
       <div>
         <h3 id="footer-social-title" class="text-lg font-mplus text-gray-400">{i18next.t('footerSocialMedia')}</h3>
         <ul class="space-y-2 mt-2">
@@ -45,17 +40,15 @@ i18next.changeLanguage(lang || 'de');
 
   </div>
 
-  
 </footer>
 
-<!-- Tailwind CSS y custom CSS para la línea -->
 <style>
   .led-line {
     position: relative;
     height: 3px;
-    background-color: #1c2b62; /* Color de la línea LED */
-    box-shadow: 0 10px 20px rgba(28, 43, 98, 0.8); /* Efecto de luz proyectada hacia abajo */
-    border-radius: 100px; /* Bordes redondeados */
+    background-color: #1c2b62;
+    box-shadow: 0 10px 20px rgba(28, 43, 98, 0.8); 
+    border-radius: 100px;
   }
 
   .led-line::before {

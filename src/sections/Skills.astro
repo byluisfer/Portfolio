@@ -4,17 +4,17 @@ const { lang } = Astro.props;
 i18next.changeLanguage(lang || 'de');
 ---
 
-<section class="h-screen mt-60 md:mt-32">
+<section class="h-screen mt-28 md:mt-24">
     <h1 id="skills-title" class="relative text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white font-saira font-black z-10 text-center">
         {i18next.t('skillsTitle')}
     </h1>
 
-    <h2 id="skills-subtitle" class="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary font-dafoe font-regular z-20 text-center led-effect-aboutMe transform -translate-y-20 sm:-translate-y-[100px] md:-translate-y-[125px] lg:-translate-y-[135px] translate-x-6 sm:translate-x-[38px] md:translate-x-[40px] lg:translate-x-[30px]">
+    <h2 id="skills-subtitle" class="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary font-dafoe font-regular z-20 text-center led-effect transform -translate-y-20 sm:-translate-y-[100px] md:-translate-y-[125px] lg:-translate-y-[135px] translate-x-6 sm:translate-x-[38px] md:translate-x-[40px] lg:translate-x-[30px]">
         {i18next.t('skillsSubtitle')}
     </h2>
 
-    <!-- Contenedor de íconos -->
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 sm:gap-10 lg:gap-16 text-white text-center px-4 md:px-8 lg:px-16">
+    
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 sm:gap-10 lg:gap-16 text-white text-center px-4 md:px-8 lg:px-16 -mt-10 lg:-mt-20">
         <!-- HTML -->
         <div class="flex flex-col items-center justify-center group">
             <img src="/skills/html.png" alt="HTML" loading="lazy" class="h-16 w-16 md:h-24 md:w-24 group-hover:translate-y-[-10px] group-hover:filter-none transition-all duration-300 ease-in-out">
@@ -69,13 +69,6 @@ i18next.changeLanguage(lang || 'de');
 </section>
 
 <style>
-    .led-effect-aboutMe {
-        text-shadow:
-            0 0 5px #9D3BE4,
-            0 0 10px #9D3BE4,
-            0 0 15px #9D3BE4;
-    }
-
     .group {
         transition: transform 0.3s ease-in-out;
     }
@@ -88,24 +81,20 @@ i18next.changeLanguage(lang || 'de');
         transform: translateY(-20px);
     }
 
-    /* Estilo para las imágenes SVG en blanco */
     img {
-        filter: brightness(0) invert(1); /* Cambia el color a blanco */
+        filter: brightness(0) invert(1);
     }
 
-    /* Texto de cada skill oculto por defecto */
     .group span {
         opacity: 0;
         margin-top: 0;
     }
 
-    /* Mostrar texto al hacer hover */
     .group:hover span {
         opacity: 1;
     }
 
-    /* Mostrar color original de los SVGs al hacer hover */
     .group:hover img {
-        filter: none; /* Elimina el filtro blanco */
+        filter: none;
     }
 </style>

@@ -4,18 +4,18 @@ const { lang } = Astro.props;
 i18next.changeLanguage(lang || 'de');
 ---
 
-<section class="h-screen mt-24">
+<section class="h-screen mt-28">
   <h1 id="projects-title" class="relative text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white font-saira font-black z-10 text-center">
     {i18next.t('projectsTitle')}
   </h1>
 
-  <h2 id="projects-subtitle" class="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary font-dafoe font-regular z-20 text-center led-effect-projects transform -translate-y-20 sm:-translate-y-[100px] md:-translate-y-[125px] lg:-translate-y-[135px] translate-x-6 sm:translate-x-[38px] md:translate-x-[40px] lg:translate-x-[30px]">
+  <h2 id="projects-subtitle" class="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary font-dafoe font-regular z-20 text-center led-effect transform -translate-y-20 sm:-translate-y-[100px] md:-translate-y-[125px] lg:-translate-y-[135px] translate-x-6 sm:translate-x-[38px] md:translate-x-[40px] lg:translate-x-[30px]">
     {i18next.t('projectsSubtitle')}
   </h2>
   
     <!-- Tic Tac Toe Project -->
     <div class="flex justify-center -mt-14 sm:-mt-20 cursor-pointer">
-      <a href="https://github.com/byluisfer/Tic-Tac-Toe" class="relative rounded-[28px] h-auto w-auto px-10 text-white hover:shadow-2xl transition-all duration-300 group overflow-hidden" style="background: linear-gradient(145deg, #151518, #19191d); box-shadow: 20px 20px 40px #101013, -20px -20px 40px #1e1e23;" target="_blank">
+      <a href="https://github.com/byluisfer/Tic-Tac-Toe" class="relative rounded-[18px] sm:rounded-[28px] h-auto w-auto px-10 text-white hover:shadow-2xl transition-all duration-300 group overflow-hidden" style="background: linear-gradient(145deg, #151518, #19191d); box-shadow: 20px 20px 40px #101013, -20px -20px 40px #1e1e23;" target="_blank">
         <div class="absolute inset-0 bg-gradient-to-b from-brown/40 to-transparent opacity-0 group-hover:opacity-75 transition-opacity duration-300"></div>
         <div class="absolute top-10 sm:top-12 right-14 z-10">
           <i class="fas fa-arrow-right text-white text-xl sm:text-2xl transform transition-transform duration-300 ease-in-out group-hover:translate-x-5"></i>
@@ -82,13 +82,3 @@ i18next.changeLanguage(lang || 'de');
 </div>
 
   </section>
-  
-
-<style>
-  .led-effect-projects {
-    text-shadow:
-      0 0 5px #9D3BE4,
-      0 0 10px #9D3BE4,
-      0 0 15px #9D3BE4;
-  }
-</style>
