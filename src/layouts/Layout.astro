@@ -7,7 +7,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="{lang}" class="dark"> <!-- Si deseas que inicie en modo oscuro, puedes dejar la clase 'dark' -->
+<html lang="{lang}">
     <head>
         <meta charset="UTF-8" />
         <meta name="description" content="Portfolio von Luis Fernandez, Applikationsentwicklung in Bern" />
@@ -20,7 +20,7 @@ const { title } = Astro.props;
         <link href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
     </head>
-    <body class="bg-white dark:bg-background text-white dark:text-black"> <!-- Usar solo dark: -->
+    <body class="bg-background text-white">
 
       <slot name="hero" />
       
@@ -34,9 +34,11 @@ const { title } = Astro.props;
 
 <style is:global>
     html {
-        font-family: system-ui, sans-serif;
         scroll-behavior: smooth;
-         overflow-x: hidden;
+        overflow-x: hidden;
+    }
+    .led-effect {
+        text-shadow: 0 0 5px #9D3BE4, 0 0 10px #9D3BE4, 0 0 15px #9D3BE4;
     }
      /* Estilo del contenedor de la barra de desplazamiento */
      ::-webkit-scrollbar {

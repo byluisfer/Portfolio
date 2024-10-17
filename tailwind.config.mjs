@@ -3,7 +3,6 @@ const plugin = require('tailwindcss/plugin');
 const textShadow = require('tailwindcss-textshadow');
 
 module.exports = {
-	darkMode: 'class', // Habilitar el modo oscuro basado en clases
 	content: [
 		'./src/**/*.{astro,html,js,jsx,ts,tsx,vue,svelte}',
 	],
@@ -11,11 +10,8 @@ module.exports = {
 		extend: {
 			colors: {
 				'primary': '#1C2B62',
-				'primary2': '#10ADBB',
 				'secondary': '#9D3BE4',
-				'secondary2': '#FC4377',
 				'accent': '#505C89',
-				'accent2': '#177C85',
 				'semi-dark': '#17171B',
 				'background': '#0E0E11',
 				'border-dark': '#252525',
@@ -23,7 +19,6 @@ module.exports = {
 				'brown': '#3c3633',
 				'purple': '#6e51f0',
 				'orange': '#ff5a1f',
-				'semi-secondary': '#b26be7',
 			},
 
 			fontFamily: {
