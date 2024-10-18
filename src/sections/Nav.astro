@@ -12,8 +12,9 @@ if (lang === 'en') {
 }
 ---
 
-<!-- Menu button for phones -->
+<!-- Botón de menú para pantallas móviles y pequeñas -->
 <div class="fixed z-20 top-6 left-6 flex items-center sm:flex md:hidden">
+  <!-- Visible en pantallas móviles, oculto en pantallas medianas y grandes -->
   <button
     id="menu-toggle"
     class="flex items-center justify-center w-12 h-12 rounded-full bg-primary bg-opacity-90 border-2 border-accent shadow-lg transition duration-300"
@@ -25,24 +26,26 @@ if (lang === 'en') {
 
 <div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-primary bg-opacity-90 z-30 transform -translate-x-full transition-transform duration-300">
   <div class="flex flex-col items-center justify-center h-full space-y-6">
-   
+    <!-- Enlaces a las secciones -->
     <a href="/{lang}/#aboutMe" class="text-white text-xl" id="menu-aboutMe">{i18next.t('aboutMe')}</a>
     <a href="/{lang}/#skills" class="text-white text-xl" id="menu-skills">{i18next.t('skills')}</a>
     <a href="/{lang}/#education" class="text-white text-xl" id="menu-education">{i18next.t('education')}</a>
     <a href="/{lang}/#projects" class="text-white text-xl" id="menu-projects">{i18next.t('projects')}</a>
     <a href="/{lang}/#contact" class="text-white text-xl" id="menu-contact">{i18next.t('contact')}</a>
 
+    <!-- Cambio de idioma dentro del menú hamburguesa -->
     <div class="flex space-x-4 mt-8">
       <a href="/de/" class="text-white">Deutsch</a>
       <a href="/en/" class="text-white">English</a>
       <a href="/es/" class="text-white">Español</a>
     </div>
 
+    <!-- Botón para cerrar el menú -->
     <button id="menu-close" class="absolute top-6 right-6 text-white text-3xl">&times;</button>
   </div>
 </div>
 
-<!-- Home button to go to the top of the website -->
+<!-- Botón para volver arriba, visible solo en pantallas grandes -->
 <div class="fixed z-40 top-6 left-20 hidden md:flex flex-col items-center">
   <a href="#top">
     <button
@@ -54,22 +57,25 @@ if (lang === 'en') {
   </a>
 </div>
 
-<!-- Navigation Bar responsive -->
+<!-- Navigation Bar responsive para pantallas medianas y grandes -->
 <nav
   class="fixed z-40 top-6 left-1/2 transform -translate-x-1/2 bg-primary bg-opacity-90 border border-accent shadow-lg rounded-full items-center justify-around w-full md:w-3/4 lg:w-[50%] max-w-xl h-12 hidden md:flex"
 >
   <div class="relative w-full flex items-center justify-between h-full">
+    <!-- Barra LED superior con efecto de neón -->
     <div
       id="led-bar"
       class="absolute top-0 left-0 h-1 w-20 bg-secondary rounded-full shadow-lg transition-all duration-300 ease-in-out transform"
       style="box-shadow: 0 0 5px #9D3BE4, 0 0 10px #9D3BE4, 0 0 15px #9D3BE4;"
     ></div>
 
+    <!-- Indicador de posición -->
     <div
       id="active-indicator"
       class="absolute top-1/2 left-0 h-8 bg-accent rounded-lg transition-all duration-300 ease-in-out transform -translate-y-1/2"
     ></div>
 
+    <!-- Botones de navegación con enlaces a secciones -->
     <a
       href="#aboutMe"
       class="relative z-10 px-4 py-0 ml-2 rounded-full text-white font-medium h-full flex items-center text-sm md:text-base"
@@ -103,14 +109,16 @@ if (lang === 'en') {
   </div>
 </nav>
 
-<!-- Change language button with dropdown menu -->
+<!-- Botón de cambio de idioma con menú desplegable -->
 <div class="fixed z-50 top-6 right-20 hidden md:flex flex-col items-center">
+  <!-- Botón con la bandera de idioma -->
   <div class="relative flex items-center justify-center rounded-full border-2 bg-primary bg-opacity-90 border-accent p-1 h-12 w-12">
     <button id="language-toggle" class="flex items-center justify-center w-12 h-12 rounded-full transition duration-300">
       <img id="current-flag-icon" src={currentFlagIcon} alt="Cambiar idioma" class="w-10 h-10 rounded-full object-cover" />
     </button>
   </div>
 
+  <!-- Menú desplegable de idiomas -->
   <div id="language-dropdown" class="absolute top-14 right-0 bg-primary bg-opacity-90 border border-accent rounded-lg shadow-lg hidden">
     <ul class="flex flex-col items-center p-2 space-y-2">
       <li>
@@ -140,20 +148,24 @@ if (lang === 'en') {
     const languageToggle = document.getElementById('language-toggle');
     const languageDropdown = document.getElementById('language-dropdown');
 
+    // Abrir el menú al hacer clic en el botón hamburguesa
     menuToggle.addEventListener('click', () => {
       mobileMenu.classList.remove('-translate-x-full');
     });
 
+    // Cerrar el menú al hacer clic en el botón de cerrar
     menuClose.addEventListener('click', () => {
       mobileMenu.classList.add('-translate-x-full');
     });
 
+    // Cerrar el menú cuando se hace clic en un enlace de sección
     document.querySelectorAll('#mobile-menu a').forEach(link => {
       link.addEventListener('click', () => {
         mobileMenu.classList.add('-translate-x-full');
       });
     });
 
+    // Toggle del menú de idiomas
     languageToggle.addEventListener('click', () => {
       languageDropdown.classList.toggle('hidden');
     });

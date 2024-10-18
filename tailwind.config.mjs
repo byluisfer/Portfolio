@@ -4,7 +4,7 @@ const textShadow = require('tailwindcss-textshadow');
 
 module.exports = {
 	content: [
-		'./src/**/*.{astro,js,ts,jsx,tsx,html}',
+		'./src/**/*.{astro,html,js,jsx,ts,tsx,vue,svelte}',
 	],
 	theme: {
 		extend: {
