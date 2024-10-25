@@ -27,7 +27,7 @@ module.exports = {
 				'mplus': ['"M PLUS Rounded 1c"', 'sans-serif'],
 				'dafoe': ['Mr Dafoe', 'sans-serif'],
 				'archivo': ['Archivo Black', 'sans-serif'],
-			},
+			},			  
 
 			fontWeight: {
 				'black': 900,

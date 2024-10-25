@@ -14,9 +14,6 @@ const { title } = Astro.props;
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <title>{title}</title>
-        <link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
     </head>
@@ -60,5 +57,26 @@ const { title } = Astro.props;
     /* Opcional: estilo de la barra de desplazamiento cuando está inactiva */
     ::-webkit-scrollbar-track {
       background-color: transparent; /* Fondo del track de la barra */
+    }
+
+    @font-face {
+      font-family: 'Saira Extra Condensed';
+      src: url('/fonts/SairaExtraCondensed-Black.woff2') format('woff2');
+      font-weight: 900;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Lobster';
+      src: url('/fonts/Lobster-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'M PLUS Rounded 1c';
+      src: url('/fonts/RoundedMplus1c-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
     }
 </style>
