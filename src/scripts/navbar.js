@@ -1,66 +1,64 @@
 document.addEventListener('DOMContentLoaded', () => {
   const navBar = document.querySelector('nav');
 
-  if (navBar) {  // Verificación para asegurarse de que navBar existe
+  if (navBar) {  //  Check for navBar
     const links = document.querySelectorAll('nav a');
     const indicator = document.getElementById('active-indicator');
     const ledBar = document.getElementById('led-bar');
     const sections = document.querySelectorAll('main > section');
-    const navHeight = navBar.offsetHeight; // Obtener la altura del nav
-    let isScrolling = false; // Variable para rastrear si se está desplazando
+    const navHeight = navBar.offsetHeight; //  Get the height of the nav
+    let isScrolling = false;
 
-    // Función para mover el indicador y la barra LED
+    // Function to move the indicator and LED bar
     const moveIndicator = (element) => {
       const linkRect = element.getBoundingClientRect();
 
-      // Ajustar el tamaño y la posición del indicador
+      //  Adjust the size and position of the indicator
       indicator.style.width = `${linkRect.width}px`;
       indicator.style.left = `${element.offsetLeft}px`;
-      indicator.style.height = `calc(75%)`; // Reducir la altura del indicador
-      indicator.style.borderRadius = '20px'; // Reducir la redondez de los bordes
+      indicator.style.height = `calc(75%)`; //  Reduce the height of the indicator
+      indicator.style.borderRadius = '20px'; //  Reduce the rounded corners of the borders
 
-      // Mover la barra LED superior
-      ledBar.style.width = `${linkRect.width / 2}px`; // LED más pequeño que el indicador
-      ledBar.style.left = `${element.offsetLeft + linkRect.width / 4}px`; // Centrado en el indicador
+      //  Move the LED bar
+      ledBar.style.width = `${linkRect.width / 2}px`; // LED smaller than the indicator
+      ledBar.style.left = `${element.offsetLeft + linkRect.width / 4}px`; //  Centered on the indicator
     };
 
-    // Función para el scroll suave
+    // Function for smooth scrolling
     function smoothScroll(target) {
-      const targetPosition = target.offsetTop - navHeight; // Ajusta el desplazamiento según la altura del navbar
+      const targetPosition = target.offsetTop - navHeight; //  Adjust the scrolling based on the height of the navbar
       window.scrollTo({
         top: targetPosition,
-        behavior: 'smooth' // Desplazamiento suave
+        behavior: 'smooth'
       });
     }
 
-    // Añadir el evento de clic a cada enlace del menú
+    //  Add event listener to each link in the menu
     links.forEach((link) => {
       link.addEventListener('click', (e) => {
-        e.preventDefault(); // Evita el comportamiento predeterminado del enlace
+        e.preventDefault();
 
-        // Mover el indicador
+        //  Move the indicator
         moveIndicator(link);
 
-        // Obtener la sección correspondiente al ID del enlace
+        //  Get the corresponding section based on the ID of the link
         const targetId = link.getAttribute('href').substring(1);
         const targetSection = document.getElementById(targetId);
 
-        // Desactivar el evento de scroll mientras se desplaza
         isScrolling = true;
 
-        // Llamar a la función de scroll suave
         smoothScroll(targetSection);
 
-        // Reiniciar la variable de desplazamiento una vez finalice
+        //  Reset the scrolling once it's finished
         setTimeout(() => {
           isScrolling = false;
-        }, 1000); // Ajusta este tiempo según la duración del scroll
+        }, 1000);
       });
     });
 
-    // Ajustar el indicador con el scroll de la página
+    //  Adjust the indicator with the page scroll
     window.addEventListener('scroll', () => {
-      if (isScrolling) return; // No ejecutar si se está desplazando por clic
+      if (isScrolling) return;
 
       let scrollPos = window.scrollY + window.innerHeight / 2;
 
@@ -69,17 +67,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const sectionHeight = section.clientHeight;
         const sectionId = section.getAttribute('id');
 
-        // Verificar si el scroll actual está dentro de la sección
+        // Verify if the current scroll is within the section
         if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
           const activeLink = document.querySelector(`nav a[href="#${sectionId}"]`);
           if (activeLink) {
-            moveIndicator(activeLink); // Mueve el indicador si lo necesitas
+            moveIndicator(activeLink);
           }
         }
       });
     });
 
-    // Mover el indicador y barra LED al cargar la página según la primera sección
     const activeLink = document.querySelector('nav a');
     if (activeLink) {
       moveIndicator(activeLink);

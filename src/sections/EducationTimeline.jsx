@@ -13,7 +13,6 @@ const EducationTimeline = ({ lang }) => {
 
   return (
     <VerticalTimeline>
-      {/* Elemento de trabajo */}
       <VerticalTimelineElement
         className="vertical-timeline-element--work"
         contentStyle={{ background: "#17171B", color: "#fff" }}

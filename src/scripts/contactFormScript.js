@@ -1,14 +1,13 @@
-// contactFormScript.js
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('contactForm');
     const alertMessage = document.getElementById('alert-message');
   
-    // Obtén los mensajes localizados desde los atributos data-*
+    // Get the localized messages from the data attributes
     const successMessage = alertMessage.getAttribute('data-success-message');
     const errorMessage = alertMessage.getAttribute('data-error-message');
   
     form.addEventListener('submit', function (event) {
-      event.preventDefault(); // Previene el envío y la redirección predeterminada
+      event.preventDefault();
   
       const formData = new FormData(form);
   
@@ -21,30 +20,30 @@ document.addEventListener('DOMContentLoaded', () => {
           if (response.ok) {
             form.reset();
   
-            // Mostrar mensaje de confirmación
+            // Show confirmation message
             alertMessage.textContent = successMessage;
             alertMessage.classList.remove('hidden');
             alertMessage.classList.add('flex');
   
-            // Ocultar mensaje después de 3 segundos
+            //  Hide message after 3 seconds
             setTimeout(() => {
               alertMessage.classList.add('hidden');
               alertMessage.classList.remove('flex');
             }, 3000);
           } else {
-            // Si la respuesta no es OK, lanza un error para ser capturado en catch
+            // If the answer is no OK, throw a error
             throw new Error('Network response was not ok');
           }
         })
         .catch((error) => {
           console.error('Error al enviar el formulario:', error);
   
-          // Mostrar mensaje de error
+          // Show the error message
           alertMessage.textContent = errorMessage;
           alertMessage.classList.remove('hidden');
           alertMessage.classList.add('flex');
   
-          // Ocultar mensaje después de 3 segundos
+          //  Hide message after 3 seconds
           setTimeout(() => {
             alertMessage.classList.add('hidden');
             alertMessage.classList.remove('flex');
@@ -52,11 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
   
-    // Evento para el botón de desplazamiento (si existe)
+    //  Event for the scroll button
     const scrollButton = document.getElementById('scroll-button');
     if (scrollButton) {
       scrollButton.addEventListener('click', () => {
-        // Desplazarse suavemente al formulario con el id 'contact-form-section'
         document.getElementById('contact-form-section').scrollIntoView({ behavior: 'smooth' });
       });
     }

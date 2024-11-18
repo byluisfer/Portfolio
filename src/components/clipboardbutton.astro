@@ -9,14 +9,11 @@ export interface Props {
 const { text, label } = Astro.props as Props;
 ---
 
-<!-- Contenedor de los botones con alineación a la izquierda en dispositivos grandes -->
 <div class="flex flex-col sm:flex-row sm:space-x-4 justify-start items-center sm:items-start space-y-4 sm:space-y-2">
-  <!-- Botón que copiará el texto al portapapeles -->
   <div class="clipboard-button text-xs sm:text-sm md:text-base lg:text-lg border-2 border-accent rounded-full px-6 py-4 cursor-pointer relative text-center sm:text-left" data-text={text}>
     {label}
-    <!-- Contenedor de la alerta personalizada -->
     <div id="copied-msg" class="copy-alert absolute top-[-40px] left-1/2 transform -translate-x-1/2 px-3 py-2 bg-accent text-white rounded-md text-sm opacity-0 transition-opacity duration-300">
-      📋 Kopiert! <!-- Este mensaje será dinámico -->
+      📋 Kopiert!
     </div>
   </div>
 </div>
@@ -24,25 +21,19 @@ const { text, label } = Astro.props as Props;
 <script>
   import i18n from '../i18n.js';
 
-  // Seleccionar todos los botones con la clase 'clipboard-button'
   const buttons = document.querySelectorAll('.clipboard-button');
 
-  // Agregar el evento click a cada botón
   buttons.forEach((button) => {
     button.addEventListener('click', () => {
       const textToCopy = button.getAttribute('data-text');
       const alertBox = button.querySelector('.copy-alert');
 
-      // Copiar el texto al portapapeles
       navigator.clipboard.writeText(textToCopy).then(() => {
-        // Actualizar el mensaje traducido
         alertBox.textContent = i18n.t('alertCopied');
 
-        // Mostrar la alerta personalizada
         alertBox.classList.remove('opacity-0');
         alertBox.classList.add('opacity-100');
 
-        // Ocultar la alerta después de 2 segundos
         setTimeout(() => {
           alertBox.classList.remove('opacity-100');
           alertBox.classList.add('opacity-0');
@@ -54,8 +45,6 @@ const { text, label } = Astro.props as Props;
   });
 </script>
 
-
-<!-- Estilos adicionales -->
 <style>
   .clipboard-button {
     position: relative;
@@ -63,18 +52,18 @@ const { text, label } = Astro.props as Props;
 
   .copy-alert {
     position: absolute;
-    top: -40px; /* Posiciona la alerta encima del botón */
+    top: -40px;
     left: 50%;
     transform: translateX(-50%);
-    color: #fff; /* Color del texto */
+    color: #fff;
     padding: 8px 12px;
     border-radius: 4px;
-    opacity: 0; /* Oculta la alerta inicialmente */
-    pointer-events: none; /* No permite hacer clic en la alerta */
-    transition: opacity 0.3s ease-in-out; /* Transición suave */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
   }
 
   .copy-alert.opacity-100 {
-    opacity: 1; /* Muestra la alerta cuando tiene la clase 'opacity-100' */
+    opacity: 1;
   }
 </style>

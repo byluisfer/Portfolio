@@ -3,10 +3,8 @@ import i18next from '../i18n.js';
 
 const { lang } = Astro.props;
 
-// Cambia el idioma según el prop o por defecto a 'de'
 await i18next.changeLanguage(lang || 'de');
 
-// Obtiene la función de traducción
 const t = i18next.t.bind(i18next);
 ---
 
@@ -41,11 +39,8 @@ const t = i18next.t.bind(i18next);
     data-success-message="{t('alertMessageSuccess')}"
     data-error-message="{t('alertMessageError')}"
   >
-    <!-- El contenido inicial puede estar vacío o contener el mensaje de éxito por defecto -->
     {t('alertMessageSuccess')}
   </div>
   </section>
   
-
-<!-- Importa el script y asegúrate de que se cargue solo en el cliente -->
 <script src="../scripts/contactFormScript.js"></script>
