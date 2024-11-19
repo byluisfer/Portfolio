@@ -14,7 +14,7 @@ i18n
     de: {
       translation: {
         aboutMe: 'Über mich',
-        skills: 'Fähigkeiten',
+        skills: 'Kenntisse  ',
         education: 'Ausbildung',
         projects: 'Projekte',
         contact: 'Kontakt',
@@ -37,7 +37,7 @@ i18n
         educationTitleMorillon: 'Sekundarschule',
         educationTitleCristoRey: 'Sekundarschule',
         educationDescribeCsbe1: 'Entwerfen und Erstellen von Webanwendungen mit HTML, CSS und JavaScript',
-        educationDescribeCsbe2: 'Collaborating effectively in team projects and independently solving tasks',
+        educationDescribeCsbe2: 'Effektive Zusammenarbeit in Teamprojekten und selbstständige Lösung von Aufgaben',
         educationDescribeMorillon1: 'Sich schnell an eine neue akademische Umgebung anpassen und gleichzeitig in einer Fremdsprache lernen',
         educationDescribeMorillon2: 'Aufbau von Grundlagenwissen in verschiedenen Fächern und gleichzeitige Integration in die Schweizer Schulkultur',
         educationDescribeCristoRey1: 'Konsolidierung wichtiger akademischer Kenntnisse aus verschiedenen Fächern in einer dynamischen Lernumgebung',
@@ -75,7 +75,7 @@ i18n
     en: {
       translation: {
         aboutMe: 'About Me',
-        skills: 'Skills',
+        skills: 'Knowledge',
         education: 'Education',
         projects: 'Projects',
         contact: 'Contact',
@@ -136,7 +136,7 @@ i18n
     es: {
       translation: {
         aboutMe: 'Sobre mí',
-        skills: 'Habilidades',
+        skills: 'Conocimientos',
         education: 'Educación',
         projects: 'Proyectos',
         contact: 'Contacto',
