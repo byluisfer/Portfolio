@@ -1,12 +1,27 @@
-<html>
-  <head>
-    <meta http-equiv="refresh" content="0; url=/de" />
-    <script>
-      if (typeof window !== "undefined") {
-        window.location.href = "/de";
-      }
-    </script>
-  </head>
-  <body>
-  </body>
-</html>
+--- 
+import Layout from '../layouts/Layout.astro';
+import Hero from '../sections/Hero.astro';
+import AboutMe from '../sections/AboutMe.astro';
+import Projects from '../sections/Projects.astro';
+import Contact from '../sections/Contact.astro';
+import Nav from '../sections/Nav.astro';
+import Skills from '../sections/Skills.astro';
+import Education from '../sections/Education.astro';
+import Footer from '../sections/Footer.astro';
+
+// Detecta el idioma desde la URL o usa el predeterminado
+const urlParams = new URLSearchParams(Astro.request.url.split('?')[1]);
+const lang = urlParams.get('lang') || 'de';
+---
+<Layout title="Luis Fernández">
+  <Nav lang={lang} />
+  <Hero slot="hero" lang={lang} />
+  <main>
+    <section id="aboutMe"><AboutMe lang={lang} /></section>
+    <section id="skills"><Skills lang={lang} /></section>
+    <section id="education"><Education lang={lang} /></section>
+    <section id="projects"><Projects lang={lang} /></section>
+    <section id="contact"><Contact lang={lang} /></section>
+  </main>
+  <Footer lang={lang} />
+</Layout>
