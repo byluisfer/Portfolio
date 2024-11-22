@@ -1,45 +1,69 @@
 ---
 import i18next from '../i18n.js';
+
 const { lang } = Astro.props;
-i18next.changeLanguage(lang || 'de');
+
+await i18next.changeLanguage(lang || 'de');
 ---
 
 <footer class="text-white py-16">
-
   <div class="led-line w-full"></div>
 
   <div class="container mx-auto flex flex-col lg:flex-row justify-between items-start lg:items-center mt-10 space-y-10 lg:space-y-0">
     
     <div class="logo-container mb-10 md:mb-0">
       <img src="/logo.svg" alt="Logo" loading="lazy" class="w-24 h-24 mt-10">
-      <p id="footer-rights-lg" class="text-white text-lg mt-12 hidden lg:block">{i18next.t('copyright')}</p>
+      <p id="footer-rights-lg" class="text-white text-lg mt-12 hidden lg:block" data-i18n="copyright">
+        {i18next.t('copyright')}
+      </p>
     </div>
     
     <div class="flex flex-row w-full lg:w-auto justify-between space-x-12 text-left">
       <div>
-        <h3 id="footer-navigation-title" class="text-lg font-mplus text-gray-400">{i18next.t('footerNavigation')}</h3>
+        <h3 id="footer-navigation-title" class="text-lg font-mplus text-gray-400" data-i18n="footerNavigation">
+          {i18next.t('footerNavigation')}
+        </h3>
         <ul class="space-y-2 mt-2">
-          <li><a id="footer-aboutMe" href="#aboutMe" class="text-white font-mplus text-base hover:underline">{i18next.t('aboutMe')}</a></li>
-          <li><a id="footer-skills" href="#skills" class="text-white font-mplus text-base hover:underline">{i18next.t('skills')}</a></li>
-          <li><a id="footer-education" href="#education" class="text-white font-mplus text-base hover:underline">{i18next.t('education')}</a></li>
-          <li><a id="footer-projects" href="#projects" class="text-white font-mplus text-base hover:underline">{i18next.t('projects')}</a></li>
-          <li><a id="footer-contact" href="#contact" class="text-white font-mplus text-base hover:underline">{i18next.t('contact')}</a></li>
+          <li><a id="footer-aboutMe" href="#aboutMe" class="text-white font-mplus text-base hover:underline" data-i18n="aboutMe">
+            {i18next.t('aboutMe')}
+          </a></li>
+          <li><a id="footer-skills" href="#skills" class="text-white font-mplus text-base hover:underline" data-i18n="skills">
+            {i18next.t('skills')}
+          </a></li>
+          <li><a id="footer-education" href="#education" class="text-white font-mplus text-base hover:underline" data-i18n="education">
+            {i18next.t('education')}
+          </a></li>
+          <li><a id="footer-projects" href="#projects" class="text-white font-mplus text-base hover:underline" data-i18n="projects">
+            {i18next.t('projects')}
+          </a></li>
+          <li><a id="footer-contact" href="#contact" class="text-white font-mplus text-base hover:underline" data-i18n="contact">
+            {i18next.t('contact')}
+          </a></li>
         </ul>
       </div>
       
       <div>
-        <h3 id="footer-social-title" class="text-lg font-mplus text-gray-400">{i18next.t('footerSocialMedia')}</h3>
+        <h3 id="footer-social-title" class="text-lg font-mplus text-gray-400" data-i18n="footerSocialMedia">
+          {i18next.t('footerSocialMedia')}
+        </h3>
         <ul class="space-y-2 mt-2">
-          <li><a href="https://github.com/byluisfer" target="_blank" class="text-white text-base font-mplus hover:underline">Github ↗</a></li>
-          <li><a href="https://www.linkedin.com/in/luisfernandezz/" target="_blank" class="text-white text-base font-mplus hover:underline">LinkedIn ↗</a></li>
-          <li><a href="mailto:luisferdass@gmail.com" target="_blank" class="text-white text-base font-mplus hover:underline">Gmail ↗</a></li>
-          <li><a href="/CV_Luis_Fernandez.pdf" target="_blank" class="text-white text-base font-mplus hover:underline">CV ↗</a></li>
+          <li><a href="https://github.com/byluisfer" target="_blank" class="text-white text-base font-mplus hover:underline">
+            Github ↗
+          </a></li>
+          <li><a href="https://www.linkedin.com/in/luisfernandezz/" target="_blank" class="text-white text-base font-mplus hover:underline">
+            LinkedIn ↗
+          </a></li>
+          <li><a href="mailto:luisferdass@gmail.com" target="_blank" class="text-white text-base font-mplus hover:underline">
+            Gmail ↗
+          </a></li>
+          <li><a href="/CV_Luis_Fernandez.pdf" target="_blank" class="text-white text-base font-mplus hover:underline">
+            CV ↗
+          </a></li>
         </ul>
       </div>
     </div>
 
   </div>
-
 </footer>
 
 <style>

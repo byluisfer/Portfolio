@@ -18,30 +18,26 @@ const available = i18next.t('available');
         {i18next.t('aboutmeTitle')}
     </h1>
 
-    <h2 id="about-subtitle" class="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary font-dafoe font-regular z-20 text-center transform -translate-y-20 sm:-translate-y-[100px] md:-translate-y-[125px] lg:-translate-y-[135px] translate-x-6 sm:translate-x-[38px] md:translate-x-[40px] lg:translate-x-[30px] text-shadow-dark-led-effect-h2 dark:text-shadow-dark-led-effect-h2">
-        {aboutSubtitle}
+    <h2 id="about-subtitle" class="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary font-dafoe font-regular z-20 text-center transform -translate-y-20 sm:-translate-y-[100px] md:-translate-y-[125px] lg:-translate-y-[135px] translate-x-6 sm:translate-x-[38px] md:translate-x-[40px] lg:translate-x-[30px] text-shadow-dark-led-effect-h2 dark:text-shadow-dark-led-effect-h2" data-i18n="aboutmeSubtitle">
+        {i18next.t('aboutmeSubtitle')}
     </h2>
 
     <div class="flex flex-col md:flex-row items-center md:items-start -mt-40 sm:-mt-16 lg:-mt-20 space-y-4 sm:space-y-0 sm:space-x-8">
         <img src="/perfil_photo.png" alt="Foto de About Me" loading="lazy" class="w-64 sm:w-80 md:w-96 lg:w-96 h-auto mt-20 sm:mt-0 object-cover rounded-lg">
 
         <div class="text-center sm:text-left space-y-6">
-            <h1 id="about-greeting" class="text-white mb-10 text-xl sm:text-xl md:text-2xl lg:text-3xl font-archivo leading-none flex flex-col sm:flex-row items-center">
+            <h1 id="about-greeting" class="text-white mb-10 text-xl sm:text-xl md:text-2xl lg:text-3xl font-archivo leading-none flex flex-col sm:flex-row items-center" data-i18n="aboutmeGreeting">
                 {aboutGreeting}
-                <a href="https://www.linkedin.com/in/luisfernandezz/" target="_blank" class="inline-flex ml-3 items-center px-2 py-1 bg-gray-100 rounded-full text-black font-mplus hover:bg-gray-200 hover:shadow-lg transition duration-300 leading-none mt-4 sm:mt-0">
-                    <span class="w-5 h-5 bg-teal-400 rounded-full mr-3 circle"></span>
-                    <span class="lg:text-lg md:text-base sm:text-sm text-xs">{available}</span>
-                </a>
             </h1>
                       
-            <p id="about-description" class="text-lg sm:text-xl md:text-xl lg:text-xl text-white dark:text-white font-mplus font-regular leading-snug" set:html={aboutDescription}></p>          
+            <p id="about-description" data-i18n="aboutMeDescription" class="text-lg sm:text-xl md:text-xl lg:text-xl text-white dark:text-white font-mplus font-regular leading-snug" set:html={aboutDescription}></p>
 
             <div class="flex flex-col sm:flex-row sm:space-x-8">
                 <div class="relative rounded-xl border-2 border-white mt-2 sm:mt-10 dark:border-white py-4 px-6 text-white dark:text-white w-[24rem]">
-                    <h2 class="text-2xl font-archivo mb-4">{languages}</h2>
+                    <h2 class="text-2xl font-archivo mb-4" data-i18n="languages">{languages}</h2>
                     <div class="space-y-2">
                         <div class="flex justify-between items-center">
-                            <span id="german-language" class="font-mplus text-lg">{german}</span>
+                            <span id="german-language" data-i18n="german" class="font-mplus text-lg">{german}</span>
                             <div class="flex space-x-1">
                                 <img src="/star.svg" alt="German proficiency" class="w-6 sm:w-8" loading="lazy">
                                 <img src="/star.svg" alt="German proficiency" class="w-6 sm:w-8" loading="lazy">
@@ -51,7 +47,7 @@ const available = i18next.t('available');
                         </div>
 
                         <div class="flex justify-between items-center">
-                            <span id="spanish-language" class="font-mplus text-lg">{spanish}</span>
+                            <span id="spanish-language" data-i18n="spanish" class="font-mplus text-lg">{spanish}</span>
                             <div class="flex space-x-1">
                                 <img src="/star.svg" alt="Spanish proficiency" class="w-6 sm:w-8" loading="lazy">
                                 <img src="/star.svg" alt="Spanish proficiency" class="w-6 sm:w-8" loading="lazy">
@@ -62,7 +58,7 @@ const available = i18next.t('available');
                         </div>
 
                         <div class="flex justify-between items-center">
-                            <span id="english-language" class="font-mplus text-lg">{english}</span>
+                            <span id="english-language" data-i18n="english" class="font-mplus text-lg">{english}</span>
                             <div class="flex space-x-1">
                                 <img src="/star.svg" alt="English proficiency" class="w-6 sm:w-8" loading="lazy">
                                 <img src="/star.svg" alt="English proficiency" class="w-6 sm:w-8" loading="lazy">
