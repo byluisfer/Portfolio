@@ -21,22 +21,21 @@ const lang = urlParams.get('lang') || 'de';
   <main>
     <!-- Cargar secciones de forma diferida -->
     <section id="aboutMe">
-      <AboutMe lang={lang} client:idle />
+      <AboutMe lang={lang} />
     </section>
     <section id="skills">
-      <Skills lang={lang} client:idle />
+      <Skills lang={lang} />
     </section>
     <section id="education">
-      <Education lang={lang} client:idle />
+      <Education lang={lang} />
     </section>
     <section id="projects">
-      <Projects lang={lang} client:visible />
+      <Projects lang={lang} />
     </section>
     <section id="contact">
-      <Contact lang={lang} client:visible />
+      <Contact lang={lang} />
     </section>
   </main>
 
-  <!-- Footer también diferido -->
-  <Footer lang={lang} client:idle />
+  <Footer lang={lang} />
 </Layout>
