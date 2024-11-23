@@ -10,19 +10,19 @@ importers:
     dependencies:
       '@astrojs/react':
         specifier: ^3.6.2
-        version: 3.6.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.4.11)
+        version: 3.6.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.4.11(terser@5.36.0))
       '@astrojs/tailwind':
         specifier: ^5.1.2
-        version: 5.1.2(astro@4.16.13(rollup@4.27.3)(typescript@5.6.3))(tailwindcss@3.4.15)
+        version: 5.1.2(astro@4.16.13(rollup@4.27.3)(terser@5.36.0)(typescript@5.6.3))(tailwindcss@3.4.15)
       '@tabler/icons-react':
         specifier: ^3.22.0
         version: 3.22.0(react@18.3.1)
       astro:
         specifier: ^4.16.13
-        version: 4.16.13(rollup@4.27.3)(typescript@5.6.3)
+        version: 4.16.13(rollup@4.27.3)(terser@5.36.0)(typescript@5.6.3)
       astro-i18next:
         specifier: 1.0.0-beta.21
-        version: 1.0.0-beta.21(astro@4.16.13(rollup@4.27.3)(typescript@5.6.3))
+        version: 1.0.0-beta.21(astro@4.16.13(rollup@4.27.3)(terser@5.36.0)(typescript@5.6.3))
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -56,6 +56,10 @@ importers:
       tailwindcss-textshadow:
         specifier: ^2.1.3
         version: 2.1.3
+    devDependencies:
+      terser:
+        specifier: ^5.36.0
+        version: 5.36.0
 
 packages:
 
@@ -475,6 +479,9 @@ packages:
     resolution: {integrity: sha512-R8gLRTZeyp03ymzP/6Lil/28tGeGEzhx1q2k703KGWRAI1VdvPIXdG70VJc2pAMw3NA6JKL5hhFu1sJX0Mnn/A==}
     engines: {node: '>=6.0.0'}
 
+  '@jridgewell/source-map@0.3.6':
+    resolution: {integrity: sha512-1ZJTZebgqllO79ue2bm3rIGud/bOe0pP5BjSRCRxxYkEZS8STV7zN84UBbiYu7jy+eCKSnVIUgoWWE/tt+shMQ==}
+
   '@jridgewell/sourcemap-codec@1.5.0':
     resolution: {integrity: sha512-gv3ZRaISU3fjPAgNsriBRqGWQL6quFx04YMPW/zD8XMLsU32mhCCbfbO6KZFLjvYpCZ8zyDEgqsgf+PwPaM7GQ==}
 
@@ -805,6 +812,9 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
 
+  buffer-from@1.1.2:
+    resolution: {integrity: sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==}
+
   bytes@3.1.2:
     resolution: {integrity: sha512-/Nf7TyzTx6S3yRJObOAV7956r8cr2+Oj8AC5dt8wSP3BQAoeX58NoHyCU8P8zGkNXStjTSi6fzO6F0pBdcYbEg==}
     engines: {node: '>= 0.8'}
@@ -896,6 +906,9 @@ packages:
 
   comma-separated-tokens@2.0.3:
     resolution: {integrity: sha512-Fu4hJdvzeylCfQPp9SGWidpzrMs7tTrlu6Vb8XGaRGck8QSNZJJp538Wrb60Lax4fPwR64ViY468OIUTbRlGZg==}
+
+  commander@2.20.3:
+    resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
 
   commander@4.1.1:
     resolution: {integrity: sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==}
@@ -2099,6 +2112,9 @@ packages:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
     engines: {node: '>=0.10.0'}
 
+  source-map-support@0.5.21:
+    resolution: {integrity: sha512-uBHU3L3czsIyYXKX88fdrGovxdSCoTGDRZ6SYXtSRxLZUzHg5P/66Ht6uoUlHu9EZod+inXhKo3qQgwXUT/y1w==}
+
   source-map@0.6.1:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
@@ -2179,6 +2195,11 @@ packages:
   tailwindcss@3.4.15:
     resolution: {integrity: sha512-r4MeXnfBmSOuKUWmXe6h2CcyfzJCEk4F0pptO5jlnYSIViUkVmsawj80N5h2lO3gwcmSb4n3PuN+e+GC1Guylw==}
     engines: {node: '>=14.0.0'}
+    hasBin: true
+
+  terser@5.36.0:
+    resolution: {integrity: sha512-IYV9eNMuFAV4THUspIRXkLakHnV6XO7FEdtKjf/mDyrnqUg9LnlOn6/RwRvM9SZjR4GUq8Nk8zj67FzVARr74w==}
+    engines: {node: '>=10'}
     hasBin: true
 
   thenify-all@1.6.0:
@@ -2453,11 +2474,11 @@ snapshots:
     dependencies:
       prismjs: 1.29.0
 
-  '@astrojs/react@3.6.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.4.11)':
+  '@astrojs/react@3.6.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.4.11(terser@5.36.0))':
     dependencies:
       '@types/react': 18.3.12
       '@types/react-dom': 18.3.1
-      '@vitejs/plugin-react': 4.3.3(vite@5.4.11)
+      '@vitejs/plugin-react': 4.3.3(vite@5.4.11(terser@5.36.0))
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       ultrahtml: 1.5.3
@@ -2465,9 +2486,9 @@ snapshots:
       - supports-color
       - vite
 
-  '@astrojs/tailwind@5.1.2(astro@4.16.13(rollup@4.27.3)(typescript@5.6.3))(tailwindcss@3.4.15)':
+  '@astrojs/tailwind@5.1.2(astro@4.16.13(rollup@4.27.3)(terser@5.36.0)(typescript@5.6.3))(tailwindcss@3.4.15)':
     dependencies:
-      astro: 4.16.13(rollup@4.27.3)(typescript@5.6.3)
+      astro: 4.16.13(rollup@4.27.3)(terser@5.36.0)(typescript@5.6.3)
       autoprefixer: 10.4.20(postcss@8.4.49)
       postcss: 8.4.49
       postcss-load-config: 4.0.2(postcss@8.4.49)
@@ -2800,6 +2821,11 @@ snapshots:
 
   '@jridgewell/set-array@1.2.1': {}
 
+  '@jridgewell/source-map@0.3.6':
+    dependencies:
+      '@jridgewell/gen-mapping': 0.3.5
+      '@jridgewell/trace-mapping': 0.3.25
+
   '@jridgewell/sourcemap-codec@1.5.0': {}
 
   '@jridgewell/trace-mapping@0.3.25':
@@ -2988,14 +3014,14 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@vitejs/plugin-react@4.3.3(vite@5.4.11)':
+  '@vitejs/plugin-react@4.3.3(vite@5.4.11(terser@5.36.0))':
     dependencies:
       '@babel/core': 7.26.0
       '@babel/plugin-transform-react-jsx-self': 7.25.9(@babel/core@7.26.0)
       '@babel/plugin-transform-react-jsx-source': 7.25.9(@babel/core@7.26.0)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.2
-      vite: 5.4.11
+      vite: 5.4.11(terser@5.36.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -3048,11 +3074,11 @@ snapshots:
 
   array-iterate@2.0.1: {}
 
-  astro-i18next@1.0.0-beta.21(astro@4.16.13(rollup@4.27.3)(typescript@5.6.3)):
+  astro-i18next@1.0.0-beta.21(astro@4.16.13(rollup@4.27.3)(terser@5.36.0)(typescript@5.6.3)):
     dependencies:
       '@proload/core': 0.3.3
       '@proload/plugin-tsm': 0.2.1(@proload/core@0.3.3)
-      astro: 4.16.13(rollup@4.27.3)(typescript@5.6.3)
+      astro: 4.16.13(rollup@4.27.3)(terser@5.36.0)(typescript@5.6.3)
       i18next: 22.5.1
       i18next-browser-languagedetector: 7.2.1
       i18next-fs-backend: 2.3.2
@@ -3063,7 +3089,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  astro@4.16.13(rollup@4.27.3)(typescript@5.6.3):
+  astro@4.16.13(rollup@4.27.3)(terser@5.36.0)(typescript@5.6.3):
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/internal-helpers': 0.4.1
@@ -3119,8 +3145,8 @@ snapshots:
       tsconfck: 3.1.4(typescript@5.6.3)
       unist-util-visit: 5.0.0
       vfile: 6.0.3
-      vite: 5.4.11
-      vitefu: 1.0.3(vite@5.4.11)
+      vite: 5.4.11(terser@5.36.0)
+      vitefu: 1.0.3(vite@5.4.11(terser@5.36.0))
       which-pm: 3.0.0
       xxhash-wasm: 1.1.0
       yargs-parser: 21.1.1
@@ -3202,6 +3228,8 @@ snapshots:
       electron-to-chromium: 1.5.63
       node-releases: 2.0.18
       update-browserslist-db: 1.1.1(browserslist@4.24.2)
+
+  buffer-from@1.1.2: {}
 
   bytes@3.1.2: {}
 
@@ -3287,6 +3315,8 @@ snapshots:
     optional: true
 
   comma-separated-tokens@2.0.3: {}
+
+  commander@2.20.3: {}
 
   commander@4.1.1: {}
 
@@ -4706,6 +4736,11 @@ snapshots:
 
   source-map-js@1.2.1: {}
 
+  source-map-support@0.5.21:
+    dependencies:
+      buffer-from: 1.1.2
+      source-map: 0.6.1
+
   source-map@0.6.1: {}
 
   space-separated-tokens@2.0.2: {}
@@ -4831,6 +4866,13 @@ snapshots:
     transitivePeerDependencies:
       - ts-node
 
+  terser@5.36.0:
+    dependencies:
+      '@jridgewell/source-map': 0.3.6
+      acorn: 8.14.0
+      commander: 2.20.3
+      source-map-support: 0.5.21
+
   thenify-all@1.6.0:
     dependencies:
       thenify: 3.3.1
@@ -4946,17 +4988,18 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.2
 
-  vite@5.4.11:
+  vite@5.4.11(terser@5.36.0):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.4.49
       rollup: 4.27.3
     optionalDependencies:
       fsevents: 2.3.3
+      terser: 5.36.0
 
-  vitefu@1.0.3(vite@5.4.11):
+  vitefu@1.0.3(vite@5.4.11(terser@5.36.0)):
     optionalDependencies:
-      vite: 5.4.11
+      vite: 5.4.11(terser@5.36.0)
 
   void-elements@3.1.0: {}
 
