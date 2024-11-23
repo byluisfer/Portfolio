@@ -3,8 +3,6 @@ import i18next from '../i18n.js';
 const { lang } = Astro.props;
 i18next.changeLanguage(lang || 'de');
 
-const aboutTitle = i18next.t('aboutmeTitle');
-const aboutSubtitle = i18next.t('aboutmeSubtitle');
 const aboutDescription = i18next.t('aboutMeDescription');
 const aboutGreeting = i18next.t('aboutmeGreeting');
 const languages = i18next.t('languages');
