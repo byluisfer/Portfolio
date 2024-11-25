@@ -4,8 +4,8 @@ const { lang } = Astro.props;
 i18next.changeLanguage(lang || 'de');
 ---
 
-<section class="h-screen mt-40 md:mt-24">
-    <h1 id="skills-title" class="relative text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white font-saira font-black z-10 text-center" data-i18n="skillsTitle">
+<section class="h-screen mt-40 md:mt-24 select-none">
+    <h1 id="skills-title" class="relative text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-white font-saira font-black z-10 text-center" data-i18n="skillsTitle">
         {i18next.t('skillsTitle')}
     </h1>
 

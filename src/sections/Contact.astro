@@ -8,11 +8,11 @@ const contactMessage = i18next.t('contactMessage');
 ---
 
 <section class="min-h-screen mt-[28rem] sm:mt-[60rem] md:mt-[85rem] lg:mt-[125rem] xl:mt-[120rem]">
-    <h1 id="contact-title" class="relative text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white font-saira font-black z-10 text-center" data-i18n="contactTitle">
+    <h1 id="contact-title" class="relative text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white font-saira font-black z-10 text-center select-none" data-i18n="contactTitle">
         {i18next.t('contactTitle')}
     </h1>
 
-    <h2 id="contact-subtitle" class="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary font-dafoe font-regular z-20 text-center led-effect transform -translate-y-20 sm:-translate-y-[100px] md:-translate-y-[125px] lg:-translate-y-[135px] translate-x-6 sm:translate-x-[38px] md:translate-x-[40px] lg:translate-x-[30px]" data-i18n="contactSubtitle">
+    <h2 id="contact-subtitle" class="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary font-dafoe font-regular z-20 text-center led-effect transform -translate-y-20 sm:-translate-y-[100px] md:-translate-y-[125px] lg:-translate-y-[135px] translate-x-6 sm:translate-x-[38px] md:translate-x-[40px] lg:translate-x-[30px] select-none" data-i18n="contactSubtitle">
         {i18next.t('contactSubtitle')}
     </h2>
 
@@ -22,7 +22,7 @@ const contactMessage = i18next.t('contactMessage');
             <p class="contact-message" data-i18n="contactMessage" set:html={contactMessage}></p>
         </h3>
         
-        <div class="absolute bottom-5 right-5 w-24 sm:w-28 md:w-32 lg:w-36 h-24 sm:h-28 md:h-32 lg:h-36 cursor-pointer hidden md:block" id="scroll-button">
+        <div class="absolute bottom-5 right-5 w-24 sm:w-28 md:w-32 lg:w-36 h-24 sm:h-28 md:h-32 lg:h-36 cursor-pointer hidden md:block select-none" id="scroll-button">
             <div class="relative w-full h-full flex items-center justify-center">
                 <div class="absolute text-2xl sm:text-3xl text-accent">↓</div>
                 <svg class="absolute w-full h-full animate-spin-slow" viewBox="0 0 100 100">

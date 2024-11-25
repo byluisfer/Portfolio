@@ -4,7 +4,7 @@ const { lang } = Astro.props;
 i18next.changeLanguage(lang || 'de');
 ---
 
-<section class="relative flex flex-col items-center justify-center h-screen">
+<section class="relative flex flex-col items-center justify-center h-screen select-none">
    
     <h1 id="welcome-text" class="relative z-20 text-5xl sm:text-7xl md:text-10xl lg:text-12xl font-black text-semi-dark dark:text-semi-dark tracking-wide font-saira" data-i18n="welcome">
         {i18next.t('welcome')}

@@ -12,11 +12,11 @@ const english = i18next.t('english');
 const available = i18next.t('available');
 ---
 <section class="h-screen mt-20">
-    <h1 id="about-title" class="relative text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white dark:text-white font-saira font-black z-10 text-center" data-i18n="aboutmeTitle">
+    <h1 id="about-title" class="relative text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white dark:text-white font-saira font-black z-10 text-center select-none" data-i18n="aboutmeTitle">
         {i18next.t('aboutmeTitle')}
     </h1>
 
-    <h2 id="about-subtitle" class="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary font-dafoe font-regular z-20 text-center transform -translate-y-20 sm:-translate-y-[100px] md:-translate-y-[125px] lg:-translate-y-[135px] translate-x-6 sm:translate-x-[38px] md:translate-x-[40px] lg:translate-x-[30px] text-shadow-dark-led-effect-h2 dark:text-shadow-dark-led-effect-h2" data-i18n="aboutmeSubtitle">
+    <h2 id="about-subtitle" class="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary font-dafoe font-regular z-20 text-center transform -translate-y-20 sm:-translate-y-[100px] md:-translate-y-[125px] lg:-translate-y-[135px] translate-x-6 sm:translate-x-[38px] md:translate-x-[40px] lg:translate-x-[30px] text-shadow-dark-led-effect-h2 dark:text-shadow-dark-led-effect-h2 select-none" data-i18n="aboutmeSubtitle">
         {i18next.t('aboutmeSubtitle')}
     </h2>
 
@@ -36,7 +36,7 @@ const available = i18next.t('available');
                     <div class="space-y-2">
                         <div class="flex justify-between items-center">
                             <span id="german-language" data-i18n="german" class="font-mplus text-lg">{german}</span>
-                            <div class="flex space-x-1">
+                            <div class="flex space-x-1 select-none">
                                 <img src="/star.svg" alt="German proficiency" class="w-6 sm:w-8" loading="lazy">
                                 <img src="/star.svg" alt="German proficiency" class="w-6 sm:w-8" loading="lazy">
                                 <img src="/star.svg" alt="German proficiency" class="w-6 sm:w-8" loading="lazy">
@@ -46,7 +46,7 @@ const available = i18next.t('available');
 
                         <div class="flex justify-between items-center">
                             <span id="spanish-language" data-i18n="spanish" class="font-mplus text-lg">{spanish}</span>
-                            <div class="flex space-x-1">
+                            <div class="flex space-x-1 select-none">
                                 <img src="/star.svg" alt="Spanish proficiency" class="w-6 sm:w-8" loading="lazy">
                                 <img src="/star.svg" alt="Spanish proficiency" class="w-6 sm:w-8" loading="lazy">
                                 <img src="/star.svg" alt="Spanish proficiency" class="w-6 sm:w-8" loading="lazy">
@@ -57,7 +57,7 @@ const available = i18next.t('available');
 
                         <div class="flex justify-between items-center">
                             <span id="english-language" data-i18n="english" class="font-mplus text-lg">{english}</span>
-                            <div class="flex space-x-1">
+                            <div class="flex space-x-1 select-none">
                                 <img src="/star.svg" alt="English proficiency" class="w-6 sm:w-8" loading="lazy">
                                 <img src="/star.svg" alt="English proficiency" class="w-6 sm:w-8" loading="lazy">
                                 <img src="/star.svg" alt="English proficiency" class="w-6 sm:w-8" loading="lazy">
